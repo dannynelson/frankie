@@ -1,0 +1,9 @@
+### NPM ###
+node_modules
+bower_components
+
+*.keystore
+*.sw*
+platforms/^.*
+
+.DS_Store
