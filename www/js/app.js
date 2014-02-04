@@ -20,6 +20,34 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+    // Signin/Signup
+    // =============
+
+    .state('signin', {
+      url: "/signin",
+      // abstract means we can never directly activate this template, it is just a wrapper for other templates
+      views: {
+        'signin': {
+          templateUrl: 'templates/signin.html',
+          controller: 'SigninCtrl'
+        }
+      }
+    })
+
+    .state('signup', {
+      url: "/signup",
+      // abstract means we can never directly activate this template, it is just a wrapper for other templates
+      views: {
+        'signup': {
+          templateUrl: 'templates/signup.html',
+          controller: 'SignupCtrl'
+        }
+      }
+    })
+
+    // Main Section
+    // ============
+
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -41,7 +69,7 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     })
 
     .state('tab.project-detail', {
-      url: '/project/:id',
+      url: '/projects/:id',
       views: {
         'projects-tab': {
           templateUrl: 'templates/project-detail.html',
