@@ -6,3 +6,7 @@
   width: 96px;
   height: 96px;
 }
+
+.pane, .view {
+  background-color: #e8e8e8;
+}
