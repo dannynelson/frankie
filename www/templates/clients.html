@@ -5,7 +5,15 @@
 <view title="'Clients'">
   <content has-header="true" has-tabs="true">
     <list>
-      <a class="item item-avatar" ng-repeat="client in clients" type="item-text-wrap" href="#/tab/client/{{client.id}}">
+      <!-- Search form -->
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input ng-model="liveSearch" type="text" placeholder="Search">
+        </label>
+      </div>
+      
+      <!-- Client List -->
+      <a class="item item-avatar" ng-repeat="client in clients | filter:liveSearch" type="item-text-wrap" href="#/tab/client/{{client.id}}">
         <img src="http://placehold.it/50x50">
         <h2>{{client.first + ' ' + client.last}}</h2>
        <!--  <p>${{project.price}}</p> -->

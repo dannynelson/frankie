@@ -5,8 +5,17 @@
 -->
 <view title="'Projects'" left-buttons="leftButtons" right-buttons="rightButtons">
   <content has-header="true" has-tabs="true">
-    <list>
-      <a class="item item-thumbnail-left" ng-repeat="project in projects" type="item-text-wrap" href="#/tab/projects/{{project.id}}">
+
+    <list>  
+      <!-- Search form -->
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input ng-model="liveSearch" type="text" placeholder="Search">
+        </label>
+      </div>
+
+      <!-- Project List -->
+      <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/tab/projects/{{project.id}}">
         <img src="http://placehold.it/100x100">
         <h2>{{project.title}}</h2>
        <!--  <p>${{project.price}}</p> -->
