@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('frankie.controllers', []);
+angular.module('frankie.services', []);
+
+
+angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -26,46 +30,46 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
     // the pet tab has its own child nav-view and history
     // the dot notation indicates that it is a child
-    .state('tab.pet-index', {
-      url: '/pets',
+    .state('tab.projects', {
+      url: '/projects',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
+        'projects-tab': {
+          templateUrl: 'templates/projects.html',
+          controller: 'ProjectsCtrl'
         }
       }
     })
 
-    .state('tab.pet-detail', {
-      url: '/pet/:petId',
+    .state('tab.project-detail', {
+      url: '/project/:id',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-detail.html',
-          controller: 'PetDetailCtrl'
+        'projects-tab': {
+          templateUrl: 'templates/project-detail.html',
+          controller: 'ProjectDetailCtrl'
         }
       }
     })
 
-    .state('tab.adopt', {
-      url: '/adopt',
+    .state('tab.clients', {
+      url: '/clients',
       views: {
-        'adopt-tab': {
-          templateUrl: 'templates/adopt.html'
+        'clients-tab': {
+          templateUrl: 'templates/clients.html'
         }
       }
     })
 
-    .state('tab.about', {
-      url: '/about',
+    .state('tab.account', {
+      url: '/account',
       views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
+        'account-tab': {
+          templateUrl: 'templates/account.html'
         }
       }
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/tab/projects');
 
 });
 

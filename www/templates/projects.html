@@ -3,13 +3,14 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<view title="'Pet Information'" left-buttons="leftButtons" right-buttons="rightButtons">
+<view title="'Projects'" left-buttons="leftButtons" right-buttons="rightButtons">
   <content has-header="true" has-tabs="true">
     <list>
-      <a class="item item-thumbnail-left" ng-repeat="pet in pets" type="item-text-wrap" href="#/tab/pet/{{pet.id}}">
+      <a class="item item-thumbnail-left" ng-repeat="project in projects" type="item-text-wrap" href="#/tab/pet/{{pet.id}}">
         <img src="http://placehold.it/100x100">
-        <h2>{{pet.title}}</h2>
-        <p>{{pet.description}}</p>
+        <h2>{{project.title}}</h2>
+       <!--  <p>${{project.price}}</p> -->
+        <p>Due in 15 days</p>
       </a>
     </list>
   </content>

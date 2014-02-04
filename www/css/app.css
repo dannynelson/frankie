@@ -7,6 +7,6 @@
   height: 96px;
 }
 
-.pane, .view {
+.scroll-content {
   background-color: #e8e8e8;
 }
