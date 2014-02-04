@@ -1,19 +1,16 @@
 <!--
   This template loads for the 'tab.adopt' state (app.js)
 -->
-<view title="'Adopt A Pet'">
+
+<view title="'Clients'">
   <content has-header="true" has-tabs="true">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <span class="input-label">Your name</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Your email</span>
-        <input type="email">
-      </label>
-      <toggle>Subscribe To Newsletter</toggle>
-      <button class="button button-positive button-block">Adopt</button>
-    </div>
+    <list>
+      <a class="item item-avatar" ng-repeat="client in clients" type="item-text-wrap" href="#/tab/client/{{client.id}}">
+        <img src="http://placehold.it/100x100">
+        <h2>{{project.title}}</h2>
+       <!--  <p>${{project.price}}</p> -->
+        <p>Due in 15 days</p>
+      </a>
+    </list>
   </content>
 </view>

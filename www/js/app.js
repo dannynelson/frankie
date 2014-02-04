@@ -54,7 +54,8 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
       url: '/clients',
       views: {
         'clients-tab': {
-          templateUrl: 'templates/clients.html'
+          templateUrl: 'templates/clients.html',
+          controller: 'ClientsCtrl'
         }
       }
     })

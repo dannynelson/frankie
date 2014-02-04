@@ -37,4 +37,40 @@ angular.module('frankie.services')
       return projects[projectId];
     }
   };
+})
+
+.factory('ClientService', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var clients = [
+    {
+      id: 0,
+      first: 'Ryan',
+      last: 'Stellar',
+      location: 'San Francisco, CA'
+    },
+    {
+      id: 1,
+      first: 'Danny',
+      last: 'Nelson',
+      location: 'San Francisco, CA'
+    },
+    {
+      id: 2,
+      first: 'Ryan',
+      last: 'Yee',
+      location: 'San Francisco, CA'
+    }
+  ];
+
+  return {
+    all: function() {
+      return clients;
+    },
+    get: function(clientId) {
+      // Simple index lookup
+      return clients[clientId];
+    }
+  };
 });
