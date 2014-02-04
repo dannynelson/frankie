@@ -2,10 +2,10 @@ angular.module('frankie.controllers')
 
 
 // A simple controller that fetches a list of data from a service
-.controller('ClientsCtrl', function($scope, $ionicModal, ProjectService) {
+.controller('ClientsCtrl', function($scope, $ionicModal, ClientService) {
   // "Pets" is a service returning mock data (services.js)
 
-  $scope.projects = ProjectService.all();
+  $scope.clients = ClientService.all();
 
   // Create our modal
   $ionicModal.fromTemplateUrl('new-task.html', function(modal) {

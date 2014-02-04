@@ -6,10 +6,10 @@
   <content has-header="true" has-tabs="true">
     <list>
       <a class="item item-avatar" ng-repeat="client in clients" type="item-text-wrap" href="#/tab/client/{{client.id}}">
-        <img src="http://placehold.it/100x100">
-        <h2>{{project.title}}</h2>
+        <img src="http://placehold.it/50x50">
+        <h2>{{client.first + ' ' + client.last}}</h2>
        <!--  <p>${{project.price}}</p> -->
-        <p>Due in 15 days</p>
+        <p>{{client.location}}</p>
       </a>
     </list>
   </content>
