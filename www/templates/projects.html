@@ -3,7 +3,7 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<view title="'Projects'" left-buttons="leftButtons" right-buttons="rightButtons">
+<view title="'Projects'" right-buttons="rightButtons">
   <content has-header="true" has-tabs="true">
 
     <list>  
@@ -15,7 +15,7 @@
       </div>
 
       <!-- Project List -->
-      <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/tab/projects/{{project.id}}">
+      <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
         <img src="http://placehold.it/100x100">
         <h2>{{project.title}}</h2>
        <!--  <p>${{project.price}}</p> -->

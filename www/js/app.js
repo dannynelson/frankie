@@ -49,56 +49,56 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     // ============
 
     // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+    .state('main', {
+      url: "/main",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "templates/main.html"
     })
 
     // the pet tab has its own child nav-view and history
     // the dot notation indicates that it is a child
-    .state('tab.projects', {
+    .state('main.projects', {
       url: '/projects',
       views: {
-        'projects-tab': {
+        'projects': {
           templateUrl: 'templates/projects.html',
           controller: 'ProjectsCtrl'
         }
       }
     })
 
-    .state('tab.project-detail', {
+    .state('main.project-detail', {
       url: '/projects/:id',
       views: {
-        'projects-tab': {
+        'projects': {
           templateUrl: 'templates/project-detail.html',
           controller: 'ProjectDetailCtrl'
         }
       }
     })
 
-    .state('tab.clients', {
+    .state('main.clients', {
       url: '/clients',
       views: {
-        'clients-tab': {
+        'clients': {
           templateUrl: 'templates/clients.html',
           controller: 'ClientsCtrl'
         }
       }
     })
 
-    .state('tab.account', {
+    .state('main.account', {
       url: '/account',
       views: {
-        'account-tab': {
+        'account': {
           templateUrl: 'templates/account.html'
         }
       }
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/projects');
+  $urlRouterProvider.otherwise('/main/projects');
 
 });
 

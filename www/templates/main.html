@@ -1,0 +1,40 @@
+
+<!-- 
+  The nav bar that will be updated as we navigate between views
+  Additional attributes set its look, nav-bar animation and icons
+  Icons provided by Ionicons: http://ionicons.com/ 
+-->
+<nav-bar type="bar-positive" 
+         animation="nav-title-slide-ios7" 
+         back-button-type="button-icon" 
+         back-button-icon="ion-ios7-arrow-back">
+</nav-bar>
+
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+
+<tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
+
+
+  <!-- Clients Tab -->
+  <tab title="Clients" icon="icon ion-ios7-people" href="#/main/clients">
+    <nav-view name="clients"></nav-view>
+  </tab>
+
+
+  <!-- Projects Tab -->
+  <tab title="Projects" icon="icon ion-ios7-calendar" href="#/main/projects">
+    <nav-view name="projects"></nav-view>
+  </tab>
+
+
+  <!-- Account Tab -->
+  <tab title="Account" icon="icon ion-ios7-gear" href="#/main/account">
+    <nav-view name="account"></nav-view>
+  </tab>
+
+
+</tabs>

@@ -5,15 +5,15 @@ angular.module('frankie.controllers')
 .controller('ProjectsCtrl', function($scope, $ionicModal, ProjectService) {
   // "Pets" is a service returning mock data (services.js)
 
-  $scope.leftButtons = [
-    {
-      type: 'button-clear',
-      content: '<i class="icon ion-navicon"></i>',
-      tap: function(e) {
-        $scope.sideMenuController.toggleLeft();
-      }
-    }
-  ];
+  // $scope.leftButtons = [
+  //   {
+  //     type: 'button-clear',
+  //     content: '<i class="icon ion-navicon"></i>',
+  //     tap: function(e) {
+  //       $scope.sideMenuController.toggleLeft();
+  //     }
+  //   }
+  // ];
 
   $scope.titleButtons =
     '<div class="button-bar">\
@@ -47,4 +47,6 @@ angular.module('frankie.controllers')
   $scope.closeNewTask = function() {
     $scope.taskModal.hide();
   };
-})
+});
+
+
