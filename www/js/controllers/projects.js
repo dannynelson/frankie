@@ -34,7 +34,7 @@ angular.module('frankie.controllers')
   $scope.projects = ProjectService.all();
 
   // Create our modal
-  $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
+  $ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope
