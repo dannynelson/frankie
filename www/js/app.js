@@ -26,23 +26,15 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     .state('signin', {
       url: "/signin",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
-      views: {
-        'signin': {
-          templateUrl: 'templates/signin.html',
-          controller: 'SigninCtrl'
-        }
-      }
+      templateUrl: 'templates/signin.html',
+      controller: 'SigninCtrl'
     })
 
     .state('signup', {
       url: "/signup",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
-      views: {
-        'signup': {
-          templateUrl: 'templates/signup.html',
-          controller: 'SignupCtrl'
-        }
-      }
+      templateUrl: 'templates/singup.html',
+      controller: 'SignupCtrl'
     })
 
     // Main Section
