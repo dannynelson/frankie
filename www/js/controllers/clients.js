@@ -3,7 +3,16 @@ angular.module('frankie.controllers')
 
 // A simple controller that fetches a list of data from a service
 .controller('ClientsCtrl', function($scope, $ionicModal, ClientService) {
-  // "Pets" is a service returning mock data (services.js)
+
+  $scope.rightButtons = [
+    {
+      type: 'button-clear',
+      content: '<i class="icon ion-ios7-plus-empty"></i>',
+      tap: function(e) {
+        $scope.newTask();
+      }
+    }
+  ];
 
   $scope.clients = ClientService.all();
 

@@ -8,7 +8,7 @@
 }
 
 .scroll-content {
-  background-color: #e8e8e8;
+  background-color: #eee;
 }
 
 .signin .scroll-content {
@@ -24,6 +24,22 @@
   color: #ff6b26;
 }
 
+.bar.bar-positive {
+  background-color: #273552;
+  color: #ff6b26;;
+}
+
+header .button {
+  color: #ff6b26;
+}
+
+.buttons i {
+  color: #ff6b26;
+}
+
+.paragraph-item {
+  background-color: white;
+}
 
 /* Helpers */
 

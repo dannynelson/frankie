@@ -4,9 +4,55 @@
   The PetCtrl pulls data from the Pets service (service.js)
   The Pets service returns an array of pet data
 -->
-<view title="project.title">
-  <content has-header="true" padding="true">
-    <p>{{ pet.description }}</p>
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/projects"> All Projects</a></p>
+<view title="project.title" right-buttons="rightButtons">
+  <content has-header="true">
+    <list>
+      
+      <!-- Project Overview -->
+      <div class="item item-divider">
+        Overview
+      </div>
+      <div class="item item-thumbnail-left" type="item-text-wrap" href="#/main/projects/{{project.id}}">
+        <img src="http://placehold.it/100x100">
+        <h2>Project Title</h2>
+        <p>
+          ${{project.price}}</br>
+          Due in 15 days
+        </p>
+      </div>
+      <div class="padding paragraph-item">
+        Lots of text hear, nothing special to see. Lots of text hear, nothing special to see.
+        Lots of text hear, nothing special to see. Lots of text hear, nothing special to see.
+      </div>
+      <!-- Client Info -->
+      <div class="item item-divider">
+        Client Info
+      </div>
+      <a class="item item-avatar" type="item-text-wrap" href="#/tab/client/{{client.id}}">
+        <img src="http://placehold.it/50x50">
+        <h2>Ryan Stellar</h2>
+        <p>San Francisco, CA</p>
+      </a>
+      
+      <!-- Timeline -->
+      <div class="item item-divider">
+        Timeline
+      </div>
+      <ul class="list">
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox">
+           </label>
+          Milestone 1
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox">
+           </label>
+          Milestone 2
+        </li>
+      </ul>
+      
+    </list>
   </content>
 </view>

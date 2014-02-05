@@ -4,18 +4,26 @@
 <view title="'Account'">
 
   <content has-header="true" has-tabs="true">
+    
     <list>
+      <div class="item item-divider"></div>
       <a class="item item-avatar" type="item-text-wrap" href="#/tab/profile/{{client.id}}">
         <img src="http://placehold.it/50x50">
         <h2>Ryan Stellar</h2>
        <!--  <p>${{project.price}}</p> -->
         <p>Joined february 15th</p>
       </a>
+      
+      <div class="item item-divider"></div>
+      <a class="item" href="#">Project Archives</a>
+      
+      <div class="item item-divider"></div>
+      <a class="item" href="#">Change Email</a>
+      <a class="item" href="#">Change Password</a>
+      
+      <a class="button button-full button-assertive" href="#/main/projects">Log Out</a>
+
     </list>
-
-    <a class="item" href="#"> Change Password </a>
-
-    <a class="button button-full button-light" href="#/main/projects">Log Out</a>
 
   </content>
 </view>
