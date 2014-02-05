@@ -12,19 +12,18 @@
       <div class="item item-divider">
         Overview
       </div>
-      <div class="item item-thumbnail-left" type="item-text-wrap" href="#/main/projects/{{project.id}}">
-        <img class="thumbnail" src="http://placehold.it/100x100">
-        <h2>Project Title</h2>
+      <div class="item item-thumbnail-left" type="item-text-wrap">
+        <img class="thumbnail" src="{{ project.photoURL }}">
+        <h2>{{project.title}}</h2>
         <p>
           ${{project.price}}</br>
           Due in 15 days
         </p>
       </div>
       <div class="padding paragraph-item">
-        Lots of text hear, nothing special to see. Lots of text hear, nothing special to see.
-        Lots of text hear, nothing special to see. Lots of text hear, nothing special to see.
+        {{ project.notes }}
       </div>
-      
+
       <!-- Client Info -->
       <div class="item item-divider">
         Client Info
