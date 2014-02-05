@@ -24,7 +24,7 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [
     {
       type: 'button-clear',
-      content: '<i class="icon ion-ios7-plus-empty"></i>',
+      content: '<i class="fa fa-plus"></i>',
       tap: function(e) {
         $scope.newTask();
       }
@@ -34,7 +34,7 @@ angular.module('frankie.controllers')
   $scope.projects = ProjectService.all();
 
   // Create our modal
-  $ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
+  $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope

@@ -56,3 +56,23 @@ header .button {
   top: 10px;
   right: 10px;
 }
+
+/* Reset annoying button margins */
+.button.button-block, .button.button-full {
+  margin: 0px;
+}
+
+/* Assertive text on light button */
+.assertive-text {
+  color: #ff6b26 !important;
+}
+
+/* make the camera icon a faded grey color */
+.camera {
+  color: lightgrey;
+}
+
+/* restrict dimensions for the image thumbnails to 100x100 */
+.thumbnail {
+  height: 100px;
+}

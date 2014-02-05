@@ -16,7 +16,7 @@
 
       <!-- Project List -->
       <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
-        <img src="http://placehold.it/100x100">
+        <img class="thumbnail" src="{{ project.photoURL }}">
         <h2>{{project.title}}</h2>
        <!--  <p>${{project.price}}</p> -->
         <p>Due in 15 days</p>

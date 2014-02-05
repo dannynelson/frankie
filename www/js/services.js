@@ -12,19 +12,34 @@ angular.module('frankie.services')
       id: 0,
       title: '1416 Bathroom Remodel',
       price: 500,
-      description: '10x10 bathroom, there is a leak in the ceiling.'
+      notes: '10x10 bathroom, there is a leak in the ceiling.',
+      start: '2014-01-15',
+      end: '2014-02-15',
+      client_id: 1,
+      user_id: 1,
+      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
       id: 1,
       title: 'Kitchen Repair',
       price: 1500,
-      description: '10x10 bathroom, there is a leak in the ceiling.'
+      notes: '10x10 bathroom, there is a leak in the ceiling.',
+      start: '2014-01-15',
+      end: '2014-02-15',
+      client_id: 1,
+      user_id: 1,
+      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
       id: 2,
       title: 'Replace Cabinets',
       price: 350,
-      description: '10x10 bathroom, there is a leak in the ceiling.'
+      notes: '10x10 bathroom, there is a leak in the ceiling.',
+      start: '2014-01-15',
+      end: '2014-02-15',
+      client_id: 1,
+      user_id: 1,
+      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     }
   ];
 
