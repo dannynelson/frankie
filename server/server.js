@@ -22,8 +22,6 @@ app.use(function(req, res, next){
   res.send(404, 'page not found');
 });
 
-// app.use('/notes/create', (req, res))
-
 // Create HTTP server with your app
 var server = http.createServer(app)
 
@@ -39,7 +37,4 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function callback () {
   console.log("Connected to the MongoDB through Mongoose!");
-
-
-
 });

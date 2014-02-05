@@ -15,7 +15,12 @@ var projectSchema = new mongoose.Schema({
     client: {
       type: mongoose.Schema.ObjectId,
       ref: 'client'
-    }
+    },
+    timeline: [{ 
+      description: String, 
+      targetDate: Date, 
+      complete: Boolean
+    }]
 });
 
 module.exports = mongoose.model('projects', projectSchema);
