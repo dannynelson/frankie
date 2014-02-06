@@ -87,10 +87,17 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
           templateUrl: 'templates/account.html'
         }
       }
+    })
+
+    // New project (nav bar but no tabs)
+    .state('new-project', {
+      url: '/new-project',
+      templateUrl: 'templates/projects.html',
+      controller: 'ProjectsCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/main/projects');
+  $urlRouterProvider.otherwise('/signin');
 
 });
 
