@@ -1,12 +1,5 @@
 /* Your app's CSS, go crazy, make it your own */
 
-.ionic-logo {
-  display: block;
-  margin: 15px auto;
-  width: 96px;
-  height: 96px;
-}
-
 .scroll-content {
   background-color: #eee;
 }
@@ -15,6 +8,7 @@
   background-color: #273552;
 }
 
+/* FRANKIE logo styling on signin page  */
 .title {
   text-align: center;
   font-weight: 900;
@@ -24,38 +18,11 @@
   color: #ff6b26;
 }
 
-.bar.bar-positive {
-  background-color: #273552;
-  color: #ff6b26;;
-}
-
-header .button {
-  color: #ff6b26;
-}
-
-.buttons i {
-  color: #ff6b26;
-}
-
 .paragraph-item {
   background-color: white;
 }
 
 /* Helpers */
-
-.pull-right {
-  text-align: right;
-}
-
-.top-buffer {
-  margin-top: 20px;
-}
-
-.top-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
 
 /* Reset annoying button margins */
 .button.button-block, .button.button-full {
@@ -80,9 +47,4 @@ header .button {
 /* make the plus icons on the page slightly larger */
 i.large {
   font-size: 20px;
-}
-
-/* Make the back button icon orange */
-.bar-positive .button.button-icon {
-  color: #ff6b26
 }

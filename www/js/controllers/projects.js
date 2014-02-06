@@ -23,7 +23,7 @@ angular.module('frankie.controllers')
 
   $scope.rightButtons = [
     {
-      type: 'button-clear',
+      type: 'button-clear button-assertive',
       content: '<i class="ion-plus large"></i>',
       tap: function(e) {
         $scope.newTask();

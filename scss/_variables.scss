@@ -2,13 +2,14 @@
 // Colors
 // -------------------------------
 
+$positive:              #273552 !default;
+$assertive:             #ff6b26 !default;
+
 $light:                 #fff !default;
 $stable:                #f8f8f8 !default;
-$positive:              #4a87ee !default;
 $calm:                  #43cee6 !default;
 $balanced:              #66cc33 !default;
 $energized:             #f0b840 !default;
-$assertive:             #ef4e3a !default;
 $royal:                 #8a6de9 !default;
 $dark:                  #444 !default;
 
@@ -291,8 +292,8 @@ $item-icon-fill-font-size:         28px !default;
 $item-avitar-width:                40px !default;
 $item-avitar-height:               40px !default;
 
-$item-thumbnail-width:             80px !default;
-$item-thumbnail-height:            80px !default;
+$item-thumbnail-width:             100px !default;
+$item-thumbnail-height:            70px !default;
 $item-thumbnail-margin:            10px !default;
 
 $item-divider-bg:                  #f5f5f5;
