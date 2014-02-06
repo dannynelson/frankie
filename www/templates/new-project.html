@@ -20,11 +20,11 @@
         <div class="item item-divider"></div>
         <label class="item item-input">
           <span class="input-label">Title</span>
-          <input type="text" placeholder="MyProjet">
+          <input ng-model="project.title" type="text" placeholder="MyProjet">
         </label>
         <label class="item item-input">
           <span class="input-label">Price</span>
-          $<input type="number" placeholder="150">
+          $<input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
           <textarea placeholder="Notes"></textarea>
@@ -42,11 +42,11 @@
         <div class="item item-divider"></div>
         <label class="item item-input">
           <span class="input-label">Start</span>
-          <input type="date">
+          <input ng-model="project.start" type="date">
         </label>
         <label class="item item-input">
           <span class="input-label">End</span>
-          <input type="date">
+          <input ng-model="project.end" type="date">
         </label>
       
         <!-- Client Info -->

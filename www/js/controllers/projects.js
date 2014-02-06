@@ -35,17 +35,17 @@ angular.module('frankie.controllers')
 
   // Create our modal
   $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
-    $scope.taskModal = modal;
+    $scope.projectModal = modal;
   }, {
     scope: $scope
   });
 
   $scope.newTask = function() {
-    $scope.taskModal.show();
+    $scope.projectModal.show();
   };
 
   $scope.closeNewTask = function() {
-    $scope.taskModal.hide();
+    $scope.projectModal.hide();
   };
 });
 
