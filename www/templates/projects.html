@@ -9,20 +9,20 @@
     <list>  
       <!-- Search form -->
 
-      <div class="item item-input-inset background-grey">
+      <div class="item item-input-inset search-item">
 <!--         <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input"> -->
-        <label class="item-input-wrapper">
+        <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
 
-          <input type="search" ng-model="liveSearch" placeholder="Search">
-        </label>
       </div>
 
       <!-- Project List -->
       <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
         <img class="thumbnail" src="{{ project.photoURL }}">
         <h2>{{project.title}}</h2>
-       <!--  <p>${{project.price}}</p> -->
-        <p>Due in 15 days</p>
+        <p>
+          ${{project.price}}</br>
+          Due in 15 days
+        </p>
       </a>
     </list>
   </content>

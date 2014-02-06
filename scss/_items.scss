@@ -429,6 +429,7 @@ button.item-button-right:after {
     left: $item-thumbnail-margin;
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
+    border-radius: $item-thumbnail-border-radius;
     width: 100%;
   }
 }
@@ -443,6 +444,7 @@ button.item-button-right:after {
     right: $item-thumbnail-margin;
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
+    border-radius: $item-thumbnail-border-radius;
     width: 100%;
   }
 }

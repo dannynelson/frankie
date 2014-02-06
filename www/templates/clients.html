@@ -6,15 +6,13 @@
   <content has-header="true" has-tabs="true">
     <list>
       <!-- Search form -->
-      <div class="item item-input-inset">
-        <label class="item-input-wrapper">
-          <input ng-model="liveSearch" type="text" placeholder="Search">
-        </label>
+      <div class="item item-input-inset search-item">
+        <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
       </div>
       
       <!-- Client List -->
       <a class="item item-avatar" ng-repeat="client in clients | filter:liveSearch" type="item-text-wrap" href="#/tab/client/{{client.id}}">
-        <img src="http://placehold.it/50x50">
+        <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
         <h2>{{client.first + ' ' + client.last}}</h2>
        <!--  <p>${{project.price}}</p> -->
         <p>{{client.location}}</p>
