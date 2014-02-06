@@ -5,7 +5,7 @@ angular.module('frankie.controllers')
   $scope.project = ProjectService.get($stateParams.id);
   $scope.rightButtons = [
     {
-      type: 'button-clear',
+      type: 'button-clear button-assertive',
       content: '<button>edit</button>',
       tap: function(e) {
         $scope.newTask();
