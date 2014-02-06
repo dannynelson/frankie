@@ -76,3 +76,8 @@ header .button {
 .thumbnail {
   height: 100px;
 }
+
+/* make the plus icons on the page slightly larger */
+i.large {
+  font-size: 20px;
+}

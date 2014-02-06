@@ -7,7 +7,7 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [
     {
       type: 'button-clear',
-      content: '<i class="icon ion-ios7-plus-empty"></i>',
+      content: '<i class="ion-plus large"></i>',
       tap: function(e) {
         $scope.newTask();
       }
