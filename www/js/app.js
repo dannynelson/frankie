@@ -58,23 +58,19 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
 
     .state('main.project-detail', {
       url: '/projects/:id',
-      views: {
-        'projects': {
-          templateUrl: 'templates/project-detail.html',
-          controller: 'ProjectDetailCtrl'
-        }
-      }
+      templateUrl: 'templates/project-detail.html',
+      controller: 'ProjectDetailCtrl'
     })
 
-    .state('main.clients', {
-      url: '/clients',
-      views: {
-        'clients': {
-          templateUrl: 'templates/clients.html',
-          controller: 'ClientsCtrl'
-        }
-      }
-    })
+    // .state('main.clients', {
+    //   url: '/clients',
+    //   views: {
+    //     'clients': {
+    //       templateUrl: 'templates/clients.html',
+    //       controller: 'ClientsCtrl'
+    //     }
+    //   }
+    // })
 
     .state('main.account', {
       url: '/account',
