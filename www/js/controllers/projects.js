@@ -10,6 +10,7 @@ angular.module('frankie.controllers')
       type: 'button-clear button-assertive',
       content: '<i class="icon ion-navicon"></i>',
       tap: function(e) {
+        debugger;
         $scope.sideMenuController.toggleLeft();
       }
     }
