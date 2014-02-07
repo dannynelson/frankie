@@ -6,13 +6,11 @@ angular.module('frankie.controllers')
 
   // Retrieve Data
   // -------------------------------
-
   $scope.projects = ProjectService.all();
 
   
   // Set Navigation
   // -------------------------------
-
   $scope.title = 'Projects';
 
   // $scope.titleButtons =

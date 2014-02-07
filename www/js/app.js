@@ -56,10 +56,21 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
       controller: 'ProjectsCtrl'
     })
 
+    // Creating and editing projects
     .state('main.project-detail', {
       url: '/projects/:id',
       templateUrl: 'templates/project-detail.html',
       controller: 'ProjectDetailCtrl'
+    })
+    .state('main.new-project', {
+      url: '/new-project',
+      templateUrl: 'templates/new-project.html',
+      controller: 'NewProjectCtrl'
+    })
+    .state('main.new-client', {
+      url: '/new-client',
+      templateUrl: 'templates/new-client.html',
+      controller: 'NewClientCtrl'
     })
 
     // .state('main.clients', {
@@ -75,14 +86,9 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     .state('main.account', {
       url: '/account',
       templateUrl: 'templates/account.html'
-    })
-
-    // New project (nav bar but no tabs)
-    .state('main.new-project', {
-      url: '/new-project',
-      templateUrl: 'templates/new-project.html',
-      controller: 'NewProjectCtrl'
     });
+
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/signin');

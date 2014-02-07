@@ -43,10 +43,10 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item" href="templates/new-client.html">
+        <a class="item" href="#/main/new-client">
           Client Info
           <span class="item-note">
-            No Client Info
+            {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
       

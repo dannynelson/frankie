@@ -1,64 +1,43 @@
-<!-- Modal content area -->
-<content has-header="true">
-  <form ng-submit="createTask(task)">
-    <!-- Main content -->
-    <div class="list">
-      <!-- Overview -->
-      <div class="item item-divider"></div>
-      <label class="item item-input">
-        <span class="input-label">Title</span>
-        <input ng-model="project.title" type="text" placeholder="MyProjet">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Price</span>
-        $<input ng-model="project.price" type="number" placeholder="150">
-      </label>
-      <label class="item item-input">
-        <textarea placeholder="Notes"></textarea>
-      </label>
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
 
-      <!-- Photo -->
-      <div class="item item-divider"></div>
-      <button class="button button-full button-light no-margin">
-        <center class="camera">
-          <i class="fa fa-camera fa-3x padding-top"></i>
-        </center>
-      </button>
-    
-      <!-- Dates -->
-      <div class="item item-divider"></div>
-      <label class="item item-input">
-        <span class="input-label">Start</span>
-        <input ng-model="project.start" type="date">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">End</span>
-        <input ng-model="project.end" type="date">
-      </label>
-    
-      <!-- Client Info -->
-      <div class="item item-divider"></div>
-      <a class="item" href="#">
-        Client Info
-        <span class="item-note">
-          No Client Info
-        </span>
-      </a>
-    
-      <!-- Timeline -->
-      <a class="item" href="#">
-        Timeline
-        <span class="item-note">
-          0 Milestones
-        </span>
-      </a>
-    
-    <div class="item item-divider"></div>
-    <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
+  <!-- Modal content area -->
+  <content has-header="true">
+    <form ng-submit="save(client)">
+      <!-- Main content -->
+      <list>
+        <!-- Overview -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">First Name</span>
+          <input ng-model="client.first" type="text" placeholder="John">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Last Name</span>
+          <input ng-model="client.last" type="text" placeholder="Doe">
+        </label>
 
-    </div> <!-- /.list -->
-    
-    <!-- Submit button -->
-  </form>
+        <!-- Contact Info -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Phone</span>
+          <input ng-model="client.phone" type="tel" placeholder="111-111-1111">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input ng-model="client.email" type="email" placeholder="example@mysite.com">
+        </label>
+        
+        <!--  -->
+        <div class="item item-divider"></div>
+        <button type="submit" class="button button-full button-light assertive-text">Save Client</button>
 
-</content>
+      </list>
+      
+      <!-- Submit button -->
+    </form>
+
+  </content>
+
+</view>

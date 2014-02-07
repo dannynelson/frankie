@@ -67,6 +67,26 @@ angular.module('frankie.services')
   };
 })
 
+.factory('CurrentProjectService', function() {
+  var project = {};
+
+  return {
+    set: function (key, value) {
+      project[key] = value;
+    },
+    get: function (key) {
+      return project[key];
+    },
+    all: function () {
+      // Simple index lookup
+      return project;
+    },
+    clear: function() {
+      project = {};
+    }
+  };
+})
+
 .factory('ClientService', function() {
   // Might use a resource here that returns a JSON array
 

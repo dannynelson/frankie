@@ -1,7 +1,9 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $stateParams, $location, $ionicModal, ProjectService) {
+.controller('NewProjectCtrl', function($scope, $stateParams, $location, $ionicModal, ProjectService, CurrentProjectService) {
   
+  $scope.project = CurrentProjectService.all();
+
   // Set Header
   // ----------------------------
 
@@ -27,17 +29,6 @@ angular.module('frankie.controllers')
       }
     }
   ];
-
-  // Listeners
-  // ----------------------------
-
-  $scope.$on('clientUpdated', function (event, data) {
-    $scope.projects.clientInfo = data;
-  });
-
-  $scope.$on('timelineUpdated', function (event, data) {
-    $scope.projects.timeline = data;
-  });
 
   // Methods
   // ----------------------------

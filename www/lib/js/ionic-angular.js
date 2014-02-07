@@ -2847,6 +2847,9 @@ angular.module('ionic.ui.viewState', ['ionic.service.view', 'ionic.service.gestu
 
 .directive('viewBack', ['$ionicViewService', '$rootScope', function($ionicViewService, $rootScope) {
   var goBack = function(e) {
+    // Broadcast when backbutton pressed
+    $rootScope.$broadcast('back');
+    
     var backView = $ionicViewService.getBackView();
     backView && backView.go();
     e.alreadyHandled = true;
