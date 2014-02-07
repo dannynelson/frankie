@@ -6,7 +6,7 @@ angular.module('frankie.controllers')
   // "Pets" is a service returning mock data (services.js)
 
   $scope.title = 'Projects';
-  
+
   // $scope.titleButtons =
   //   '<div class="button-bar">\
   //     <a class="button">Projects</a>\
@@ -25,7 +25,7 @@ angular.module('frankie.controllers')
 
   $scope.rightButtons = [
     {
-      type: 'button-clear button-assertive',
+      type: 'button-icon button-clear button-assertive',
       content: '<i class="ion-plus large"></i>',
       tap: function(e) {
         $location.url('/main/new-project');
