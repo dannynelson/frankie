@@ -2,8 +2,16 @@ angular.module('frankie.controllers')
 
 
 // A simple controller that fetches a list of data from a service
-.controller('ProjectsCtrl', function($scope, $ionicModal, ProjectService) {
+.controller('ProjectsCtrl', function($scope, $ionicModal, $location, ProjectService) {
   // "Pets" is a service returning mock data (services.js)
+
+  $scope.title = 'Projects';
+  
+  // $scope.titleButtons =
+  //   '<div class="button-bar">\
+  //     <a class="button">Projects</a>\
+  //     <a class="button">Calendar</a>\
+  //   </div>';
 
   $scope.leftButtons = [
     {
@@ -15,18 +23,12 @@ angular.module('frankie.controllers')
     }
   ];
 
-  $scope.titleButtons =
-    '<div class="button-bar">\
-      <a class="button">Projects</a>\
-      <a class="button">Calendar</a>\
-    </div>';
-
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
       content: '<i class="ion-plus large"></i>',
       tap: function(e) {
-        $scope.newTask();
+        $location.url('/main/new-project');
       }
     }
   ];

@@ -2,7 +2,14 @@ angular.module('frankie.controllers')
 
 // A simple controller that shows a tapped item's data
 .controller('ProjectDetailCtrl', function($scope, $stateParams, $ionicModal, ProjectService) {
+  // Retrieve Data
   $scope.project = ProjectService.get($stateParams.id);
+
+  // Navigation
+  $scope.title = $scope.project.title;
+
+  $scope.leftButtons = [];
+
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',

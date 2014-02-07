@@ -4,6 +4,10 @@ angular.module('frankie.controllers')
 // A simple controller that fetches a list of data from a service
 .controller('ClientsCtrl', function($scope, $ionicModal, ClientService) {
 
+  $scope.title = 'Clients';
+
+  $scope.leftButtons = [];
+  
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',

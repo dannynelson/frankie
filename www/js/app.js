@@ -40,7 +40,7 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     // Main Section
     // ============
 
-    // setup an abstract state for the tabs directive
+    // setup an abstract state for the side menu directive
     .state('main', {
       url: "/main",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
@@ -78,10 +78,10 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     })
 
     // New project (nav bar but no tabs)
-    .state('new-project', {
+    .state('main.new-project', {
       url: '/new-project',
-      templateUrl: 'templates/projects.html',
-      controller: 'ProjectsCtrl'
+      templateUrl: 'templates/new-project.html',
+      controller: 'NewProjectCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
