@@ -3,12 +3,11 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<view  title="'Projects'" right-buttons="rightButtons">
+<view left-buttons="leftButtons" title="'Projects'" right-buttons="rightButtons">
   <content has-header="true" has-tabs="true">
 
     <list>  
       <!-- Search form -->
-
       <div class="item item-input-inset search-item">
         <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
       </div>

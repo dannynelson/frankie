@@ -46,13 +46,40 @@
     'frankie' is the name of this angular module (js/app.js)
   -->
   <body ng-app="frankie" ng-controller="AppCtrl" animation="slide-left-right-ios7">
+    
+        <!-- Left menu -->
+    <side-menu side="left">
+      <header class="bar bar-header bar-dark">
+        <h1 class="title">Settings</h1>
+      </header>
+      <content has-header="true" scroll="false">
+        <list>
+          <item ng-repeat="project in projects" ng-click="selectProject(project)" ng-class="{active: activeProject == project}">
+            {{project.title}}
+          </item>
+        </list>
+      </content>
+    </side-menu>
+    
+    <pane side-menu-content>
+      <nav-bar type="bar-positive" 
+               animation="nav-title-slide-ios7" 
+               back-button-type="button-icon" 
+               back-button-icon="ion-ios7-arrow-back"></nav-bar>
 
+      <!-- 
+        The views will be rendered in the <nav-view> directive below
+        Templates are in the /templates folder (but you could also
+        have templates inline in this html file if you'd like).
+      -->
+      <nav-view></nav-view>
+    </pane>
     <!-- 
       The views will be rendered in the <nav-view> directive below
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    <nav-view></nav-view>
-
+<!--     <nav-view></nav-view>
+ -->
   </body>
 </html>
