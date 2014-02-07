@@ -1,19 +1,39 @@
 angular.module('frankie.controllers')
 
-// A simple controller that shows a tapped item's data
-.controller('NewProjectCtrl', function($scope, $stateParams, $ionicModal, ProjectService) {
+.controller('NewProjectCtrl', function($scope, $stateParams, $location, $ionicModal, ProjectService) {
+  
+  // Set Header
+  // ----------------------------
 
   $scope.title = 'New Project';
 
-  $scope.leftButtons = [];
+  $scope.leftButtons = [
+    {
+      type: 'button-clear button-assertive',
+      content: 'Cancel',
+      tap: function(e) {
+        $location.url('/main/projects');
+      }
+    }
+  ];
 
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
-      content: '<i class="ion-plus large"></i>',
+      content: '<b>Save</b>',
       tap: function(e) {
+        $scope.save($scope.project);
         $location.url('/main/new-project');
       }
     }
   ];
+
+  // Methods
+  // ----------------------------
+
+  $scope.save = function (projectJSON) {
+    ProjectService.save(projectJSON);
+    // emit event to update projects page
+    $scope.$emit('projectCreated');
+  };
 });

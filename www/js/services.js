@@ -50,6 +50,19 @@ angular.module('frankie.services')
     get: function(projectId) {
       // Simple index lookup
       return projects[projectId];
+    },
+    save: function(newProject) {
+      newProject.id = projects.length;
+      projects.push(newProject);
+    },
+    update: function(newProject) {
+      // test if project exists
+      for (var i = 0; i < projects.length; i++) {
+        if (project.id === newProject.id) {
+          project = newProject;
+          return;
+        }
+      }
     }
   };
 })

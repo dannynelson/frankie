@@ -3,7 +3,15 @@ angular.module('frankie.controllers')
 
 // A simple controller that fetches a list of data from a service
 .controller('ProjectsCtrl', function($scope, $ionicModal, $location, ProjectService) {
-  // "Pets" is a service returning mock data (services.js)
+
+  // Retrieve Data
+  // -------------------------------
+
+  $scope.projects = ProjectService.all();
+
+  
+  // Set Navigation
+  // -------------------------------
 
   $scope.title = 'Projects';
 
@@ -15,7 +23,7 @@ angular.module('frankie.controllers')
 
   $scope.leftButtons = [
     {
-      type: 'button-clear button-assertive',
+      type: 'button-icon button-clear button-assertive',
       content: '<i class="icon ion-navicon"></i>',
       tap: function(e) {
         $scope.sideMenuController.toggleLeft();
@@ -33,26 +41,13 @@ angular.module('frankie.controllers')
     }
   ];
 
-  $scope.closeSideMenu = function() {
-    $scope.sideMenuController.close();
-  };
-
-  $scope.projects = ProjectService.all();
-
-  // Create our modal
-  $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
-    $scope.projectModal = modal;
-  }, {
-    scope: $scope
+  // Event listeners
+  // ---------------------------------
+  // when project created, update all projects
+  $scope.$on('projectCreated', function (event) {
+    $scope.projects = ProjectService.all();
   });
 
-  $scope.newTask = function() {
-    $scope.projectModal.show();
-  };
-
-  $scope.closeNewTask = function() {
-    $scope.projectModal.hide();
-  };
 });
 
 

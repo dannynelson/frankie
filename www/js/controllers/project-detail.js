@@ -1,11 +1,14 @@
 angular.module('frankie.controllers')
 
-// A simple controller that shows a tapped item's data
 .controller('ProjectDetailCtrl', function($scope, $stateParams, $ionicModal, ProjectService) {
+  
   // Retrieve Data
+  // -------------------------------
   $scope.project = ProjectService.get($stateParams.id);
 
-  // Navigation
+
+  // Set Navigation
+  // -------------------------------
   $scope.title = $scope.project.title;
 
   $scope.leftButtons = [];
@@ -21,17 +24,17 @@ angular.module('frankie.controllers')
   ];
 
     // Create our modal
-  $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
-    $scope.projectModal = modal;
-  }, {
-    scope: $scope
-  });
+  // $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
+  //   $scope.projectModal = modal;
+  // }, {
+  //   scope: $scope
+  // });
 
-  $scope.newTask = function() {
-    $scope.projectModal.show();
-  };
+  // $scope.newTask = function() {
+  //   $scope.projectModal.show();
+  // };
 
-  $scope.closeNewTask = function() {
-    $scope.projectModal.hide();
-  };
+  // $scope.closeNewTask = function() {
+  //   $scope.projectModal.hide();
+  // };
 });
