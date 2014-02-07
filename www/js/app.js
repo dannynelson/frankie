@@ -21,7 +21,7 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
   $stateProvider
 
     // Signin/Signup
-    // =============
+    // ------------------------------
 
     .state('signin', {
       url: "/signin",
@@ -38,7 +38,7 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     })
 
     // Main Section
-    // ============
+    // ------------------------------
 
     // setup an abstract state for the side menu directive
     .state('main', {

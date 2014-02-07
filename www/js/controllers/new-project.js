@@ -28,6 +28,17 @@ angular.module('frankie.controllers')
     }
   ];
 
+  // Listeners
+  // ----------------------------
+
+  $scope.$on('clientUpdated', function (event, data) {
+    $scope.projects.clientInfo = data;
+  });
+
+  $scope.$on('timelineUpdated', function (event, data) {
+    $scope.projects.timeline = data;
+  });
+
   // Methods
   // ----------------------------
 
