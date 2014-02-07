@@ -10,7 +10,6 @@ angular.module('frankie.controllers')
       type: 'button-clear button-assertive',
       content: '<i class="icon ion-navicon"></i>',
       tap: function(e) {
-        debugger;
         $scope.sideMenuController.toggleLeft();
       }
     }
@@ -31,6 +30,10 @@ angular.module('frankie.controllers')
       }
     }
   ];
+
+  $scope.closeSideMenu = function() {
+    $scope.sideMenuController.close();
+  };
 
   $scope.projects = ProjectService.all();
 

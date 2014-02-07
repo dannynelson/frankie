@@ -52,12 +52,8 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
     // the dot notation indicates that it is a child
     .state('main.projects', {
       url: '/projects',
-      views: {
-        'projects': {
-          templateUrl: 'templates/projects.html',
-          controller: 'ProjectsCtrl'
-        }
-      }
+      templateUrl: 'templates/projects.html',
+      controller: 'ProjectsCtrl'
     })
 
     .state('main.project-detail', {
@@ -82,11 +78,7 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
 
     .state('main.account', {
       url: '/account',
-      views: {
-        'account': {
-          templateUrl: 'templates/account.html'
-        }
-      }
+      templateUrl: 'templates/account.html'
     })
 
     // New project (nav bar but no tabs)

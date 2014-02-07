@@ -6,27 +6,67 @@
   navigation history that also transitions its views in and out.
 -->
 
+<side-menus >
+  <!-- Left menu -->
+  <side-menu side="left">
+    <content>
+      <form>
+        <list>
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/projects', sideMenuController)">
+            <i class="icon ion-clipboard"></i>
+            Projects
+          </div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-filing"></i>
+            Archives
+          </div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-person-stalker"></i>
+            Clients
+          </div>
 
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-help"></i>
+            Help
+          </div>
+          <div class="item item-icon-left" 
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-ios7-gear"></i>
+            Settings
+          </div>
+<!--           <item ng-click="goTo('main/account', sideMenuController)">Account</item>
+ -->
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left" ng-click="goTo('signin', sideMenuController)">
+            <i class="icon ion-arrow-left-a"></i>
+            Logout
+          </div>
+        </list>
+      </form>
+    </content>
+  </side-menu>
+  
+  <!-- Main content -->
+  <pane side-menu-content>
 
-<tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
+     <nav-bar type="bar-positive" 
+              animation="nav-title-slide-ios7" 
+              back-button-type="button-icon" 
+              back-button-icon="ion-ios7-arrow-back">
+    </nav-bar>
+    <!-- 
+      The views will be rendered in the <nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <nav-view></nav-view>
+  </pane>
 
+</side-menus>
 
-  <!-- Clients Tab -->
-  <tab title="Clients" icon="icon ion-ios7-people" href="#/main/clients">
-    <nav-view name="clients"></nav-view>
-  </tab>
-
-
-  <!-- Projects Tab -->
-  <tab title="Projects" icon="icon ion-ios7-calendar" href="#/main/projects">
-    <nav-view name="projects"></nav-view>
-  </tab>
-
-
-  <!-- Account Tab -->
-  <tab title="Account" icon="icon ion-ios7-gear" href="#/main/account">
-    <nav-view name="account"></nav-view>
-  </tab>
-
-
-</tabs>
