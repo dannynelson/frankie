@@ -72,6 +72,11 @@ angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
       templateUrl: 'templates/new-client.html',
       controller: 'NewClientCtrl'
     })
+    .state('main.new-timeline', {
+      url: '/new-timeline',
+      templateUrl: 'templates/new-timeline.html',
+      controller: 'NewTimelineCtrl'
+    })
 
     // .state('main.clients', {
     //   url: '/clients',

@@ -12,13 +12,11 @@ angular.module('frankie.controllers')
   // Set Navigation
   // -------------------------------
   $scope.title = 'Projects';
-
   // $scope.titleButtons =
   //   '<div class="button-bar">\
   //     <a class="button">Projects</a>\
   //     <a class="button">Calendar</a>\
   //   </div>';
-
   $scope.leftButtons = [
     {
       type: 'button-icon button-clear button-assertive',
@@ -28,7 +26,6 @@ angular.module('frankie.controllers')
       }
     }
   ];
-
   $scope.rightButtons = [
     {
       type: 'button-icon button-clear button-assertive',

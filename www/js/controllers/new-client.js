@@ -2,6 +2,8 @@ angular.module('frankie.controllers')
 
 .controller('NewClientCtrl', function($scope, $stateParams, $location, CurrentProjectService) {
   
+  // Set Variables
+  // ----------------------------
   $scope.client = CurrentProjectService.get('client') || {};
 
   // Set Header

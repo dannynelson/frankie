@@ -1,46 +1,42 @@
 angular.module('frankie.controllers')
 
-.controller('NewTimelineCtrl', function($scope, $stateParams, $location, $ionicModal, CurrentProjectService) {
+.controller('NewTimelineCtrl', function($scope, $stateParams, $location, CurrentProjectService) {
   
+  // Get Data
+  // ----------------------------
+  var milestone = {
+    title: '',
+    date: ''
+  };
+
+  $scope.timeline = CurrentProjectService.get('timeline') || [milestone];
+
   // Set Header
   // ----------------------------
   $scope.title = 'Timeline';
   $scope.leftButtons = [];
-  $scope.rightButtons = [];
-
-  // Methods
-  // ----------------------------
-  $scope.save = function (timeline) {
-    CurrentProjectService.set('timeline', timeline);
-  };
-
-});
-
-angular.module('frankie.controllers')
-
-.controller('NewTimelineCtrl', function($scope, $stateParams, $location, CurrentProjectService) {
-  
-  $scope.client = CurrentProjectService.get('client') || {};
-
-  // Set Header
-  // ----------------------------
-  $scope.title = 'New Client';
-  $scope.leftButtons = [];
-  $scope.rightButtons = [];
+  $scope.rightButtons = [
+    {
+      type: 'button-icon button-clear button-assertive',
+      content: '<i class="ion-plus large"></i>',
+      tap: function(e) {
+        $scope.addMilestone();
+      }
+    }
+  ];
 
   // Listeners
   // ----------------------------
   // Listen for when back button is pressed
   // Event broadcast added to viewBack directive
   $scope.$on('back', function(event) {
-    CurrentProjectService.set('client', $scope.client);
+    CurrentProjectService.set('timeline', $scope.timeline);
   });
 
   // Methods
   // ----------------------------
-  $scope.save = function (client) {
-    CurrentProjectService.set('client', client);
-    $location.url('/main/new-project');
+  $scope.addMilestone = function () {
+    $scope.timeline.push(milestone);
   };
 
 });

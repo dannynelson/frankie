@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $stateParams, $location, $ionicModal, ProjectService, CurrentProjectService) {
+.controller('NewProjectCtrl', function($scope, $stateParams, $location, ProjectService, CurrentProjectService) {
   
   $scope.project = CurrentProjectService.all();
 
