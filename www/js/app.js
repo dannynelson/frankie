@@ -9,7 +9,7 @@ angular.module('frankie.controllers', []);
 angular.module('frankie.services', []);
 
 
-angular.module('frankie', ['ionic', 'frankie.services', 'frankie.controllers'])
+angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
