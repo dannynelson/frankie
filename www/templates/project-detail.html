@@ -33,7 +33,7 @@
       </div>
       <div class="item item-icon-left">
         <i class="icon ion-person"></i>
-        Ryan Stellar
+        {{ project.client.first + ' ' +  project.client.last }}
       </div>
       
       <!-- Timeline -->
@@ -41,15 +41,10 @@
         Timeline
       </div>
       <ul class="list">
-        <a class="item item-avatar" type="item-text-wrap" href="#/tab/client/{{client.id}}">
+        <a class="item item-avatar" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/tab/client/{{client.id}}">
           <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
-          <h2>Milestone 1</h2>
+          <h2>{{ milestone.title }}</h2>
           <p>Complete</p>
-        </a>
-        <a class="item item-avatar" type="item-text-wrap" href="#/tab/client/{{client.id}}">
-          <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
-          <h2>Milestone 2</h2>
-          <p>Due in 15 days</p>
         </a>
         
 <!--         <a class="item item-thumbnail-left" type="item-text-wrap" href="#">
