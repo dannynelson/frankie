@@ -4,12 +4,7 @@ angular.module('frankie.controllers')
   
   // Get Data
   // ----------------------------
-  var milestone = {
-    title: '',
-    date: ''
-  };
-
-  $scope.timeline = CurrentProjectService.get('timeline') || [milestone];
+  $scope.timeline = CurrentProjectService.get('timeline') || [{title: '', date: ''}];
 
   // Set Header
   // ----------------------------
@@ -36,7 +31,7 @@ angular.module('frankie.controllers')
   // Methods
   // ----------------------------
   $scope.addMilestone = function () {
-    $scope.timeline.push(milestone);
+    $scope.timeline.push({title: '', date: ''});
   };
 
 });
