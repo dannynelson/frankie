@@ -13,6 +13,13 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [
     {
       type: 'button-icon button-clear button-assertive',
+      content: '<i class="ion-minus large"></i>',
+      tap: function(e) {
+        $scope.removeMilestone();
+      }
+    },
+    {
+      type: 'button-icon button-clear button-assertive',
       content: '<i class="ion-plus large"></i>',
       tap: function(e) {
         $scope.addMilestone();
@@ -24,6 +31,9 @@ angular.module('frankie.controllers')
   // ----------------------------
   $scope.addMilestone = function () {
     $scope.timeline.push({title: '', date: currentDate});
+  };
+  $scope.removeMilestone = function () {
+    $scope.timeline.pop();
   };
 
 });
