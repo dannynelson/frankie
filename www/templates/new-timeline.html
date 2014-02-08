@@ -1,0 +1,26 @@
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+
+  <content has-header="true">
+    
+    <!-- Main content -->
+    <list>
+      <!-- Overview -->
+      <div ng-repeat='milestone in timeline'>
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Milestone {{ $index + 1 }}</span>
+          <input ng-model="milestone.title" type="text" placeholder="Milestone Name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input ng-model="milestone.date" type="date" placeholder="">
+        </label>
+      </div>
+      
+    </list>
+      
+  </content>
+
+</view>

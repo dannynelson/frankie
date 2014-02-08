@@ -1,0 +1,30 @@
+<!-- 
+  This template gets placed in the Pet tab's <nav-view> directive.
+  It was wired up in the app config (app.js) 
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <content has-header="true">
+
+    <list>  
+      <!-- Search form -->
+      <div class="item item-input-inset search-item">
+        <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
+      </div>
+
+      <!-- Project List -->
+      <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
+        <img class="thumbnail" src="{{ project.photoURL }}">
+        <h2>{{project.title}}</h2>
+        <p>
+          ${{project.price}}</br>
+          Due in 15 days
+        </p>
+      </a>
+    </list>
+  </content>
+</view>

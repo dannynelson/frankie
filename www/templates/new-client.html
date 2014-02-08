@@ -1,0 +1,35 @@
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+
+  <content has-header="true">
+    
+    <!-- Main content -->
+    <list>
+      <!-- Overview -->
+      <div class="item item-divider"></div>
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input ng-model="client.first" type="text" placeholder="John">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input ng-model="client.last" type="text" placeholder="Doe">
+      </label>
+
+      <!-- Contact Info -->
+      <div class="item item-divider"></div>
+      <label class="item item-input">
+        <span class="input-label">Phone</span>
+        <input ng-model="client.phone" type="tel" placeholder="111-111-1111">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input ng-model="client.email" type="email" placeholder="example@mysite.com">
+      </label>
+      
+    </list>
+      
+  </content>
+
+</view>

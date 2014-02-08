@@ -1,0 +1,68 @@
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+
+<side-menus>
+  <!-- Left menu -->
+  <side-menu side="left">
+    <content>
+      <form>
+        <list>
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/projects', sideMenuController)">
+            <i class="icon ion-clipboard"></i>
+            Projects
+          </div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-filing"></i>
+            Archives
+          </div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-person-stalker"></i>
+            Clients
+          </div>
+
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left"
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-help"></i>
+            Help
+          </div>
+          <div class="item item-icon-left" 
+               ng-click="goTo('main/account', sideMenuController)">
+            <i class="icon ion-ios7-gear"></i>
+            Settings
+          </div>
+
+          <div class="item item-divider"></div>
+          <div class="item item-icon-left" ng-click="goTo('signin', sideMenuController)">
+            <i class="icon ion-log-out"></i>
+            Logout
+          </div>
+        </list>
+      </form>
+    </content>
+  </side-menu>
+  
+  <!-- Main content -->
+  <pane side-menu-content>
+
+     <nav-bar type="bar-positive" 
+              back-button-type="button-icon button-clear button-assertive" 
+              back-button-icon="ion-ios7-arrow-back">
+    </nav-bar>
+    <!-- 
+      The views will be rendered in the <nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <nav-view></nav-view>
+  </pane>
+
+</side-menus>
+

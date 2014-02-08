@@ -6,7 +6,10 @@
   "dependencies": {
     "express": "~3.4.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-sass": "~0.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

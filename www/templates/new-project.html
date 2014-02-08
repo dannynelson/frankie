@@ -1,0 +1,78 @@
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <!-- Modal content area -->
+  <content has-header="true">
+    <form ng-submit="save(project)">
+      <!-- Main content -->
+      <list>
+        <!-- Overview -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input ng-model="project.title" type="text" placeholder="MyProjet">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Price</span>
+          $ <input ng-model="project.price" type="number" placeholder="150">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Notes" rows="4"></textarea>
+        </label>
+
+        <!-- Photo -->
+        <div class="item item-divider"></div>
+        <button class="button button-full button-light no-margin">
+          <center class="camera">
+            <i class="icon ion-camera padding-top"></i>
+          </center>
+        </button>
+      
+        <!-- Dates -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Start</span>
+          <span class="item-note">
+            <input ng-model="project.start" type="date">
+          </span>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">End</span>
+          <span class="item-note">
+            <input ng-model="project.end" type="date">
+          </span>
+        </label>
+      
+        <!-- Client Info -->
+        <div class="item item-divider"></div>
+        <a class="item item-input" ng-click="goTo('main/new-client')" href="#/main/new-client">
+          <span class="input-label">Client Info</span>
+          <span class="item-note" ng-hide="project.client.first">
+            No Client
+          </span>
+          <span class="item-note" ng-show="project.client.first">
+            {{ project.client.first + ' ' + project.client.last }}
+          </span>
+        </a>
+      
+        <!-- Timeline -->
+        <a class="item item-input" href="#/main/new-timeline">
+          <span class="input-label">Timeline</span>
+          <span class="item-note">
+            {{ project.timeline.length || 0 }} Milestones
+          </span>
+        </a>
+      
+      <div class="item item-divider"></div>
+      <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
+
+      </list> <!-- /.list -->
+      
+      <!-- Submit button -->
+    </form>
+
+  </content>
+
+</view>

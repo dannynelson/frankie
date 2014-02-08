@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('frankie.controllers', []);
+angular.module('frankie.services', []);
+
+
+angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -16,56 +20,71 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+    // Signin/Signup
+    // ------------------------------
+
+    .state('signin', {
+      url: "/signin",
+      // abstract means we can never directly activate this template, it is just a wrapper for other templates
+      templateUrl: 'templates/signin.html',
+      controller: 'SigninCtrl'
+    })
+
+    .state('signup', {
+      url: "/signup",
+      // abstract means we can never directly activate this template, it is just a wrapper for other templates
+      templateUrl: 'templates/signup.html',
+      controller: 'SignupCtrl'
+    })
+
+    // Main Section
+    // ------------------------------
+
+    // setup an abstract state for the side menu directive
+    .state('main', {
+      url: "/main",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "templates/main.html"
     })
 
     // the pet tab has its own child nav-view and history
     // the dot notation indicates that it is a child
-    .state('tab.pet-index', {
-      url: '/pets',
-      views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
-        }
-      }
+    .state('main.projects', {
+      url: '/projects',
+      templateUrl: 'templates/projects.html',
+      controller: 'ProjectsCtrl'
     })
 
-    .state('tab.pet-detail', {
-      url: '/pet/:petId',
-      views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-detail.html',
-          controller: 'PetDetailCtrl'
-        }
-      }
+    // Creating and editing projects
+    .state('main.project-detail', {
+      url: '/projects/:id',
+      templateUrl: 'templates/project-detail.html',
+      controller: 'ProjectDetailCtrl'
+    })
+    .state('main.new-project', {
+      url: '/new-project',
+      templateUrl: 'templates/new-project.html',
+      controller: 'NewProjectCtrl'
+    })
+    .state('main.new-client', {
+      url: '/new-client',
+      templateUrl: 'templates/new-client.html',
+      controller: 'NewClientCtrl'
+    })
+    .state('main.new-timeline', {
+      url: '/new-timeline',
+      templateUrl: 'templates/new-timeline.html',
+      controller: 'NewTimelineCtrl'
     })
 
-    .state('tab.adopt', {
-      url: '/adopt',
-      views: {
-        'adopt-tab': {
-          templateUrl: 'templates/adopt.html'
-        }
-      }
-    })
-
-    .state('tab.about', {
-      url: '/about',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
-        }
-      }
+    .state('main.account', {
+      url: '/account',
+      templateUrl: 'templates/account.html'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/signin');
 
 });
 

@@ -1,0 +1,80 @@
+<!--
+  This template loads for the 'tab.pet-detail' state (app.js)
+  'pet' is a $scope variable created in the PetCtrl controller (controllers.js)
+  The PetCtrl pulls data from the Pets service (service.js)
+  The Pets service returns an array of pet data
+-->
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+      
+  <content has-header="true">
+    <list>
+      
+      <!-- Project Overview -->
+      <div class="item item-divider">
+        Overview
+      </div>
+      <div class="item item-thumbnail-left" type="item-text-wrap">
+        <img class="thumbnail" src="{{ project.photoURL }}">
+        <h2>{{project.title}}</h2>
+        <p>
+          ${{project.price}}</br>
+          Due in 15 days
+        </p>
+      </div>
+      <div class="padding paragraph-item">
+        {{ project.notes }}
+      </div>
+
+      <!-- Client Info -->
+      <div class="item item-divider">
+        Client Info
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-person"></i>
+        {{ project.client.first + ' ' +  project.client.last }}
+      </div>
+      
+      <!-- Timeline -->
+      <div class="item item-divider">
+        Timeline
+      </div>
+      <ul class="list">
+        <a class="item item-avatar" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/tab/client/{{client.id}}">
+          <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
+          <h2>{{ milestone.title }}</h2>
+          <p>Complete</p>
+        </a>
+        
+<!--         <a class="item item-thumbnail-left" type="item-text-wrap" href="#">
+          <img class="thumbnail" src="http://placehold.it/200x200">
+          <h2>Milestone 1</h2>
+          <p>
+            Due in 15 days
+          </p>
+        </a>
+        <a class="item item-thumbnail-left" type="item-text-wrap" href="#">
+          <img class="thumbnail" src="http://placehold.it/200x200">
+          <h2>Milestone 2</h2>
+          <p>
+            Due in 15 days
+          </p>
+        </a> -->
+<!--         <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox">
+           </label>
+          Milestone 1
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox">
+           </label>
+          Milestone 2
+        </li> -->
+      </ul>
+      
+    </list>
+  </content>
+</view>
