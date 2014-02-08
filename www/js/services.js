@@ -86,12 +86,17 @@ angular.module('frankie.services')
 })
 
 .factory('currentProject', function(currentDate) {
-  var project = {
-    start: currentDate,
-    end: currentDate,
-    timeline: [],
-    client: {}
+  
+  var makeProject = function () {
+    return {
+      start: currentDate,
+      end: currentDate,
+      timeline: [],
+      client: {}
+    };
   };
+
+  var project = makeProject();
 
   return {
     set: function (key, value) {
@@ -105,7 +110,7 @@ angular.module('frankie.services')
       return project;
     },
     clear: function() {
-      project = {};
+      project = makeProject();
     }
   };
 })

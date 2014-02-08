@@ -16,7 +16,7 @@
         </label>
         <label class="item item-input">
           <span class="input-label">Price</span>
-          $<input ng-model="project.price" type="number" placeholder="150">
+          $ <input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
           <textarea placeholder="Notes"></textarea>
@@ -26,7 +26,7 @@
         <div class="item item-divider"></div>
         <button class="button button-full button-light no-margin">
           <center class="camera">
-            <i class="fa fa-camera fa-3x padding-top"></i>
+            <i class="icon ion-camera padding-top"></i>
           </center>
         </button>
       
@@ -43,16 +43,16 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item" ng-click="goTo('main/new-client')" href="#/main/new-client">
-          Client Info
+        <a class="item item-input" ng-click="goTo('main/new-client')" href="#/main/new-client">
+          <span class="input-label">Client Info</span>
           <span class="item-note">
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
       
         <!-- Timeline -->
-        <a class="item" href="#/main/new-timeline">
-          Timeline
+        <a class="item item-input" href="#/main/new-timeline">
+          <span class="input-label">Timeline</span>
           <span class="item-note">
             {{ project.timeline.length || 0 }} Milestones
           </span>

@@ -78,22 +78,10 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       controller: 'NewTimelineCtrl'
     })
 
-    // .state('main.clients', {
-    //   url: '/clients',
-    //   views: {
-    //     'clients': {
-    //       templateUrl: 'templates/clients.html',
-    //       controller: 'ClientsCtrl'
-    //     }
-    //   }
-    // })
-
     .state('main.account', {
       url: '/account',
       templateUrl: 'templates/account.html'
     });
-
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/signin');

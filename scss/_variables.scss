@@ -24,7 +24,7 @@ $font-family-serif:              Georgia, "Times New Roman", Times, serif !defau
 $font-family-monospace:          Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
 $font-family-base:               $font-family-sans-serif !default;
-$font-size-base:                 14px !default;
+$font-size-base:                 16px !default;
 $font-size-large:                18px !default;
 $font-size-small:                11px !default;
 
@@ -405,7 +405,7 @@ $input-color:                     #111;
 $input-border:                    $item-default-border;
 $input-border-width:              $item-border-width;
 $input-label-color:               $positive;
-$input-color-placeholder:         lighten($dark, 40%);
+$input-color-placeholder:         lighten($dark, 50%);
 
 
 // Toggle

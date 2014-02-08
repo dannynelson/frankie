@@ -1981,9 +1981,9 @@ body, .ionic-body {
   padding: 0;
   color: #000;
   word-wrap: break-word;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 20px;
+  line-height: 22px;
   text-rendering: optimizeLegibility;
   -webkit-user-drag: none; }
 
@@ -2198,7 +2198,7 @@ infinite-scroll.active .scroll-infinite {
  * --------------------------------------------------
  */
 p {
-  margin: 0 0 10px; }
+  margin: 0 0 11px; }
 
 small {
   font-size: 85%; }
@@ -2225,46 +2225,46 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height: 1; }
 
 h1, .h1, h2, .h2, h3, .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-top: 22px;
+  margin-bottom: 11px; }
   h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
     margin-top: 0; }
   h1 + h1, h1 + .h1, h1 + h2, h1 + .h2, h1 + h3, h1 + .h3, .h1 + h1, .h1 + .h1, .h1 + h2, .h1 + .h2, .h1 + h3, .h1 + .h3, h2 + h1, h2 + .h1, h2 + h2, h2 + .h2, h2 + h3, h2 + .h3, .h2 + h1, .h2 + .h1, .h2 + h2, .h2 + .h2, .h2 + h3, .h2 + .h3, h3 + h1, h3 + .h1, h3 + h2, h3 + .h2, h3 + h3, h3 + .h3, .h3 + h1, .h3 + .h1, .h3 + h2, .h3 + .h2, .h3 + h3, .h3 + .h3 {
-    margin-top: 10px; }
+    margin-top: 11px; }
 
 h4, .h4, h5, .h5, h6, .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-top: 11px;
+  margin-bottom: 11px; }
 
 h1, .h1 {
-  font-size: 36px; }
+  font-size: 41px; }
 
 h2, .h2 {
-  font-size: 30px; }
+  font-size: 34px; }
 
 h3, .h3 {
-  font-size: 24px; }
+  font-size: 28px; }
 
 h4, .h4 {
-  font-size: 18px; }
+  font-size: 20px; }
 
 h5, .h5 {
-  font-size: 14px; }
+  font-size: 16px; }
 
 h6, .h6 {
-  font-size: 12px; }
-
-h1 small, .h1 small {
-  font-size: 24px; }
-
-h2 small, .h2 small {
-  font-size: 18px; }
-
-h3 small, .h3 small, h4 small, .h4 small {
   font-size: 14px; }
 
+h1 small, .h1 small {
+  font-size: 28px; }
+
+h2 small, .h2 small {
+  font-size: 20px; }
+
+h3 small, .h3 small, h4 small, .h4 small {
+  font-size: 16px; }
+
 dl {
-  margin-bottom: 20px; }
+  margin-bottom: 22px; }
 
 dt, dd {
   line-height: 1.42857; }
@@ -2273,12 +2273,12 @@ dt {
   font-weight: bold; }
 
 blockquote {
-  margin: 0 0 20px;
-  padding: 10px 20px;
+  margin: 0 0 22px;
+  padding: 11px 22px;
   border-left: 5px solid gray; }
   blockquote p {
     font-weight: 300;
-    font-size: 17.5px;
+    font-size: 20px;
     line-height: 1.25; }
   blockquote p:last-child {
     margin-bottom: 0; }
@@ -2293,7 +2293,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 
 address {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-style: normal;
   line-height: 1.42857; }
 
@@ -3543,8 +3543,8 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
 
 .item-note {
   float: right;
-  color: #aaa;
-  font-size: 14px; }
+  color: #868686;
+  font-size: 16px; }
 
 .item-reordering {
   position: absolute;
@@ -3886,14 +3886,14 @@ legend {
   width: 100%;
   border: 1px solid #ddd;
   color: #444;
-  font-size: 21px;
+  font-size: 24px;
   line-height: 2.85714; }
   legend small {
     color: #f8f8f8;
     font-size: 1.07143; }
 
 label, input, button, select, textarea {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.42857; }
 
@@ -4019,7 +4019,7 @@ input, button, select, textarea {
   padding: 7px 10px 7px 3px;
   max-width: 200px;
   color: #273552;
-  font-weight: bold; }
+  font-weight: 500; }
 
 .placeholder-icon {
   color: #aaa; }
@@ -4043,15 +4043,15 @@ input, button, select, textarea {
   background-color: #fff; }
 
 .item-stacked-label input {
-  height: 46px; }
+  height: 50px; }
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   display: block;
-  height: 34px;
+  height: 38px;
   color: #111;
   vertical-align: middle;
-  font-size: 14px;
-  line-height: 20px; }
+  font-size: 16px;
+  line-height: 22px; }
 
 input, textarea {
   width: 100%; }
@@ -4073,18 +4073,18 @@ select[multiple], select[size] {
   height: auto; }
 
 select, input[type="file"] {
-  line-height: 34px; }
+  line-height: 36px; }
 
 select {
   border: 1px solid #ddd;
   background-color: #fff; }
 
 input:-moz-placeholder, textarea:-moz-placeholder {
-  color: #aaaaaa; }
+  color: #c4c4c4; }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #aaaaaa; }
+  color: #c4c4c4; }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #aaaaaa; }
+  color: #c4c4c4; }
 
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
   background-color: #f8f8f8;

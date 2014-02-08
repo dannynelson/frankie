@@ -21,7 +21,7 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
-      content: '<b>Save</b>',
+      content: 'Save',
       tap: function(e) {
         $scope.save($scope.project);
       }
@@ -32,6 +32,7 @@ angular.module('frankie.controllers')
   // ----------------------------
   $scope.save = function (project) {
     ProjectService.add(project);
+    currentProject.clear();
     $location.url('/main/projects');
   };
 });
