@@ -2493,7 +2493,7 @@ a.subdued {
   border-width: 0;
   border-style: solid;
   border-top: 1px solid transparent;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #CACACA;
   background-color: white;
   /* border-width: 1px will actually create 2 device pixels on retina */
   /* this nifty trick sets an actual 1px border on hi-res displays */
@@ -2501,7 +2501,7 @@ a.subdued {
   @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .bar {
       border: none;
-      background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
+      background-image: linear-gradient(0deg, #CACACA, #CACACA 50%, transparent 50%);
       background-position: bottom;
       background-size: 100% 1px;
       background-repeat: no-repeat; } }
@@ -2520,8 +2520,8 @@ a.subdued {
       height: 28px; }
   .bar.bar-light {
     background-color: white;
-    border-color: #ddd;
-    background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
+    border-color: #CACACA;
+    background-image: linear-gradient(0deg, #CACACA, #CACACA 50%, transparent 50%);
     color: #444; }
     .bar.bar-light .title {
       color: #444; }
@@ -2639,7 +2639,7 @@ a.subdued {
 .bar-light .button {
   color: #444;
   background-color: white;
-  border-color: #ddd; }
+  border-color: #CACACA; }
   .bar-light .button:hover {
     color: #444;
     text-decoration: none; }
@@ -2888,8 +2888,8 @@ a.subdued {
     color: #f8f8f8; }
   .tabs.tabs-light {
     background-color: #fff;
-    background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
-    border-color: #ddd;
+    background-image: linear-gradient(0deg, #CACACA, #CACACA 50%, transparent 50%);
+    border-color: #CACACA;
     color: #444; }
     .tabs.tabs-light .tab-item .badge {
       background-color: #444;
@@ -3168,7 +3168,7 @@ a.subdued {
 .item {
   color: #444;
   background-color: #fff;
-  border-color: #ddd;
+  border-color: #CACACA;
   -webkit-transition: margin-left 0.2s ease-in-out, margin-right 0.2s ease-in-out, left 0.2s ease-in-out;
   -moz-transition: margin-left 0.2s ease-in-out, margin-right 0.2s ease-in-out, left 0.2s ease-in-out;
   transition: margin-left 0.2s ease-in-out, margin-right 0.2s ease-in-out, left 0.2s ease-in-out;
@@ -3204,7 +3204,7 @@ a.subdued {
   .item.item-light {
     color: #444;
     background-color: #fff;
-    border-color: #ddd; }
+    border-color: #CACACA; }
   .item.item-stable {
     color: #444;
     background-color: #f8f8f8;
@@ -3896,7 +3896,7 @@ legend {
   margin-bottom: 1.42857;
   padding: 0;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #CACACA;
   color: #444;
   font-size: 24px;
   line-height: 2.85714; }
@@ -3955,7 +3955,7 @@ input, button, select, textarea {
     text-align: center;
     font-size: 16px; }
   .item-input.item.active, .ionic-pseudo .item-input.item:active {
-    border-color: #ddd; }
+    border-color: #CACACA; }
   .item-input .button-bar {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -4029,7 +4029,8 @@ input, button, select, textarea {
   flex: 1 0 100px;
   padding: 7px 10px 7px 3px;
   max-width: 200px;
-  color: #273552; }
+  color: #273552;
+  font-weight: 500; }
 
 .placeholder-icon {
   color: #aaa; }
@@ -4086,7 +4087,7 @@ select, input[type="file"] {
   line-height: 36px; }
 
 select {
-  border: 1px solid #ddd;
+  border: 1px solid #CACACA;
   background-color: #fff; }
 
 input:-moz-placeholder, textarea:-moz-placeholder {
@@ -4372,7 +4373,7 @@ input[type="range"] {
   align-items: center;
   padding: 2px 4px; }
   .range.range-light input::-webkit-slider-thumb:before {
-    background: #ddd; }
+    background: #CACACA; }
   .range.range-stable input::-webkit-slider-thumb:before {
     background: #b2b2b2; }
   .range.range-positive input::-webkit-slider-thumb:before {
@@ -4479,7 +4480,7 @@ input[type="range"] {
   .button.button-light {
     color: #444;
     background-color: #fff;
-    border-color: #ddd; }
+    border-color: #CACACA; }
     .button.button-light:hover {
       color: #444;
       text-decoration: none; }
@@ -4488,7 +4489,7 @@ input[type="range"] {
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #ccc; }
     .button.button-light.button-clear {
-      color: #ddd;
+      color: #CACACA;
       background: none;
       border-color: transparent;
       box-shadow: none; }
@@ -4497,10 +4498,10 @@ input[type="range"] {
       border-color: transparent; }
     .button.button-light.button-outline {
       background: transparent;
-      border-color: #ddd;
-      color: #ddd; }
+      border-color: #CACACA;
+      color: #CACACA; }
       .button.button-light.button-outline.active, .button.button-light.button-outline:active {
-        background-color: #ddd;
+        background-color: #CACACA;
         color: #fff;
         box-shadow: none; }
   .button.button-stable {
@@ -5795,7 +5796,7 @@ a.button {
   background-color: #fff; }
 
 .light-border {
-  border-color: #ddd; }
+  border-color: #CACACA; }
 
 .stable, a.stable {
   color: #f8f8f8; }

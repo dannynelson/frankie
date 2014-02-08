@@ -7,19 +7,27 @@
     
     <!-- Main content -->
     <list>
-      <!-- Overview -->
-      <div class="item item-divider"></div>
+      <!-- Photo -->
+      <div class="item item-divider">Take Photo</div>
       <div class="button button-full button-light no-margin">
         <i class="ion-camera camera"></i>
       </div>
-
-      <div class="item item-divider"></div>
+      
+      <!-- Notes -->
+      <div class="item item-divider">Notes</div>
       <label class="item item-input">
-        <textarea ng-model="milestone.notes" placeholder="Notes" rows="4"></textarea>
+        <textarea ng-model="milestone.notes" 
+                  placeholder="Some notes about the milestone to be sent to the client"
+                  rows="4">
+        </textarea>
       </label>
-
+      
+      <!-- Submit Button -->
       <div class="item item-divider"></div>
-      <button type="submit" class="button button-full button-light assertive-text">Complete Milestone</button>
+      <button class="button button-full button-light assertive-text" 
+              ng-click="completeMilestone(milestone)">
+        Complete Milestone
+      </button>
     </list>
       
   </content>

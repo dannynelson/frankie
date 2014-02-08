@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('NewMilestoneCtrl', function($scope, $location, $stateParams, currentProject, currentDate) {
+.controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, currentProject) {
   
   // Get Data
   // ----------------------------
@@ -12,4 +12,9 @@ angular.module('frankie.controllers')
   $scope.leftButtons = [];
   $scope.rightButtons = [];
 
+  // Methods
+  // ----------------------------
+  $scope.completeMilestone = function (milestone) {
+    $rootScope.$viewHistory.backView.go();
+  };
 });
