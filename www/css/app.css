@@ -50,6 +50,9 @@
 i.large {
   font-size: 20px;
 }
+i.extra-large {
+  font-size: 30px;
+}
 
 /* grey background for search input */
 .search-item {

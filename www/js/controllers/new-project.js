@@ -1,14 +1,14 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $stateParams, $location, ProjectService, CurrentProjectService) {
+.controller('NewProjectCtrl', function($scope, $stateParams, $location, ProjectService, currentProject) {
   
-  $scope.project = CurrentProjectService.all();
+  // Get Data
+  // ----------------------------
+  $scope.project = currentProject.all();
 
   // Set Header
   // ----------------------------
-
   $scope.title = 'New Project';
-
   $scope.leftButtons = [
     {
       type: 'button-clear button-assertive',
@@ -18,24 +18,20 @@ angular.module('frankie.controllers')
       }
     }
   ];
-
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
       content: '<b>Save</b>',
       tap: function(e) {
         $scope.save($scope.project);
-        $location.url('/main/new-project');
       }
     }
   ];
 
   // Methods
   // ----------------------------
-
-  $scope.save = function (projectJSON) {
-    ProjectService.save(projectJSON);
-    // emit event to update projects page
-    $scope.$emit('projectCreated');
+  $scope.save = function (project) {
+    ProjectService.add(project);
+    $location.url('/main/projects');
   };
 });

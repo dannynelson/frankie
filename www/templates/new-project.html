@@ -5,9 +5,9 @@
 
   <!-- Modal content area -->
   <content has-header="true">
-    <form ng-submit="createTask(task)">
+    <form ng-submit="save(project)">
       <!-- Main content -->
-      <div class="list">
+      <list>
         <!-- Overview -->
         <div class="item item-divider"></div>
         <label class="item item-input">
@@ -43,7 +43,7 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item" href="#/main/new-client">
+        <a class="item" ng-click="goTo('main/new-client')" href="#/main/new-client">
           Client Info
           <span class="item-note">
             {{ project.client.first + ' ' + project.client.last }}
@@ -61,7 +61,7 @@
       <div class="item item-divider"></div>
       <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
 
-      </div> <!-- /.list -->
+      </list> <!-- /.list -->
       
       <!-- Submit button -->
     </form>

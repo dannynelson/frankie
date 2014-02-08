@@ -29,7 +29,7 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [
     {
       type: 'button-icon button-clear button-assertive',
-      content: '<i class="ion-plus large"></i>',
+      content: '<i class="ion-compose extra-large"></i>',
       tap: function(e) {
         $location.url('/main/new-project');
       }

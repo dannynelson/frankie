@@ -1,10 +1,10 @@
 angular.module('frankie.controllers')
 
-.controller('NewTimelineCtrl', function($scope, $stateParams, $location, CurrentProjectService) {
+.controller('NewTimelineCtrl', function($scope, $location, currentProject, currentDate) {
   
   // Get Data
   // ----------------------------
-  $scope.timeline = CurrentProjectService.get('timeline') || [{title: '', date: ''}];
+  $scope.timeline = currentProject.get('timeline');
 
   // Set Header
   // ----------------------------
@@ -20,18 +20,10 @@ angular.module('frankie.controllers')
     }
   ];
 
-  // Listeners
-  // ----------------------------
-  // Listen for when back button is pressed
-  // Event broadcast added to viewBack directive
-  $scope.$on('back', function(event) {
-    CurrentProjectService.set('timeline', $scope.timeline);
-  });
-
   // Methods
   // ----------------------------
   $scope.addMilestone = function () {
-    $scope.timeline.push({title: '', date: ''});
+    $scope.timeline.push({title: '', date: currentDate});
   };
 
 });

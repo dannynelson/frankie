@@ -3,6 +3,19 @@ angular.module('frankie.services')
 /**
  * A simple example service that returns some data.
  */
+
+.factory('currentDate', function() {
+  // generate current date
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+  if (dd < 10) dd = '0' + dd;
+  if (mm < 10) mm = '0' + mm;
+  today = yyyy+'-'+mm+'-'+dd;
+  return today;
+})
+
 .factory('ProjectService', function() {
   // Might use a resource here that returns a JSON array
 
@@ -47,6 +60,11 @@ angular.module('frankie.services')
     all: function() {
       return projects;
     },
+    add: function(project) {
+      // Simple index lookup
+      project.id = projects.length;
+      projects.push(project);
+    },
     get: function(projectId) {
       // Simple index lookup
       return projects[projectId];
@@ -67,8 +85,13 @@ angular.module('frankie.services')
   };
 })
 
-.factory('CurrentProjectService', function() {
-  var project = {};
+.factory('currentProject', function(currentDate) {
+  var project = {
+    start: currentDate,
+    end: currentDate,
+    timeline: [],
+    client: {}
+  };
 
   return {
     set: function (key, value) {
@@ -87,6 +110,8 @@ angular.module('frankie.services')
   };
 })
 
+
+  
 .factory('ClientService', function() {
   // Might use a resource here that returns a JSON array
 

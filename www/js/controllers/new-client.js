@@ -1,10 +1,10 @@
 angular.module('frankie.controllers')
 
-.controller('NewClientCtrl', function($scope, $stateParams, $location, CurrentProjectService) {
+.controller('NewClientCtrl', function($scope, $location, currentProject) {
   
   // Set Variables
   // ----------------------------
-  $scope.client = CurrentProjectService.get('client') || {};
+  $scope.client = currentProject.get('client');
 
   // Set Header
   // ----------------------------
@@ -16,15 +16,15 @@ angular.module('frankie.controllers')
   // ----------------------------
   // Listen for when back button is pressed
   // Event broadcast added to viewBack directive
-  $scope.$on('back', function(event) {
-    CurrentProjectService.set('client', $scope.client);
-  });
+  // $scope.$on('back', function(event) {
+  //   CurrentProjectService.set('client', $scope.client);
+  // });
 
   // Methods
   // ----------------------------
-  $scope.save = function (client) {
-    CurrentProjectService.set('client', client);
-    $location.url('/main/new-project');
-  };
+  // $scope.save = function (client) {
+  //   CurrentProjectService.set('client', client);
+  //   $location.url('/main/new-project');
+  // };
 
 });
