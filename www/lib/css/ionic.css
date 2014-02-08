@@ -3493,6 +3493,18 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
     width: 100%;
     border-radius: 4px; }
 
+.item-avatar-wide {
+  padding-left: 90px;
+  min-height: 70px; }
+  .item-avatar-wide img:first-child, .item-avatar-wide .item-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    max-width: 60px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; }
+
 .item-thumbnail-left {
   padding-left: 125px;
   min-height: 90px; }

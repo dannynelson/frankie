@@ -78,6 +78,12 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       controller: 'NewTimelineCtrl'
     })
 
+    .state('main.milestone', {
+      url: '/new-milestone/:id',
+      templateUrl: 'templates/new-milestone.html',
+      controller: 'NewMilestoneCtrl'
+    })
+
     .state('main.account', {
       url: '/account',
       templateUrl: 'templates/account.html'

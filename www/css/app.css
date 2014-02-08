@@ -65,6 +65,12 @@ h2 {
   color: #273552
 }
 
+/* styling for camera button */
+.camera {
+  font-size: 100px;
+  color: lightgrey;
+}
+
 /* group of client contact buttons */
 /*.button-group {
   float: right;

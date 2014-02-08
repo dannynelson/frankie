@@ -5,41 +5,26 @@ angular.module('frankie.controllers')
   // Retrieve Data
   // -------------------------------
   $scope.project = ProjectService.get($stateParams.id);
-
+  currentProject.create($scope.project);
 
   // Set Navigation
   // -------------------------------
   $scope.title = $scope.project.title;
-
   $scope.leftButtons = [];
-
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
       content: '<button>edit</button>',
       tap: function(e) {
-        $scope.openEditView();
+        $location.url('/main/new-project');
       }
     }
   ];
 
-  $scope.openEditView = function() {
-    currentProject.create($scope.project);
-    $location.url('/main/new-project');
-  };
+  // Listeners
+  // -------------------------------
+  $scope.$on('back', function(event) {
+    currentProject.clear();
+  });
 
-    // Create our modal
-  // $ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
-  //   $scope.projectModal = modal;
-  // }, {
-  //   scope: $scope
-  // });
-
-  // $scope.newTask = function() {
-  //   $scope.projectModal.show();
-  // };
-
-  // $scope.closeNewTask = function() {
-  //   $scope.projectModal.hide();
-  // };
 });

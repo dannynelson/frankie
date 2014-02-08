@@ -41,8 +41,8 @@
         Timeline
       </div>
       <ul class="list">
-        <a class="item item-avatar" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/tab/client/{{client.id}}">
-          <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
+        <a class="item item-avatar-wide" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/main/new-milestone/{{ $index }}">
+          <img src="http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png">
           <h2>{{ milestone.title }}</h2>
           <p>Complete</p>
         </a>

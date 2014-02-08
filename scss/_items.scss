@@ -415,6 +415,21 @@ button.item-button-right:after {
   }
 }
 
+.item-avatar-wide {
+  padding-left: $item-avitar-width-wide + ($item-padding * 2);
+  min-height: $item-avitar-height + ($item-padding * 2);
+
+  img:first-child, .item-img {
+    position: absolute;
+    top: $item-padding;
+    left: $item-padding;
+    max-width: $item-avitar-width-wide;
+    max-height: $item-avitar-height;
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
 
 // Item Thumbnails
 // -------------------------------
