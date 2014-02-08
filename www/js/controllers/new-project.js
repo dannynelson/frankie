@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $stateParams, $location, ProjectService, currentProject) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $location, ProjectService, currentProject) {
   
   // Get Data
   // ----------------------------
@@ -14,7 +14,7 @@ angular.module('frankie.controllers')
       type: 'button-clear button-assertive',
       content: 'Cancel',
       tap: function(e) {
-        $location.url('/main/projects');
+        $rootScope.$viewHistory.backView.go();
       }
     }
   ];
@@ -33,6 +33,6 @@ angular.module('frankie.controllers')
   $scope.save = function (project) {
     ProjectService.add(project);
     currentProject.clear();
-    $location.url('/main/projects');
+    $rootScope.$viewHistory.backView.go();
   };
 });

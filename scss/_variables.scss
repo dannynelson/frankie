@@ -404,7 +404,7 @@ $input-bg-disabled:               $stable;
 $input-color:                     #111;
 $input-border:                    $item-default-border;
 $input-border-width:              $item-border-width;
-$input-label-color:               black;
+$input-label-color:               $positive;
 $input-color-placeholder:         lighten($dark, 50%);
 
 

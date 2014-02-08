@@ -109,6 +109,9 @@ angular.module('frankie.services')
       // Simple index lookup
       return project;
     },
+    create: function(projectJSON) {
+      project = projectJSON;
+    },
     clear: function() {
       project = makeProject();
     }
