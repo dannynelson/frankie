@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, currentProject) {
+.controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, photo, currentProject) {
   
   // Get Data
   // ----------------------------
@@ -16,5 +16,13 @@ angular.module('frankie.controllers')
   // ----------------------------
   $scope.completeMilestone = function (milestone) {
     $rootScope.$viewHistory.backView.go();
+  };
+
+  $scope.getPhoto = function () {
+    photo.get(function (imageData) {
+      $scope.$apply(function () {
+        $scope.milestone.photo = "data:image/jpeg;base64," + imageData;
+      });
+    });
   };
 });

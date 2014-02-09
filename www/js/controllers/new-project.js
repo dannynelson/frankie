@@ -1,10 +1,10 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $location, ProjectService, currentProject) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, ProjectService, currentProject, photo) {
   
   // Get Data
   // ----------------------------
-  // $stateParams.type = either 'new', or 'edit'
+  // $stateParams.type is either 'new', or 'edit'
   $scope.project = currentProject.all();
 
   // Set Header
@@ -46,4 +46,13 @@ angular.module('frankie.controllers')
     currentProject.clear();
     $rootScope.$viewHistory.backView.go();
   };
+
+  $scope.getPhoto = function () {
+    photo.get(function (imageData) {
+      $scope.$apply(function () {
+        $scope.project.photo = "data:image/jpeg;base64," + imageData;
+      });
+    });
+  };
+
 });

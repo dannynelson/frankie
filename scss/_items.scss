@@ -36,7 +36,7 @@
   }
   p {
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   h1:last-child,
@@ -512,7 +512,10 @@ button.item-button-right:after {
 // -------------------------------
 
 .item-note {
-  float: right;
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  // float: right;
   color: #868686;
   font-size: $font-size-base;
 }

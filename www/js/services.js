@@ -45,7 +45,7 @@ angular.module('frankie.services')
         }
       ],
       user_id: 1,
-      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
+      photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
       id: 1,
@@ -56,7 +56,7 @@ angular.module('frankie.services')
       end: '2014-02-15',
       client_id: 1,
       user_id: 1,
-      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
+      photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
       id: 2,
@@ -67,7 +67,7 @@ angular.module('frankie.services')
       end: '2014-02-15',
       client_id: 1,
       user_id: 1,
-      photoURL:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
+      photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     }
   ];
 
@@ -142,10 +142,67 @@ angular.module('frankie.services')
   };
 })
 
+.factory('photo', function($ionicActionSheet) {
+  
+  // Get photo from library, or take a photo
+  // source type is either 'CAMERA' or 'PHOTOLIBRARY'
+  var getPhoto = function (sourceType, onSuccess) {
+    
+    var onFail = function (message) {
+      alert('Failed because: ' + message);
+    };
 
+    navigator.camera.getPicture(onSuccess, onFail, {
+      quality: 20,
+      sourceType : Camera.PictureSourceType[sourceType],
+      destinationType: Camera.DestinationType.DATA_URL,
+      targetWidth: 200,
+      targetHeight: 150
+    });
+    // function onSuccess(imageData) {
+    //   $scope.$apply(function () {
+    //     $scope.project.photo = "data:image/jpeg;base64," + imageData;
+    //   });
+    // }
+
+  };
+
+  // Display action sheet to ask which type of photo to retrieve
+  var selectPhotoType = function (onSuccess) {
+    $ionicActionSheet.show({
+      // The various non-destructive button choices
+      buttons: [
+        { text: 'Take Photo' },
+        { text: 'Choose Existing' },
+      ],
+
+      // The text of the cancel button
+      cancelText: 'Cancel',
+
+      // Called when the sheet is cancelled, either from triggering the
+      // cancel button, or tapping the backdrop, or using escape on the keyboard
+      cancel: function() {},
+
+      // Called when one of the non-destructive buttons is clicked, with
+      // the index of the button that was clicked. Return
+      // "true" to tell the action sheet to close. Return false to not close.
+      buttonClicked: function(index) {
+        if (index === 0) {
+          getPhoto('CAMERA', onSuccess);
+        } else {
+          getPhoto('PHOTOLIBRARY', onSuccess);
+        }
+        return true;
+      },
+    });
+  };
+
+  return {
+    get: selectPhotoType
+  };
+})
   
 .factory('ClientService', function() {
-  // Might use a resource here that returns a JSON array
 
   // Some fake testing data
   var clients = [
