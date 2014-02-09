@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, currentProject) {
+.controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, photo, currentProject) {
   
   // Get Data
   // ----------------------------
@@ -18,20 +18,11 @@ angular.module('frankie.controllers')
     $rootScope.$viewHistory.backView.go();
   };
 
-  $scope.takePhoto = function() {
-    navigator.camera.getPicture(onSuccess, onFail, {
-      quality: 20,
-      destinationType: Camera.DestinationType.DATA_URL,
-      targetWidth: 200,
-      targetHeight: 150
-    });
-    function onSuccess(imageData) {
+  $scope.getPhoto = function () {
+    photo.get(function (imageData) {
       $scope.$apply(function () {
         $scope.milestone.photo = "data:image/jpeg;base64," + imageData;
       });
-    }
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
+    });
   };
 });
