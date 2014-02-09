@@ -2438,7 +2438,7 @@ a.subdued {
     width: 100%;
     border-radius: 0;
     background-color: transparent;
-    color: #273552;
+    color: blue;
     font-size: 18px; }
     .action-sheet .button.destructive {
       color: #ff6b26; }
@@ -3506,24 +3506,24 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
     border-radius: 4px; }
 
 .item-thumbnail-left {
-  padding-left: 125px;
-  min-height: 90px; }
+  padding-left: 130px;
+  min-height: 100px; }
   .item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 15px;
+    left: 15px;
     max-width: 100px;
     max-height: 70px;
     border-radius: 3px;
     width: 100%; }
 
 .item-thumbnail-right {
-  padding-right: 125px;
-  min-height: 90px; }
+  padding-right: 130px;
+  min-height: 100px; }
   .item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     max-width: 100px;
     max-height: 70px;
     border-radius: 3px;
@@ -3715,7 +3715,7 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
  */
 .card, .list-inset {
   overflow: hidden;
-  margin: 20px 10px;
+  margin: 30px 15px;
   border-radius: 2px;
   background-color: #fff; }
 
@@ -5764,19 +5764,19 @@ a.button {
  * --------------------------------------------------
  */
 .padding {
-  padding: 10px; }
+  padding: 15px; }
 
 .padding-top, .padding-vertical {
-  padding-top: 10px; }
+  padding-top: 15px; }
 
 .padding-right, .padding-horizontal {
-  padding-right: 10px; }
+  padding-right: 15px; }
 
 .padding-bottom, .padding-vertical {
-  padding-bottom: 10px; }
+  padding-bottom: 15px; }
 
 .padding-left, .padding-horizontal {
-  padding-left: 10px; }
+  padding-left: 15px; }
 
 /**
  * Rounded

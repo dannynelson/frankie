@@ -41,7 +41,7 @@ $base-color:                     #000;
 $link-color:                     $assertive !default;
 $link-hover-color:               darken($link-color, 15%) !default;
 
-$content-padding:                10px !default;
+$content-padding:                15px !default;
 
 $padding-base-vertical:          6px !default;
 $padding-base-horizontal:        12px !default;
@@ -293,7 +293,7 @@ $item-avitar-height:               40px !default;
 
 $item-thumbnail-width:             100px !default;
 $item-thumbnail-height:            70px !default;
-$item-thumbnail-margin:            10px !default;
+$item-thumbnail-margin:            15px !default;
 $item-thumbnail-border-radius:     3px !default;
 
 $item-divider-bg:                  $stable;
