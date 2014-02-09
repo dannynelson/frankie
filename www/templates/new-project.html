@@ -26,7 +26,8 @@
         <div class="item item-divider"></div>
         <div class="button button-full button-light no-margin"
              ng-click="takePicture()">
-          <i class="ion-camera camera"></i>
+          <i ng-hide="photo" class="ion-camera camera"></i>
+          <img ng-show="photo" ng-src="{{ photo }}" class="photo"></img>
         </div>
       
         <!-- Dates -->

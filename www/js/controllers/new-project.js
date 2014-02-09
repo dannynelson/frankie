@@ -48,19 +48,19 @@ angular.module('frankie.controllers')
   };
 
   $scope.takePicture = function() {
-    alert('taking picture');
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL
+    navigator.camera.getPicture(onSuccess, onFail, {
+      quality: 20,
+      destinationType: Camera.DestinationType.DATA_URL,
+      targetWidth: 200,
+      targetHeight: 150
     });
-
     function onSuccess(imageData) {
-      alert('picture success');
-      // var image = document.getElementById('myImage');
-      // image.src = "data:image/jpeg;base64," + imageData;
+      $scope.$apply(function () {
+        $scope.photo = "data:image/jpeg;base64," + imageData;
+      });
     }
-
     function onFail(message) {
-        alert('Failed because: ' + message);
+      alert('Failed because: ' + message);
     }
   };
 });

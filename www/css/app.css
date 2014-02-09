@@ -71,8 +71,14 @@ h2 {
   top: 10px;
 }
 
+/* Maximum width for uploaded photos */
+.photo {
+  max-width: 200px;
+  padding-top: 10px;
+}
+
 .divider {
-  
+
 }
 
 /* 
