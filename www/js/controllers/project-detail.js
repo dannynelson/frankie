@@ -16,7 +16,7 @@ angular.module('frankie.controllers')
       type: 'button-clear button-assertive',
       content: '<button>edit</button>',
       tap: function(e) {
-        $location.url('/main/new-project');
+        $location.url('/main/new-project/edit');
       }
     }
   ];
@@ -27,4 +27,9 @@ angular.module('frankie.controllers')
     currentProject.clear();
   });
 
+  // Listeners
+  // -------------------------------
+  $scope.contact = function (method, address) {
+    window.location.href = method + ':' + address;
+  };
 });

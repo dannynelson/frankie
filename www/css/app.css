@@ -1,13 +1,5 @@
 /* Your app's CSS, go crazy, make it your own */
 
-.scroll-content {
-  background-color: #E6E6E6;
-}
-
-.signin .scroll-content {
-  background-color: #273552;
-}
-
 /* FRANKIE logo styling on signin page  */
 .title {
   text-align: center;
@@ -20,6 +12,7 @@
 }
 
 .paragraph-item {
+  font-size: 14px;
   background-color: white;
   color: #666;
 }
@@ -72,9 +65,11 @@ h2 {
 }
 
 /* group of client contact buttons */
-/*.button-group {
-  float: right;
-}*/
+.icons-right {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
 
 /* 
   Topcoat Search Input 

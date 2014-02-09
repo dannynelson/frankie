@@ -30,7 +30,9 @@ angular.module('frankie.services')
       end: '2014-02-15',
       client: {
         first: 'joe',
-        last: 'schmoe'
+        last: 'schmoe',
+        phone: 8583374505,
+        email: 'danielnelsonguitar@gmail.com'
       },
       timeline: [
         {
@@ -70,23 +72,32 @@ angular.module('frankie.services')
   ];
 
   return {
-    all: function() {
+    all: function () {
       return projects;
     },
-    add: function(project) {
-      // Simple index lookup
+    add: function (project) {
+      // Test to see if project exists
       project.id = projects.length;
       projects.push(project);
     },
-    get: function(projectId) {
+    update: function (project) {
+      // Search through projects, and replace one with matching ID
+      for (var i = 0; i < projects.length; i++) {
+        if (project.id = projects[i].id) {
+          projects[i] = project;
+          return;
+        }
+      }
+    },
+    get: function (projectId) {
       // Simple index lookup
       return projects[projectId];
     },
-    save: function(newProject) {
+    save: function (newProject) {
       newProject.id = projects.length;
       projects.push(newProject);
     },
-    update: function(newProject) {
+    update: function (newProject) {
       // test if project exists
       for (var i = 0; i < projects.length; i++) {
         if (project.id === newProject.id) {

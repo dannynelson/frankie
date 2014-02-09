@@ -22,7 +22,6 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
 
     // Signin/Signup
     // ------------------------------
-
     .state('signin', {
       url: "/signin",
       // abstract means we can never directly activate this template, it is just a wrapper for other templates
@@ -39,7 +38,6 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
 
     // Main Section
     // ------------------------------
-
     // setup an abstract state for the side menu directive
     .state('main', {
       url: "/main",
@@ -62,16 +60,20 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       templateUrl: 'templates/project-detail.html',
       controller: 'ProjectDetailCtrl'
     })
+
     .state('main.new-project', {
-      url: '/new-project',
+      // add type to specify edit mode
+      url: '/new-project/:type',
       templateUrl: 'templates/new-project.html',
       controller: 'NewProjectCtrl'
     })
+
     .state('main.new-client', {
       url: '/new-client',
       templateUrl: 'templates/new-client.html',
       controller: 'NewClientCtrl'
     })
+
     .state('main.new-timeline', {
       url: '/new-timeline',
       templateUrl: 'templates/new-timeline.html',

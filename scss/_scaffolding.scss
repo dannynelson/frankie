@@ -288,6 +288,6 @@ infinite-scroll.active .scroll-infinite {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: $stable;
   @include translate3d(0,0,0);
 }

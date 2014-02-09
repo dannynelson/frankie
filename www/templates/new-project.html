@@ -16,7 +16,7 @@
         </label>
         <label class="item item-input">
           <span class="input-label">Price</span>
-          $ <input ng-model="project.price" type="number" placeholder="150">
+          $  <input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
           <textarea placeholder="Notes" rows="4"></textarea>
@@ -45,7 +45,7 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item item-input" ng-click="goTo('main/new-client')" href="#/main/new-client">
+        <a class="item item-input" href="#/main/new-client">
           <span class="input-label">Client Info</span>
           <span class="item-note" ng-hide="project.client.first">
             No Client

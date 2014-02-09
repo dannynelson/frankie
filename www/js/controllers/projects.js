@@ -31,7 +31,8 @@ angular.module('frankie.controllers')
       type: 'button-icon button-clear button-assertive',
       content: '<i class="ion-compose extra-large"></i>',
       tap: function(e) {
-        $location.url('/main/new-project');
+        // must specify new at end of state to get correct form
+        $location.url('/main/new-project/new');
       }
     }
   ];

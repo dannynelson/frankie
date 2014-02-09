@@ -4,11 +4,17 @@ angular.module('frankie.controllers')
   
   // Get Data
   // ----------------------------
+  // $stateParams.type = either 'new', or 'edit'
   $scope.project = currentProject.all();
 
   // Set Header
   // ----------------------------
-  $scope.title = 'New Project';
+  $scope.title = (function (type) {
+    // capitalize first letter
+    var newType = type.charAt(0).toUpperCase() + type.slice(1);
+    return newType + ' Project';
+  })($stateParams.type);
+
   $scope.leftButtons = [
     {
       type: 'button-clear button-assertive',
@@ -18,6 +24,7 @@ angular.module('frankie.controllers')
       }
     }
   ];
+
   $scope.rightButtons = [
     {
       type: 'button-clear button-assertive',
@@ -31,7 +38,11 @@ angular.module('frankie.controllers')
   // Methods
   // ----------------------------
   $scope.save = function (project) {
-    ProjectService.add(project);
+    if ($stateParams.type === 'new') {
+      ProjectService.add(project);
+    } else if ($scope.mode === 'edit') {
+      ProjectService.update(project);
+    }
     currentProject.clear();
     $rootScope.$viewHistory.backView.go();
   };

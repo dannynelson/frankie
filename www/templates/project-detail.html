@@ -28,52 +28,43 @@
       </div>
 
       <!-- Client Info -->
-      <div class="item item-divider">
-        Client Info
-      </div>
-      <div class="item item-icon-left">
-        <i class="icon ion-person"></i>
-        {{ project.client.first + ' ' +  project.client.last }}
+      <div ng-show="project.client.first">
+        <div class="item item-divider">
+          Client Info
+        </div>
+        <div class="item item-icon-left">
+          <i class="icon ion-person"></i>
+          <h2>{{ project.client.first + ' ' +  project.client.last }}</h2>
+          <span class="icons-right">
+            <!-- call -->
+            <i class="ion-ios7-telephone extra-large padding-horizontal"
+               ng-click="contact('tel', project.client.phone)">
+            </i>
+            <!-- email -->
+            <i class="ion-email extra-large padding-horizontal"
+               ng-click="contact('mailto', project.client.email)">
+            </i>
+            <!-- text -->
+            <i class="ion-chatboxes extra-large padding-horizontal"
+               ng-click="contact('sms', project.client.phone)">
+            </i>
+          </span>
+        </div>
       </div>
       
       <!-- Timeline -->
-      <div class="item item-divider">
-        Timeline
+      <div ng-show="project.timeline.length">
+        <div class="item item-divider">
+          Timeline
+        </div>
+        <list>
+          <a class="item item-avatar-wide" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/main/new-milestone/{{ $index }}">
+            <img src="http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png">
+            <h2>{{ milestone.title }}</h2>
+            <p>Complete</p>
+          </a>
+        </list>
       </div>
-      <ul class="list">
-        <a class="item item-avatar-wide" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/main/new-milestone/{{ $index }}">
-          <img src="http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png">
-          <h2>{{ milestone.title }}</h2>
-          <p>Complete</p>
-        </a>
-        
-<!--         <a class="item item-thumbnail-left" type="item-text-wrap" href="#">
-          <img class="thumbnail" src="http://placehold.it/200x200">
-          <h2>Milestone 1</h2>
-          <p>
-            Due in 15 days
-          </p>
-        </a>
-        <a class="item item-thumbnail-left" type="item-text-wrap" href="#">
-          <img class="thumbnail" src="http://placehold.it/200x200">
-          <h2>Milestone 2</h2>
-          <p>
-            Due in 15 days
-          </p>
-        </a> -->
-<!--         <li class="item item-checkbox">
-           <label class="checkbox">
-             <input type="checkbox">
-           </label>
-          Milestone 1
-        </li>
-        <li class="item item-checkbox">
-           <label class="checkbox">
-             <input type="checkbox">
-           </label>
-          Milestone 2
-        </li> -->
-      </ul>
       
     </list>
   </content>
