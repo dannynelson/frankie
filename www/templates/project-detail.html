@@ -37,15 +37,15 @@
           <h2>{{ project.client.first + ' ' +  project.client.last }}</h2>
           <span class="icons-right">
             <!-- call -->
-            <i class="ion-ios7-telephone extra-large padding-horizontal positive"
+            <i class="ion-ios7-telephone extra-large positive"
                ng-click="contact('tel', project.client.phone)">
             </i>
             <!-- email -->
-            <i class="ion-email extra-large padding-horizontal positive"
+            <i class="ion-email extra-large padding-left positive"
                ng-click="contact('mailto', project.client.email)">
             </i>
             <!-- text -->
-            <i class="ion-chatboxes extra-large padding-horizontal positive"
+            <i class="ion-chatboxes extra-large padding-left positive"
                ng-click="contact('sms', project.client.phone)">
             </i>
           </span>

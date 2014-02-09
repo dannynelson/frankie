@@ -82,6 +82,12 @@ h2 {
   text-align: right;
 }
 
+/* center, and set max width to signin form */
+.signin-form {
+  max-width: 325px;
+  margin: auto;
+}
+
 .divider {
 
 }
