@@ -7,14 +7,14 @@
     <list>
       <!-- Milestone List -->
       <div ng-repeat="milestone in timeline">
-        <div class="item item-divider"></div>
+        <div class="item item-divider">Milestone {{ $index + 1 }}</div>
         <label class="item item-input">
-          <span class="input-label">Milestone {{ $index }}</span>
-          <input ng-model="milestone.title" type="text" placeholder="MyProjet">
+          <span class="input-label">Title</span>
+          <input ng-model="milestone.title" type="text" placeholder="Milestone">
         </label>
         <label class="item item-input">
-          <span class="input-label">Deadline</span>
-          <input ng-model="milestone.date" type="date" placeholder="MyProjet">
+          <span class="input-label">Date</span>
+          <input ng-model="milestone.date" type="date">
         </label>
       </div>
     </list>
