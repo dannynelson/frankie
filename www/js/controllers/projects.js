@@ -2,14 +2,14 @@ angular.module('frankie.controllers')
 
 
 // A simple controller that fetches a list of data from a service
-.controller('ProjectsCtrl', function($scope, $ionicModal, $location, ProjectService, moment) {
+.controller('ProjectsCtrl', function($scope, $location, projects, moment) {
 
-  // Retrieve Data
+  // Get Data
   // -------------------------------
-  $scope.projects = ProjectService.all();
+  $scope.projects = projects.all();
 
   
-  // Set Navigation
+  // Header
   // -------------------------------
   $scope.title = 'Projects';
   // $scope.titleButtons =
@@ -37,13 +37,8 @@ angular.module('frankie.controllers')
     }
   ];
 
-  // Event listeners
+  // Methods
   // ---------------------------------
-  // when project created, update all projects
-  $scope.$on('projectCreated', function (event) {
-    $scope.projects = ProjectService.all();
-  });
-
   $scope.fromNow = moment.fromNow;
 
 });

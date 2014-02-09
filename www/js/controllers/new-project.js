@@ -1,13 +1,13 @@
 angular.module('frankie.controllers')
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, ProjectService, currentProject, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, projects, currentProject, photo) {
   
   // Get Data
   // ----------------------------
   // $stateParams.type is either 'new', or 'edit'
   $scope.project = currentProject.all();
 
-  // Set Header
+  // Header
   // ----------------------------
   $scope.title = (function (type) {
     // capitalize first letter
@@ -37,11 +37,14 @@ angular.module('frankie.controllers')
 
   // Methods
   // ----------------------------
+  // save current project to projects collection
+  // clear currentProject 
+  // go back to previous view
   $scope.save = function (project) {
     if ($stateParams.type === 'new') {
-      ProjectService.add(project);
+      projects.add(project);
     } else if ($scope.mode === 'edit') {
-      ProjectService.update(project);
+      projects.update(project);
     }
     currentProject.clear();
     $rootScope.$viewHistory.backView.go();

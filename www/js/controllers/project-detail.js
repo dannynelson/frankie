@@ -1,14 +1,14 @@
 angular.module('frankie.controllers')
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, currentProject, ProjectService, moment) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, currentProject, projects, moment) {
   
-  // Retrieve Data
+  // Get Data
   // -------------------------------
-  $scope.project = ProjectService.get($stateParams.id);
+  $scope.project = projects.get($stateParams.id);
   // set currentProject, so that related views can reference the same object
   currentProject.create($scope.project);
 
-  // Navigation
+  // Header
   // -------------------------------
   $scope.title = $scope.project.title;
   $scope.leftButtons = [];
@@ -32,6 +32,8 @@ angular.module('frankie.controllers')
   // Methods
   // -------------------------------
   // go to url to open contact application
+  // method is tel, sms, or mailto
+  // address is address to be contacted
   $scope.contact = function (method, address) {
     window.location.href = method + ':' + address;
   };
