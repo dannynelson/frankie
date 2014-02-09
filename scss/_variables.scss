@@ -6,7 +6,7 @@ $positive:              #273552 !default;
 $assertive:             #ff6b26 !default;
 $light:                 #fff !default;
 $stable:                #E6E6E6 !default;
-$dark:                  #444 !default;
+$dark:                  #5C5C5C !default;
 
 $calm:                  #43cee6 !default;
 $balanced:              #66cc33 !default;
@@ -400,11 +400,11 @@ $input-height-small:              (floor($font-size-small * $line-height-small) 
 $input-bg:                        $light;
 $input-bg-disabled:               $stable;
 
-$input-color:                     #111;
+$input-color:                     $dark;
 $input-border:                    $item-default-border;
 $input-border-width:              $item-border-width;
 $input-label-color:               $positive;
-$input-color-placeholder:         lighten($dark, 50%);
+$input-color-placeholder:         lighten($dark, 40%);
 
 
 // Toggle

@@ -88,8 +88,11 @@ h2 {
   margin: auto;
 }
 
-.divider {
-
+/* Change item divider text to match iOS */
+.item-divider {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /* 
