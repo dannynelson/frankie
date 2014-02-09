@@ -46,4 +46,21 @@ angular.module('frankie.controllers')
     currentProject.clear();
     $rootScope.$viewHistory.backView.go();
   };
+
+  $scope.takePicture = function() {
+    alert('taking picture');
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL
+    });
+
+    function onSuccess(imageData) {
+      alert('picture success');
+      // var image = document.getElementById('myImage');
+      // image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+  };
 });

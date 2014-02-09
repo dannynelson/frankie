@@ -24,7 +24,8 @@
 
         <!-- Photo -->
         <div class="item item-divider"></div>
-        <div class="button button-full button-light no-margin">
+        <div class="button button-full button-light no-margin"
+             ng-click="takePicture()">
           <i class="ion-camera camera"></i>
         </div>
       
@@ -32,25 +33,21 @@
         <div class="item item-divider"></div>
         <label class="item item-input">
           <span class="input-label">Start</span>
-          <span class="item-note">
             <input ng-model="project.start" type="date">
-          </span>
         </label>
         <label class="item item-input">
           <span class="input-label">End</span>
-          <span class="item-note">
             <input ng-model="project.end" type="date">
-          </span>
         </label>
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
         <a class="item item-input" href="#/main/new-client">
           <span class="input-label">Client Info</span>
-          <span class="item-note" ng-hide="project.client.first">
+          <span ng-hide="project.client.first">
             No Client
           </span>
-          <span class="item-note" ng-show="project.client.first">
+          <span ng-show="project.client.first">
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
@@ -58,13 +55,11 @@
         <!-- Timeline -->
         <a class="item item-input" href="#/main/new-timeline">
           <span class="input-label">Timeline</span>
-          <span class="item-note">
             {{ project.timeline.length || 0 }} Milestones
-          </span>
         </a>
       
-      <div class="item item-divider"></div>
-      <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
+        <div class="item item-divider"></div>
+        <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
 
       </list> <!-- /.list -->
       

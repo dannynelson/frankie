@@ -2217,7 +2217,7 @@ cite {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
-  font-weight: 500;
+  font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.1; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -3194,7 +3194,7 @@ a.subdued {
     font-size: 10px; }
   .item p {
     color: #666;
-    font-size: 14px; }
+    font-size: 16px; }
   .item h1:last-child, .item h2:last-child, .item h3:last-child, .item h4:last-child, .item h5:last-child, .item h6:last-child, .item p:last-child {
     margin-bottom: 0; }
   .item .badge {
@@ -3554,7 +3554,9 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
   font-weight: bold; }
 
 .item-note {
-  float: right;
+  position: absolute;
+  right: 30px;
+  top: 12px;
   color: #868686;
   font-size: 16px; }
 
@@ -4030,7 +4032,7 @@ input, button, select, textarea {
   padding: 7px 10px 7px 3px;
   max-width: 200px;
   color: #273552;
-  font-weight: 500; }
+  font-weight: bold; }
 
 .placeholder-icon {
   color: #aaa; }
