@@ -2,7 +2,7 @@ angular.module('frankie.controllers')
 
 
 // A simple controller that fetches a list of data from a service
-.controller('ProjectsCtrl', function($scope, $ionicModal, $location, ProjectService) {
+.controller('ProjectsCtrl', function($scope, $ionicModal, $location, ProjectService, moment) {
 
   // Retrieve Data
   // -------------------------------
@@ -43,6 +43,8 @@ angular.module('frankie.controllers')
   $scope.$on('projectCreated', function (event) {
     $scope.projects = ProjectService.all();
   });
+
+  $scope.fromNow = moment.fromNow;
 
 });
 

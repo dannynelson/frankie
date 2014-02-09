@@ -6,7 +6,7 @@ angular.module('frankie.controllers')
   // ----------------------------
   $scope.timeline = currentProject.get('timeline');
 
-  // Set Header
+  // Header
   // ----------------------------
   $scope.title = 'Timeline';
   $scope.leftButtons = [];
