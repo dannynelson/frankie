@@ -62,7 +62,8 @@
             <img 
             ng-src="{{ milestone.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
             <h2>{{ milestone.title }}</h2>
-            <p>Due {{ fromNow(milestone.date) }}</p>
+            <p ng-hide="milestone.completed">Due {{ fromNow(milestone.date) }}</p>
+            <p ng-show="milestone.completed">Completed</p>
           </a>
         </list>
       </div>

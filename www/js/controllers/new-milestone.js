@@ -15,6 +15,7 @@ angular.module('frankie.controllers')
   // Methods
   // ----------------------------
   $scope.completeMilestone = function (milestone) {
+    milestone.completed = true;
     $rootScope.$viewHistory.backView.go();
   };
 
