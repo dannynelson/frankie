@@ -13,24 +13,24 @@
       
       <!-- Project Overview -->
       <div class="item item-divider">
-        Overview
+        Project
       </div>
       <div class="item item-thumbnail-left" type="item-text-wrap">
         <img class="thumbnail" src="{{ project.photo }}">
-        <h2>{{project.title}}</h2>
+        <h2>{{ project.title }}</h2>
         <p>
-          ${{project.price}}</br>
-          Due in 15 days
+          ${{ project.price }}</br>
+          {{ format(project.start) }} - {{ format(project.end) }}
         </p>
       </div>
       <div class="padding paragraph-item">
         {{ project.notes }}
       </div>
 
-      <!-- Client Info -->
+      <!-- Client -->
       <div ng-show="project.client.first">
         <div class="item item-divider">
-          Client Info
+          Client
         </div>
         <div class="item item-icon-left">
           <i class="icon ion-person"></i>
@@ -62,7 +62,7 @@
             <img 
             ng-src="{{ milestone.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
             <h2>{{ milestone.title }}</h2>
-            <p>Complete</p>
+            <p>Due {{ fromNow(milestone.date) }}</p>
           </a>
         </list>
       </div>

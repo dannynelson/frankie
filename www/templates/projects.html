@@ -19,10 +19,10 @@
       <!-- Project List -->
       <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
         <img class="thumbnail" src="{{ project.photo }}">
-        <h2>{{project.title}}</h2>
+        <h2>{{ project.title }}</h2>
         <p>
-          ${{project.price}}</br>
-          Due in 15 days
+          ${{ project.price }}</br>
+          Due {{ fromNow(project.end) }}
         </p>
       </a>
     </list>

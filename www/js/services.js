@@ -159,11 +159,6 @@ angular.module('frankie.services')
       targetWidth: 200,
       targetHeight: 150
     });
-    // function onSuccess(imageData) {
-    //   $scope.$apply(function () {
-    //     $scope.project.photo = "data:image/jpeg;base64," + imageData;
-    //   });
-    // }
 
   };
 
@@ -223,38 +218,3 @@ angular.module('frankie.services')
   };
 
 });
-  
-// .factory('ClientService', function() {
-
-//   // Some fake testing data
-//   var clients = [
-//     {
-//       id: 0,
-//       first: 'Ryan',
-//       last: 'Stellar',
-//       location: 'San Francisco, CA'
-//     },
-//     {
-//       id: 1,
-//       first: 'Danny',
-//       last: 'Nelson',
-//       location: 'San Francisco, CA'
-//     },
-//     {
-//       id: 2,
-//       first: 'Ryan',
-//       last: 'Yee',
-//       location: 'San Francisco, CA'
-//     }
-//   ];
-
-//   return {
-//     all: function() {
-//       return clients;
-//     },
-//     get: function(clientId) {
-//       // Simple index lookup
-//       return clients[clientId];
-//     }
-//   };
-// });
