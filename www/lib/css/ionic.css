@@ -3556,7 +3556,7 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
 .item-note {
   position: absolute;
   right: 30px;
-  top: 12px;
+  top: 13px;
   color: #868686;
   font-size: 16px; }
 
@@ -4031,7 +4031,7 @@ input, button, select, textarea {
   flex: 1 0 100px;
   padding: 7px 10px 7px 3px;
   max-width: 200px;
-  min-width: 200px;
+  width: 200px;
   color: #273552;
   font-weight: bold; }
 

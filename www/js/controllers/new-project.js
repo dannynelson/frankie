@@ -4,7 +4,7 @@ angular.module('frankie.controllers')
   
   // Get Data
   // ----------------------------
-  // $stateParams.type = either 'new', or 'edit'
+  // $stateParams.type is either 'new', or 'edit'
   $scope.project = currentProject.all();
 
   // Set Header
@@ -56,7 +56,7 @@ angular.module('frankie.controllers')
     });
     function onSuccess(imageData) {
       $scope.$apply(function () {
-        $scope.photo = "data:image/jpeg;base64," + imageData;
+        $scope.project.photo = "data:image/jpeg;base64," + imageData;
       });
     }
     function onFail(message) {

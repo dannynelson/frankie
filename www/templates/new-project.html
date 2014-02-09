@@ -10,53 +10,55 @@
       <list>
         <!-- Overview -->
         <div class="item item-divider"></div>
-        <label class="item item-input">
+        <div class="item item-input">
           <span class="input-label">Title</span>
           <input ng-model="project.title" type="text" placeholder="MyProjet">
-        </label>
+        </div>
         <label class="item item-input">
           <span class="input-label">Price</span>
-          $  <input ng-model="project.price" type="number" placeholder="150">
+          $<input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
-          <textarea placeholder="Notes" rows="4"></textarea>
+          <textarea ng-model="project.notes" placeholder="Notes" rows="4"></textarea>
         </label>
 
         <!-- Photo -->
         <div class="item item-divider"></div>
         <div class="button button-full button-light no-margin"
              ng-click="takePicture()">
-          <i ng-hide="photo" class="ion-camera camera"></i>
-          <img ng-show="photo" ng-src="{{ photo }}" class="photo"></img>
+          <i ng-hide="project.photo" class="ion-camera camera"></i>
+          <img ng-show="project.photo" ng-src="{{ project.photo }}" class="photo"></img>
         </div>
       
         <!-- Dates -->
         <div class="item item-divider"></div>
         <label class="item item-input">
           <span class="input-label">Start</span>
-            <input ng-model="project.start" type="date">
+            <input ng-model="project.start" type="date" class="pull-right">
         </label>
         <label class="item item-input">
           <span class="input-label">End</span>
-            <input ng-model="project.end" type="date">
+            <input ng-model="project.end" type="date" class="pull-right">
         </label>
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item item-input" href="#/main/new-client">
-          <span class="input-label">Client Info</span>
-          <span ng-hide="project.client.first">
+        <a class="item" href="#/main/new-client">
+          <h2>Client Info</h2>
+          <span ng-hide="project.client.first" class="item-note">
             No Client
           </span>
-          <span ng-show="project.client.first">
+          <span ng-show="project.client.first" class="item-note">
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
       
         <!-- Timeline -->
-        <a class="item item-input" href="#/main/new-timeline">
-          <span class="input-label">Timeline</span>
+        <a class="item" href="#/main/new-timeline">
+          <h2>Timeline</h2>
+          <span class="item-note">
             {{ project.timeline.length || 0 }} Milestones
+          </span>
         </a>
       
         <div class="item item-divider"></div>
