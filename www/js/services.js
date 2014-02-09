@@ -201,38 +201,60 @@ angular.module('frankie.services')
     get: selectPhotoType
   };
 })
-  
-.factory('ClientService', function() {
 
-  // Some fake testing data
-  var clients = [
-    {
-      id: 0,
-      first: 'Ryan',
-      last: 'Stellar',
-      location: 'San Francisco, CA'
-    },
-    {
-      id: 1,
-      first: 'Danny',
-      last: 'Nelson',
-      location: 'San Francisco, CA'
-    },
-    {
-      id: 2,
-      first: 'Ryan',
-      last: 'Yee',
-      location: 'San Francisco, CA'
-    }
-  ];
+// TODO: figure out a way to only inject moment here
+.factory('moment', function() {
+
+  // converts to time from new, e.g. in a month
+  // date is YYYY-MM-DD
+  var fromNow = function(date) {
+    return moment(date, "YYYY-MM-DD").fromNow();
+  };
+
+  // converts date to just month and day
+  // date is YYYY-MM-DD
+  var format = function(date) {
+    return moment(date).format("MMM Do");
+  };
 
   return {
-    all: function() {
-      return clients;
-    },
-    get: function(clientId) {
-      // Simple index lookup
-      return clients[clientId];
-    }
+    fromNow: fromNow,
+    format: format
   };
+
 });
+  
+// .factory('ClientService', function() {
+
+//   // Some fake testing data
+//   var clients = [
+//     {
+//       id: 0,
+//       first: 'Ryan',
+//       last: 'Stellar',
+//       location: 'San Francisco, CA'
+//     },
+//     {
+//       id: 1,
+//       first: 'Danny',
+//       last: 'Nelson',
+//       location: 'San Francisco, CA'
+//     },
+//     {
+//       id: 2,
+//       first: 'Ryan',
+//       last: 'Yee',
+//       location: 'San Francisco, CA'
+//     }
+//   ];
+
+//   return {
+//     all: function() {
+//       return clients;
+//     },
+//     get: function(clientId) {
+//       // Simple index lookup
+//       return clients[clientId];
+//     }
+//   };
+// });
