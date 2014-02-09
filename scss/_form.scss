@@ -50,7 +50,7 @@ textarea {
   @include align-items(center);
   position: relative;
   overflow: hidden;
-  padding: 6px 8px 5px;
+  padding: 6px 12px 5px;
 
   input {
     @include border-radius(0);
