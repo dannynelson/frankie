@@ -47,7 +47,7 @@ angular.module('frankie.controllers')
     $rootScope.$viewHistory.backView.go();
   };
 
-  $scope.takePicture = function() {
+  $scope.takePhoto = function() {
     navigator.camera.getPicture(onSuccess, onFail, {
       quality: 20,
       destinationType: Camera.DestinationType.DATA_URL,

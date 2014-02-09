@@ -93,11 +93,10 @@ h2 {
 
 .topcoat-search-input,
 .topcoat-search-input--large {
-  /*reset */
-  display: block; 
-  width: 100%;
-  padding: 0;
-  border-width: 0;
+  /* make it so that padding does not change element size */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
   /*main styles*/
   line-height: 3rem;
   height: 3rem;

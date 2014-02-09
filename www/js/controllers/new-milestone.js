@@ -17,4 +17,21 @@ angular.module('frankie.controllers')
   $scope.completeMilestone = function (milestone) {
     $rootScope.$viewHistory.backView.go();
   };
+
+  $scope.takePhoto = function() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+      quality: 20,
+      destinationType: Camera.DestinationType.DATA_URL,
+      targetWidth: 200,
+      targetHeight: 150
+    });
+    function onSuccess(imageData) {
+      $scope.$apply(function () {
+        $scope.milestone.photo = "data:image/jpeg;base64," + imageData;
+      });
+    }
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+  };
 });

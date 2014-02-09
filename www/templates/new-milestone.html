@@ -9,8 +9,10 @@
     <list>
       <!-- Photo -->
       <div class="item item-divider">Take Photo</div>
-      <div class="button button-full button-light no-margin">
-        <i class="ion-camera camera"></i>
+      <div class="button button-full button-light no-margin"
+           ng-click="takePhoto()">
+        <i ng-hide="milestone.photo" class="ion-camera camera"></i>
+        <img ng-show="milestone.photo" ng-src="{{ milestone.photo }}" class="photo"></img>
       </div>
       
       <!-- Notes -->

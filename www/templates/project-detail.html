@@ -59,7 +59,8 @@
         </div>
         <list>
           <a class="item item-avatar-wide" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/main/new-milestone/{{ $index }}">
-            <img src="http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png">
+            <img 
+            ng-src="{{ milestone.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
             <h2>{{ milestone.title }}</h2>
             <p>Complete</p>
           </a>
