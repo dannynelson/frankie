@@ -11,9 +11,9 @@
 
     <list>  
       <!-- Search form -->
-      <div class="item item-input-inset search-item">
-        <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
-      </div>
+        <div class="item item-input-inset search-item">
+          </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
+        </div>
 
       <!-- Project List -->
       <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">

@@ -11,11 +11,6 @@ angular.module('frankie.controllers')
     $location.url('/' + page);
   };
 
-  // change status bar to light color
-  $ionicPlatform.ready(function() {
-    StatusBar.styleLightContent();
-  });
-
 
 
 });

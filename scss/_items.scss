@@ -85,6 +85,9 @@
   &.item-dark { 
     @include item-style($item-dark-bg, $item-dark-border, $item-dark-text);
   }
+  &.item-darker { 
+    @include item-style($item-darker-bg, $item-dark-border, $item-dark-text);
+  }
 
 }
 
