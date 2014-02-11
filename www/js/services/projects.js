@@ -5,7 +5,7 @@ angular.module('frankie.services')
   var projects = [
     {
       id: 0,
-      title: '1416 Bathroom Remodel',
+      title: 'Sallys Bathroom Remodel',
       price: 500,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
       start: '2014-01-15',
@@ -18,12 +18,12 @@ angular.module('frankie.services')
       },
       timeline: [
         {
-          title: 'milestone 1',
-          date: '',
+          title: 'Remove Wallpaper',
+          date: '2014-2-10',
         },
         {
-          title: 'milestone 2',
-          date: '',
+          title: 'Install New Toilets',
+          date: '2014-2-15',
         }
       ],
       user_id: 1,
@@ -31,23 +31,53 @@ angular.module('frankie.services')
     },
     {
       id: 1,
-      title: 'Kitchen Repair',
+      title: 'Johnson Kitchen Repair',
       price: 1500,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
       start: '2014-01-15',
       end: '2014-02-15',
-      client_id: 1,
+      client: {
+        first: 'joe',
+        last: 'schmoe',
+        phone: 8583374505,
+        email: 'danielnelsonguitar@gmail.com'
+      },
+      timeline: [
+        {
+          title: 'Select new kitchen tiles',
+          date: '2014-2-25',
+        },
+        {
+          title: 'Replace cabinets',
+          date: '2014-2-30',
+        }
+      ],
       user_id: 1,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
       id: 2,
-      title: 'Replace Cabinets',
+      title: 'Davids counter retile',
       price: 350,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
-      start: '2014-01-15',
-      end: '2014-02-15',
-      client_id: 1,
+      start: '2014-03-15',
+      end: '2014-04-15',
+      client: {
+        first: 'joe',
+        last: 'schmoe',
+        phone: 8583374505,
+        email: 'danielnelsonguitar@gmail.com'
+      },
+      timeline: [
+        {
+          title: 'Take client to select tile colors',
+          date: '2014-1-29',
+        },
+        {
+          title: 'Remove old kitchen tiles',
+          date: '2014-2-12',
+        }
+      ],
       user_id: 1,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     }

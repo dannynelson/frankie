@@ -1,14 +1,11 @@
 angular.module('frankie.controllers')
 
-
-// A simple controller that fetches a list of data from a service
 .controller('ProjectsCtrl', function($scope, $location, projects, moment) {
 
   // Get Data
   // -------------------------------
   $scope.projects = projects.all();
 
-  
   // Header
   // -------------------------------
   $scope.title = 'Projects';

@@ -21,7 +21,6 @@ angular.module('frankie.services')
       return project[key];
     },
     all: function () {
-      // Simple index lookup
       return project;
     },
     create: function(projectJSON) {

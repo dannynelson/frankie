@@ -1,44 +1,56 @@
 <!-- 
-  Create tabs with an icon and label, using the tabs-positive style. 
-  Each tab's child <nav-view> directive will have its own 
-  navigation history that also transitions its views in and out.
+  Create side menu tabs with an icon and label. 
+  Each menu item links to a state (configured in app.js) to load the appropriate <nav-view>.
 -->
 
 <side-menus>
   <!-- Left menu -->
-  <side-menu side="left" class="dark-bg">
+  <side-menu side="left" class="darker-bg">
     <content>
       <form>
         <list>
-          <div class="item item-divider dark-bg"></div>
-          <div class="item item-dark item-icon-left"
-               ng-click="goTo('main/projects', sideMenuController)">
+          <div class="item item-divider darker-bg dark-border"></div>
+          <!-- goTo helper in sideMenuController in ionic-angular.js -->
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/projects')">
             <i class="icon stable ion-clipboard"></i>
             Projects
           </div>
-          <div class="item item-dark item-icon-left"
-               ng-click="goTo('main/account', sideMenuController)">
-            <i class="icon stable ion-filing"></i>
-            Archives
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/calendar')">
+            <i class="icon stable ion-calendar"></i>
+            Calendar
           </div>
-          <div class="item item-dark item-icon-left"
-               ng-click="goTo('main/account', sideMenuController)">
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/account')">
             <i class="icon stable ion-person-stalker"></i>
             Clients
           </div>
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/account')">
+            <i class="icon stable ion-stats-bars"></i>
+            Analytics
+          </div>
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/account')">
+            <i class="icon stable ion-filing"></i>
+            Archives
+          </div>
 
-          <div class="item item-dark item-icon-left"
-               ng-click="goTo('main/account', sideMenuController)">
+          <div class="item item-divider darker-bg dark-border"></div>
+          <div class="item item-darker item-icon-left"
+               ng-click="goTo('main/account')">
             <i class="icon stable ion-help"></i>
             Help
           </div>
-          <div class="item item-dark item-icon-left" 
-               ng-click="goTo('main/account', sideMenuController)">
+          <div class="item item-darker item-icon-left" 
+               ng-click="goTo('main/account')">
             <i class="icon stable ion-ios7-gear"></i>
             Account
           </div>
-
-          <div class="item item-dark item-icon-left" ng-click="goTo('signin', sideMenuController)">
+          
+          <div class="item item-divider darker-bg dark-border"></div>
+          <div class="item item-darker item-icon-left" ng-click="goTo('signin')">
             <i class="icon stable ion-log-out"></i>
             Logout
           </div>

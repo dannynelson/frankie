@@ -1,7 +1,6 @@
-<!-- 
-  This template gets placed in the Pet tab's <nav-view> directive.
-  It was wired up in the app config (app.js) 
-  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+<!--
+  Index of all active projects
+  This template loads for the 'main.projects' state (app.js)
 -->
 <view title="title" 
       left-buttons="leftButtons" 
@@ -12,9 +11,9 @@
 
     <list>  
       <!-- Search form -->
-      <div class="item item-input-inset search-item">
-        <input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
-      </div>
+        <div class="item item-input-inset search-item">
+          </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
+        </div>
 
       <!-- Project List -->
       <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">

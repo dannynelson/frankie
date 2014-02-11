@@ -96,17 +96,18 @@ h2 {
 }
 
 /* 
+  set search bar container height, so that the inner item displays 
+  correctly with absolute positioning
+*/
+.search-item {
+}
+
+/* 
   Topcoat Search Input 
   =======================================
 */
 
-.topcoat-search-input,
-.topcoat-search-input--large {
-  /* make it so that padding does not change element size */
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
-  /*main styles*/
+.topcoat-search-input {
   line-height: 3rem;
   height: 3rem;
   width: 100%;
@@ -115,18 +116,17 @@ h2 {
   background-color: #fff;
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.23);
   color: #454545;
-  padding: 0 0 0 2em;
-  /* right margin to offset left padding */
-/*  margin-right: 2em;
-*/  border-radius: 30px;
+  padding: 0 0 0 2rem;
+
+  border-radius: 30px;
   background-image: url("../img/search.svg");
   background-position: 1rem center;
   background-repeat: no-repeat;
   background-size: 16px;
+
 }
 
-.topcoat-search-input:focus,
-.topcoat-search-input--large:focus {
+.topcoat-search-input:focus {
   background-color: #fff;
   color: #454545;
   border: 1px solid #0036ff;
@@ -134,26 +134,12 @@ h2 {
 }
 
 .topcoat-search-input::-webkit-search-cancel-button,
-.topcoat-search-input::-webkit-search-decoration,
-.topcoat-search-input--large::-webkit-search-cancel-button,
-.topcoat-search-input--large::-webkit-search-decoration {
+.topcoat-search-input::-webkit-search-decoration {
   margin-right: 5px;
 }
 
 .topcoat-search-input:focus::-webkit-input-placeholder,
 .topcoat-search-input:focus::-webkit-input-placeholder {
   color: #c6c8c8;
-}
-
-.topcoat-search-input:disabled::-webkit-input-placeholder {
-  color: #454545;
-}
-
-.topcoat-search-input:disabled::-moz-placeholder {
-  color: #454545;
-}
-
-.topcoat-search-input:disabled:-ms-input-placeholder {
-  color: #454545;
 }
 

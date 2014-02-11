@@ -7,6 +7,7 @@ $assertive:             #ff6b26 !default;
 $light:                 #fff !default;
 $stable:                #E6E6E6 !default;
 $dark:                  #5C5C5C !default;
+$darker:                #3B3B3B !default;
 
 $calm:                  #43cee6 !default;
 $balanced:              #66cc33 !default;
@@ -353,6 +354,8 @@ $item-dark-border:                 $button-dark-border;
 $item-dark-text:                   $button-dark-text;
 $item-dark-active-bg:              $button-dark-active-bg;
 $item-dark-active-border:          $button-dark-active-border;
+
+$item-darker-bg:                   lighten($darker, 7%);
 
 $item-default-bg:                  $item-light-bg;
 $item-default-border:              $item-light-border;

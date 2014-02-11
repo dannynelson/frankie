@@ -15,9 +15,14 @@ angular.module('frankie.services')
     return moment(date).format("MMM Do");
   };
 
+  var formatMonth = function(date) {
+    return moment(date).format("MMMM, YYYY");
+  };
+
   return {
     fromNow: fromNow,
-    format: format
+    format: format,
+    formatMonth: formatMonth
   };
 
 });

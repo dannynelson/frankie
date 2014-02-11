@@ -5,7 +5,7 @@ angular.module('frankie.services')
   // Get photo from library, or take a photo
   // source type is either 'CAMERA' or 'PHOTOLIBRARY'
   var getPhoto = function (sourceType, onSuccess) {
-    
+
     var onFail = function (message) {
       alert('Failed because: ' + message);
     };
@@ -22,6 +22,7 @@ angular.module('frankie.services')
 
   // Display action sheet to ask which type of photo to retrieve
   var selectPhotoType = function (onSuccess) {
+    
     $ionicActionSheet.show({
       // The various non-destructive button choices
       buttons: [

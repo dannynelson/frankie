@@ -1911,7 +1911,7 @@ angular.module('ionic.ui.sideMenu', ['ionic.service.gesture', 'ionic.service.vie
 .directive('sideMenus', function() {
   return {
     restrict: 'ECA',
-    controller: ['$scope', function($scope) {
+    controller: ['$scope', '$location', function($scope, $location) {
       var _this = this;
 
       angular.extend(this, ionic.controllers.SideMenuController.prototype);
@@ -1931,6 +1931,12 @@ angular.module('ionic.ui.sideMenu', ['ionic.service.gesture', 'ionic.service.vie
       $scope.sideMenuContentTranslateX = 0;
 
       $scope.sideMenuController = this;
+
+      // helper that goes to specified path when clicked
+      $scope.goTo = function(path) {
+        $scope.sideMenuController.toggleLeft();
+        $location.url('/' + path);
+      };
     }],
     replace: true,
     transclude: true,
