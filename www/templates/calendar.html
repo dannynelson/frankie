@@ -10,9 +10,9 @@
   <content has-header="true">
 
     <list>
-
-      <!-- Project List -->
-      <a class="item item-thumbnail-left" ng-repeat="event in events | orderBy:event.date" type="item-text-wrap" href="#/main/projects/{{event.projectId}}">
+      <!-- Event List -->
+      <div class="item item-darker item-divider">Over Due</div>
+      <a class="item item-thumbnail-left" ng-repeat="event in events | orderBy:'orderingDate'" type="item-text-wrap" href="#/main/projects/{{event.projectId}}">
         <img class="thumbnail" src="{{ event.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
         <h2>{{ event.title }}</h2>
         <p>

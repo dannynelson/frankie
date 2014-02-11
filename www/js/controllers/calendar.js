@@ -15,6 +15,8 @@ angular.module('frankie.controllers')
         this.photo = project.photo,
         this.title = title,
         this.date = date;
+        // format date so that angular formats it correctly
+        this.orderingDate = new Date(date);
       };
 
       // Add start/end project events
@@ -28,7 +30,6 @@ angular.module('frankie.controllers')
         });
       }
     });
-
     return events;
   })();
 
