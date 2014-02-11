@@ -1,0 +1,25 @@
+<!--
+  Index of all active projects
+  This template loads for the 'main.projects' state (app.js)
+-->
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <content has-header="true">
+
+    <list>
+
+      <!-- Project List -->
+      <a class="item item-thumbnail-left" ng-repeat="event in events | orderBy:event.date" type="item-text-wrap" href="#/main/projects/{{event.projectId}}">
+        <img class="thumbnail" src="{{ event.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
+        <h2>{{ event.title }}</h2>
+        <p>
+          {{ event.projectTitle }}</br>
+          Due {{ fromNow(event.date) }}
+        </p>
+      </a>
+    </list>
+  </content>
+</view>

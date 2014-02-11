@@ -49,6 +49,12 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       templateUrl: 'templates/projects.html',
       controller: 'ProjectsCtrl'
     })
+    
+    .state('main.calendar', {
+      url: '/calendar',
+      templateUrl: 'templates/calendar.html',
+      controller: 'CalendarCtrl'
+    })
 
     // Creating and editing projects
     .state('main.project-detail', {
