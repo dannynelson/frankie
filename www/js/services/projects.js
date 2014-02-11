@@ -27,6 +27,7 @@ angular.module('frankie.services')
         }
       ],
       user_id: 1,
+      completed: false,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
@@ -53,6 +54,7 @@ angular.module('frankie.services')
         }
       ],
       user_id: 1,
+      completed: false,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
@@ -79,6 +81,7 @@ angular.module('frankie.services')
         }
       ],
       user_id: 1,
+      completed: false,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     }
   ];

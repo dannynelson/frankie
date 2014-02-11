@@ -27,7 +27,8 @@
       </a>
 
       <!-- Future Events Calendar -->
-      <div ng-repeat="(month, events) in calendar | orderBy:'orderingDate'">
+      <!-- TODO: why are the months sorting correctly?? -->
+      <div ng-repeat="(month, events) in calendar">
         <div class="item item-darker item-divider">{{ formatMonth(month) }}</div>
         <a class="item item-thumbnail-left" 
            ng-repeat="event in events | orderBy:'orderingDate'" 

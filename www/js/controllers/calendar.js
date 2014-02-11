@@ -6,6 +6,7 @@ angular.module('frankie.controllers')
   // -------------------------------
   // Over-due calendar events
   $scope.overDue = [];
+
   // All future calendar events
   $scope.calendar = (function () {
     var events = [];
@@ -39,7 +40,7 @@ angular.module('frankie.controllers')
     });
 
     // Make Calendar:
-    // assign each event to a YYYY-MM property
+    // push each event to a YYYY-MM property
     for (var i = 0; i < events.length; i++) {
       var myEvent = events[i];
       // if date is before current date, add to $scope.overDue
@@ -48,8 +49,7 @@ angular.module('frankie.controllers')
         continue;
       }
 
-      // Add 1 to date to make up for javascript stupidity
-      // [YYYY, MM]
+      // Add 1 to date because of javascript stupidity (YYYY-MM+1)
       var date = myEvent.date.slice(0, -3).split('-');
       date[1] = String(parseInt(date[1]) + 1);
       date[1] = date[1].length === 1 ? '0' + date[1] : date[1];

@@ -2188,7 +2188,7 @@ infinite-scroll.active .scroll-infinite {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #E6E6E6;
+  background-color: #D4D4D4;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
@@ -2523,7 +2523,7 @@ a.subdued {
     .bar.bar-light .title {
       color: #444; }
   .bar.bar-stable {
-    background-color: #e6e6e6;
+    background-color: #d4d4d4;
     border-color: #b2b2b2;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
@@ -2656,7 +2656,7 @@ a.subdued {
 
 .bar-stable .button {
   color: #444;
-  background-color: #e6e6e6;
+  background-color: #d4d4d4;
   border-color: #b2b2b2; }
   .bar-stable .button:hover {
     color: #444;
@@ -2867,7 +2867,7 @@ a.subdued {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  background-color: #E6E6E6;
+  background-color: #D4D4D4;
   background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
   border-color: #b2b2b2;
   color: #444;
@@ -2882,7 +2882,7 @@ a.subdued {
   line-height: 49px; }
   .tabs .tab-item .badge {
     background-color: #444;
-    color: #E6E6E6; }
+    color: #D4D4D4; }
   .tabs.tabs-light {
     background-color: #fff;
     background-image: linear-gradient(0deg, #CACACA, #CACACA 50%, transparent 50%);
@@ -2892,13 +2892,13 @@ a.subdued {
       background-color: #444;
       color: #fff; }
   .tabs.tabs-stable {
-    background-color: #E6E6E6;
+    background-color: #D4D4D4;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     border-color: #b2b2b2;
     color: #444; }
     .tabs.tabs-stable .tab-item .badge {
       background-color: #444;
-      color: #E6E6E6; }
+      color: #D4D4D4; }
   .tabs.tabs-positive {
     background-color: #273552;
     background-image: linear-gradient(0deg, #0e141e, #0e141e 50%, transparent 50%);
@@ -3038,7 +3038,7 @@ a.subdued {
   .tab-item.active.tab-item-light, .tab-item:active.tab-item-light {
     color: #fff; }
   .tab-item.active.tab-item-stable, .tab-item:active.tab-item-stable {
-    color: #E6E6E6; }
+    color: #D4D4D4; }
   .tab-item.active.tab-item-positive, .tab-item:active.tab-item-positive {
     color: #273552; }
   .tab-item.active.tab-item-calm, .tab-item:active.tab-item-calm {
@@ -3204,7 +3204,7 @@ a.subdued {
     border-color: #CACACA; }
   .item.item-stable {
     color: #444;
-    background-color: #E6E6E6;
+    background-color: #D4D4D4;
     border-color: #b2b2b2; }
   .item.item-positive {
     color: #fff;
@@ -3550,7 +3550,7 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
   padding-top: 7.5px;
   padding-bottom: 7.5px;
   min-height: 30px;
-  background-color: #E6E6E6;
+  background-color: #D4D4D4;
   color: #222;
   font-weight: bold; }
 
@@ -3774,7 +3774,7 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
     background-color: #fff;
     color: #444; }
   .badge.badge-stable {
-    background-color: #E6E6E6;
+    background-color: #D4D4D4;
     color: #444; }
   .badge.badge-positive {
     background-color: #273552;
@@ -3904,7 +3904,7 @@ legend {
   font-size: 24px;
   line-height: 2.85714; }
   legend small {
-    color: #E6E6E6;
+    color: #D4D4D4;
     font-size: 1.07143; }
 
 label, input, button, select, textarea {
@@ -4102,7 +4102,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #c2c2c2; }
 
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
-  background-color: #E6E6E6;
+  background-color: #D4D4D4;
   cursor: not-allowed; }
 
 input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="radio"][readonly], input[type="checkbox"][readonly] {
@@ -4441,7 +4441,7 @@ input[type="range"] {
  */
 .button {
   color: #444;
-  background-color: #E6E6E6;
+  background-color: #D4D4D4;
   border-color: #b2b2b2;
   position: relative;
   display: inline-block;
@@ -4510,7 +4510,7 @@ input[type="range"] {
         box-shadow: none; }
   .button.button-stable {
     color: #444;
-    background-color: #E6E6E6;
+    background-color: #D4D4D4;
     border-color: #b2b2b2; }
     .button.button-stable:hover {
       color: #444;
@@ -5803,10 +5803,10 @@ a.button {
   border-color: #CACACA; }
 
 .stable, a.stable {
-  color: #E6E6E6; }
+  color: #D4D4D4; }
 
 .stable-bg {
-  background-color: #E6E6E6; }
+  background-color: #D4D4D4; }
 
 .stable-border {
   border-color: #b2b2b2; }
