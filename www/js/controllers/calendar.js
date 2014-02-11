@@ -38,7 +38,13 @@ angular.module('frankie.controllers')
     // Make Calendar:
     // assign each event to a YYYY-MM property
     events.forEach(function (myEvent) {
-      var date = myEvent.date.slice(0, -3);
+      // Add 1 to date to make up for javascript stupidity
+      // [YYYY, MM]
+      var date = myEvent.date.slice(0, -3).split('-');
+      date[1] = String(parseInt(date[1]) + 1);
+      date[1] = date[1].length === 1 ? '0' + date[1] : date[1];
+      date = date.join('-');
+
       calendar[date] = calendar[date] || [];
       calendar[date].push(myEvent);
     });
