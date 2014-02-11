@@ -5,7 +5,7 @@ angular.module('frankie.services')
   var projects = [
     {
       id: 0,
-      title: '1416 Bathroom Remodel',
+      title: 'Sallys Bathroom Remodel',
       price: 500,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
       start: '2014-01-15',
@@ -18,12 +18,12 @@ angular.module('frankie.services')
       },
       timeline: [
         {
-          title: 'milestone 1',
+          title: 'Remove Wallpaper',
           date: '2014-2-10',
         },
         {
-          title: 'milestone 2',
-          date: '2014-3-15',
+          title: 'Install New Toilets',
+          date: '2014-2-15',
         }
       ],
       user_id: 1,
@@ -31,7 +31,7 @@ angular.module('frankie.services')
     },
     {
       id: 1,
-      title: 'Kitchen Repair',
+      title: 'Johnson Kitchen Repair',
       price: 1500,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
       start: '2014-01-15',
@@ -44,11 +44,11 @@ angular.module('frankie.services')
       },
       timeline: [
         {
-          title: 'milestone 1',
+          title: 'Select new kitchen tiles',
           date: '2014-2-25',
         },
         {
-          title: 'milestone 2',
+          title: 'Replace cabinets',
           date: '2014-2-30',
         }
       ],
@@ -57,7 +57,7 @@ angular.module('frankie.services')
     },
     {
       id: 2,
-      title: 'Replace Cabinets',
+      title: 'Davids counter retile',
       price: 350,
       notes: '10x10 bathroom, there is a leak in the ceiling.',
       start: '2014-03-15',
@@ -70,11 +70,11 @@ angular.module('frankie.services')
       },
       timeline: [
         {
-          title: 'milestone 1',
-          date: '2014-2-10',
+          title: 'Take client to select tile colors',
+          date: '2014-1-29',
         },
         {
-          title: 'milestone 2',
+          title: 'Remove old kitchen tiles',
           date: '2014-2-12',
         }
       ],
