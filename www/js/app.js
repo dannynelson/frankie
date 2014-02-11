@@ -90,7 +90,8 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
 
     .state('main.account', {
       url: '/account',
-      templateUrl: 'templates/account.html'
+      templateUrl: 'templates/account.html',
+      controller: 'AccountCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback

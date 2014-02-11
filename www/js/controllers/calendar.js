@@ -1,12 +1,15 @@
 angular.module('frankie.controllers')
 
-.controller('CalendarCtrl', function($scope, $location, projects, moment) {
+.controller('CalendarCtrl', function($scope, $location, projects, moment, currentDate) {
 
   // Get Data
   // -------------------------------
-  $scope.events = (function () {
+  $scope.calendar = (function () {
     var events = [];
+    // object matching events to months
+    var calendar = {};
     
+    // Make Events:
     // go through each project, and extract the start, end, and milestone events
     projects.all().forEach(function (project) {
       var Event = function (title, date) {
@@ -14,8 +17,9 @@ angular.module('frankie.controllers')
         this.projectTitle = project.title,
         this.photo = project.photo,
         this.title = title,
+        // date formatted for moment.js
         this.date = date;
-        // format date so that angular formats it correctly
+        // date formatted so that angular orderBy sorts it correctly
         this.orderingDate = new Date(date);
       };
 
@@ -30,7 +34,16 @@ angular.module('frankie.controllers')
         });
       }
     });
-    return events;
+
+    // Make Calendar:
+    // assign each event to a YYYY-MM property
+    events.forEach(function (myEvent) {
+      var date = myEvent.date.slice(0, -3);
+      calendar[date] = calendar[date] || [];
+      calendar[date].push(myEvent);
+    });
+
+    return calendar;
   })();
 
   // Header
@@ -59,6 +72,7 @@ angular.module('frankie.controllers')
   // Methods
   // ---------------------------------
   $scope.fromNow = moment.fromNow;
+  $scope.formatMonth = moment.formatMonth;
 
 });
 

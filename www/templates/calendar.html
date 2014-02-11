@@ -11,15 +11,21 @@
 
     <list>
       <!-- Event List -->
-      <div class="item item-darker item-divider">Over Due</div>
-      <a class="item item-thumbnail-left" ng-repeat="event in events | orderBy:'orderingDate'" type="item-text-wrap" href="#/main/projects/{{event.projectId}}">
-        <img class="thumbnail" src="{{ event.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
-        <h2>{{ event.title }}</h2>
-        <p>
-          {{ event.projectTitle }}</br>
-          Due {{ fromNow(event.date) }}
-        </p>
-      </a>
+      <div ng-repeat="(month, events) in calendar | orderBy:'orderingDate'">
+        <div class="item item-darker item-divider">{{ formatMonth(month) }}</div>
+        <a class="item item-thumbnail-left" 
+           ng-repeat="event in events | orderBy:'orderingDate'" 
+           type="item-text-wrap" 
+           href="#/main/projects/{{event.projectId}}">
+
+          <img class="thumbnail" src="{{ event.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
+          <h2>{{ event.title }}</h2>
+          <p>
+            {{ event.projectTitle }}</br>
+            Due {{ fromNow(event.date) }}
+          </p>
+        </a>
+      <div>
     </list>
   </content>
 </view>
