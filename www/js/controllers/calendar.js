@@ -4,11 +4,14 @@ angular.module('frankie.controllers')
 
   // Get Data
   // -------------------------------
+  // Over-due calendar events
+  $scope.overDue = [];
+  // All future calendar events
   $scope.calendar = (function () {
     var events = [];
     // object matching events to months
     var calendar = {};
-    
+
     // Make Events:
     // go through each project, and extract the start, end, and milestone events
     projects.all().forEach(function (project) {
@@ -37,7 +40,14 @@ angular.module('frankie.controllers')
 
     // Make Calendar:
     // assign each event to a YYYY-MM property
-    events.forEach(function (myEvent) {
+    for (var i = 0; i < events.length; i++) {
+      var myEvent = events[i];
+      // if date is before current date, add to $scope.overDue
+      if (myEvent.date < currentDate) {
+        $scope.overDue.push(myEvent);
+        continue;
+      }
+
       // Add 1 to date to make up for javascript stupidity
       // [YYYY, MM]
       var date = myEvent.date.slice(0, -3).split('-');
@@ -47,7 +57,7 @@ angular.module('frankie.controllers')
 
       calendar[date] = calendar[date] || [];
       calendar[date].push(myEvent);
-    });
+    }
 
     return calendar;
   })();
