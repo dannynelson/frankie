@@ -5,7 +5,6 @@ angular.module('frankie.controllers')
   // Get Data
   // -------------------------------
   $scope.projects = projects.all();
-
   // Header
   // -------------------------------
   $scope.title = 'Projects';

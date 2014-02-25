@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, currentProject, projects) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, $rootScope, currentProject, projects, archives) {
   
   // Get Data
   // -------------------------------
@@ -36,6 +36,15 @@ angular.module('frankie.controllers')
   // address is address to be contacted
   $scope.contact = function (method, address) {
     window.location.href = method + ':' + address;
+  };
+
+  $scope.completeProject = function (project) {
+    // save project to archives
+    project.completed = true;
+    archives.add(project);
+    // delete project by ID from collection
+    projects.remove(project.id);
+    $rootScope.$viewHistory.backView.go();
   };
 
 });

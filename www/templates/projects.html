@@ -16,12 +16,16 @@
       </div>
 
       <!-- Project List -->
-      <a class="item item-thumbnail-left" ng-repeat="project in projects | filter:liveSearch" type="item-text-wrap" href="#/main/projects/{{project.id}}">
+      <a class="item item-thumbnail-left" 
+         ng-repeat="project in projects | filter:liveSearch" 
+         type="item-text-wrap" 
+         href="#/main/projects/{{project.id}}">
         <img class="thumbnail" src="{{ project.photo }}">
         <h2>{{ project.title }}</h2>
         <p>
           ${{ project.price }}</br>
-          Due {{ project.end | moment.fromNow }}
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">Due {{ project.end | moment.fromNow }}</span>
         </p>
       </a>
     </list>

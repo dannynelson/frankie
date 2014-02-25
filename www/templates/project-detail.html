@@ -18,7 +18,8 @@
         <h2>{{ project.title }}</h2>
         <p>
           ${{ project.price }}</br>
-          {{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">{{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}</span>
         </p>
       </div>
       <div class="padding paragraph-item">
@@ -65,6 +66,13 @@
           </a>
         </list>
       </div>
+      
+      <!-- Complete Project -->
+      <button type="submit"
+              class="button button-full button-light assertive-text"
+              ng-click="completeProject(project)">
+        Complete Project
+      </button>
       
     </list>
   </content>

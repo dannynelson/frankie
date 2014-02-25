@@ -98,7 +98,7 @@ angular.module('frankie.services')
     update: function (project) {
       // Search through projects, and replace one with matching ID
       for (var i = 0; i < projects.length; i++) {
-        if (project.id = projects[i].id) {
+        if (project.id === projects[i].id) {
           projects[i] = project;
           return;
         }
@@ -112,12 +112,10 @@ angular.module('frankie.services')
       newProject.id = projects.length;
       projects.push(newProject);
     },
-    update: function (newProject) {
-      // test if project exists
+    remove: function (projectId) {
       for (var i = 0; i < projects.length; i++) {
-        if (project.id === newProject.id) {
-          project = newProject;
-          return;
+        if (projectId === projects[i].id) {
+          projects.splice(i, 1);
         }
       }
     }

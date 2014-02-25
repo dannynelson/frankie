@@ -1,20 +1,17 @@
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
+// TODO: navigation helper for going to pages and goinb back
+
 angular.module('frankie.controllers', []);
 angular.module('frankie.services', []);
+angular.module('frankie.directives', []);
 angular.module('frankie.filters', []);
-angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers', 'frankie.filters'])
+angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers', 'frankie.directives', 'frankie.filters'])
 
 
-// Configuration Code
+// States
 // ==================================
 
 .config(function($stateProvider, $urlRouterProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
+  
   $stateProvider
 
     // Signin/Signup
@@ -49,6 +46,12 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       url: '/projects',
       templateUrl: 'templates/projects.html',
       controller: 'ProjectsCtrl'
+    })
+
+    .state('main.archives', {
+      url: '/archives',
+      templateUrl: 'templates/projects.html',
+      controller: 'ArchivesCtrl'
     })
     
     .state('main.calendar', {
@@ -101,7 +104,7 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
 })
 
 
-// Initialization Code
+// Initialize
 // ==================================
 
 .run(function($ionicPlatform) {

@@ -8,14 +8,13 @@
       hide-back-button="true">
 
   <content has-header="true" class="darker-bg">
-
     <list>
       <!-- Over Due Events -->
       <div class="item item-darker item-divider">Over Due</div>
       <a class="item item-thumbnail-left" 
          ng-repeat="event in overDue | orderBy:'orderingDate'" 
          type="item-text-wrap" 
-         href="#/main/projects/{{event.projectId}}">
+         href="#/main/projects/{{ event.projectId }}">
 
         <img class="thumbnail" src="{{ event.photo }}">
         <h2>{{ event.title }}</h2>
@@ -44,4 +43,5 @@
       <div>
     </list>
   </content>
+
 </view>
