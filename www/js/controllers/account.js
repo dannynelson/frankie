@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('AccountCtrl', function($scope, $location, projects, moment) {
+.controller('AccountCtrl', function($scope) {
 
   // Header
   // -------------------------------

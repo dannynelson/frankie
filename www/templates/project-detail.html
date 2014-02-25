@@ -18,7 +18,7 @@
         <h2>{{ project.title }}</h2>
         <p>
           ${{ project.price }}</br>
-          {{ format(project.start) }} - {{ format(project.end) }}
+          {{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}
         </p>
       </div>
       <div class="padding paragraph-item">
@@ -60,7 +60,7 @@
             <img 
             ng-src="{{ milestone.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
             <h2>{{ milestone.title }}</h2>
-            <p ng-hide="milestone.completed">Due {{ fromNow(milestone.date) }}</p>
+            <p ng-hide="milestone.completed">Due {{ milestone.date | moment.fromNow }}</p>
             <p ng-show="milestone.completed">Completed</p>
           </a>
         </list>

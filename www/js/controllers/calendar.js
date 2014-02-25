@@ -1,10 +1,11 @@
 angular.module('frankie.controllers')
 
-.controller('CalendarCtrl', function($scope, $location, calendar, moment) {
+.controller('CalendarCtrl', function($scope, $location, calendar) {
 
   // Get Data
   // -------------------------------
   // Over-due calendar events
+  var calendar = calendar.create();
   $scope.overDue = calendar.overDue;
   $scope.calendar = calendar.upcoming;
 
@@ -30,11 +31,6 @@ angular.module('frankie.controllers')
       }
     }
   ];
-
-  // Methods
-  // ---------------------------------
-  $scope.fromNow = moment.fromNow;
-  $scope.formatMonth = moment.formatMonth;
 
 });
 

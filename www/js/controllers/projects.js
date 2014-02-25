@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('ProjectsCtrl', function($scope, $location, projects, moment) {
+.controller('ProjectsCtrl', function($scope, $location, projects) {
 
   // Get Data
   // -------------------------------
@@ -33,10 +33,6 @@ angular.module('frankie.controllers')
       }
     }
   ];
-
-  // Methods
-  // ---------------------------------
-  $scope.fromNow = moment.fromNow;
 
 });
 

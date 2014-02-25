@@ -2,7 +2,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('frankie.controllers', []);
 angular.module('frankie.services', []);
-angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers'])
+angular.module('frankie.filters', []);
+angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.controllers', 'frankie.filters'])
 
 
 // Configuration Code

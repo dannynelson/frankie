@@ -1,6 +1,6 @@
 angular.module('frankie.controllers')
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, currentProject, projects, moment) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, currentProject, projects) {
   
   // Get Data
   // -------------------------------
@@ -37,11 +37,5 @@ angular.module('frankie.controllers')
   $scope.contact = function (method, address) {
     window.location.href = method + ':' + address;
   };
-
-  // abbreviate dates in project overview
-  $scope.format = moment.format;
-
-  // convert to date from now in timeline
-  $scope.fromNow = moment.fromNow;
 
 });
