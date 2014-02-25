@@ -10,6 +10,7 @@
     
     <list>
       <!-- Milestone List -->
+      <!-- TODO: this orderBy could provide unusual UX  -->
       <div ng-repeat="milestone in timeline | orderBy:'date'">
         <div class="item item-divider">Milestone {{ $index + 1 }}</div>
         <label class="item item-input">
