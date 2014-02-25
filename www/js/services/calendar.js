@@ -36,8 +36,7 @@ angular.module('frankie.services')
       }
     });
 
-    // Make Calendar:
-    // push each event to a YYYY-MM property
+    // Make Calendar: { YYYY-MM: [array of events] }
     for (var i = 0; i < events.length; i++) {
       var myEvent = events[i];
       // if date is before current date, add to overDue

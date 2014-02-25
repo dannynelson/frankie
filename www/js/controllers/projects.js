@@ -8,11 +8,6 @@ angular.module('frankie.controllers')
   // Header
   // -------------------------------
   $scope.title = 'Projects';
-  // $scope.titleButtons =
-  //   '<div class="button-bar">\
-  //     <a class="button">Projects</a>\
-  //     <a class="button">Calendar</a>\
-  //   </div>';
   $scope.leftButtons = [
     {
       type: 'button-icon button-clear button-assertive',

@@ -14,7 +14,7 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
   
   $stateProvider
 
-    // Signin/Signup
+    // Signin Signup Views
     // ------------------------------
     .state('signin', {
       url: "/signin",
@@ -30,22 +30,25 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       controller: 'SignupCtrl'
     })
 
-    // Main Section
+    // Side Tabs Views
     // ------------------------------
-    // setup an abstract state for the side menu directive
+    // setup an abstract state for the side menu
     .state('main', {
       url: "/main",
-      // abstract means we can never directly activate this template, it is just a wrapper for other templates
       abstract: true,
       templateUrl: "templates/main.html"
     })
 
-    // the pet tab has its own child nav-view and history
-    // the dot notation indicates that it is a child
     .state('main.projects', {
       url: '/projects',
       templateUrl: 'templates/projects.html',
       controller: 'ProjectsCtrl'
+    })
+
+    .state('main.calendar', {
+      url: '/calendar',
+      templateUrl: 'templates/calendar.html',
+      controller: 'CalendarCtrl'
     })
 
     .state('main.archives', {
@@ -53,14 +56,21 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       templateUrl: 'templates/projects.html',
       controller: 'ArchivesCtrl'
     })
-    
-    .state('main.calendar', {
-      url: '/calendar',
-      templateUrl: 'templates/calendar.html',
-      controller: 'CalendarCtrl'
+
+    .state('main.help', {
+      url: '/help',
+      templateUrl: 'templates/help.html',
+      controller: 'HelpCtrl'
     })
 
-    // Creating and editing projects
+    .state('main.account', {
+      url: '/account',
+      templateUrl: 'templates/account.html',
+      controller: 'AccountCtrl'
+    })
+
+    // Sub Views
+    // ------------------------------
     .state('main.project-detail', {
       url: '/projects/:id',
       templateUrl: 'templates/project-detail.html',
@@ -68,16 +78,10 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
     })
 
     .state('main.new-project', {
-      // add type to specify edit mode
+      // add type to specify edit/new
       url: '/new-project/:type',
       templateUrl: 'templates/new-project.html',
       controller: 'NewProjectCtrl'
-    })
-
-    .state('main.new-client', {
-      url: '/new-client',
-      templateUrl: 'templates/new-client.html',
-      controller: 'NewClientCtrl'
     })
 
     .state('main.new-timeline', {
@@ -90,12 +94,6 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       url: '/new-milestone/:id',
       templateUrl: 'templates/new-milestone.html',
       controller: 'NewMilestoneCtrl'
-    })
-
-    .state('main.account', {
-      url: '/account',
-      templateUrl: 'templates/account.html',
-      controller: 'AccountCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
@@ -104,7 +102,7 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
 })
 
 
-// Initialize
+// Initialization
 // ==================================
 
 .run(function($ionicPlatform) {

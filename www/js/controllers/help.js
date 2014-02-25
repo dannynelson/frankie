@@ -1,14 +1,10 @@
 angular.module('frankie.controllers')
 
-.controller('ArchivesCtrl', function($scope, $location, archives) {
-
-  // Get Data
-  // -------------------------------
-  $scope.projects = archives.all();
+.controller('HelpCtrl', function($scope) {
 
   // Header
   // -------------------------------
-  $scope.title = 'Archives';
+  $scope.title = 'Help';
   $scope.leftButtons = [{
     type: 'button-icon button-clear button-assertive',
     content: '<i class="icon ion-navicon"></i>',
@@ -19,3 +15,5 @@ angular.module('frankie.controllers')
   $scope.rightButtons = [];
 
 });
+
+
