@@ -30,7 +30,7 @@ angular.module('frankie', ['ionic', 'ngTouch', 'frankie.services', 'frankie.cont
       controller: 'SignupCtrl'
     })
 
-    // Main Views (includes navbar, and sidemenu)
+    // Side Tabs Views
     // ------------------------------
     // setup an abstract state for the side menu
     .state('main', {

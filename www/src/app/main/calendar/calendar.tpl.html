@@ -1,0 +1,47 @@
+<!--
+  Index of all active projects
+  This template loads for the 'main.projects' state (app.js)
+-->
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <content has-header="true" class="darker-bg">
+    <list>
+      <!-- Over Due Events -->
+      <div class="item item-darker item-divider">Over Due</div>
+      <a class="item item-thumbnail-left" 
+         ng-repeat="event in overDue | orderBy:'orderingDate'" 
+         type="item-text-wrap" 
+         href="#/main/projects/{{ event.projectId }}">
+
+        <img class="thumbnail" src="{{ event.photo }}">
+        <h2>{{ event.title }}</h2>
+        <p>
+          {{ event.projectTitle }}</br>
+          Due {{ event.date | moment.fromNow }}
+        </p>
+      </a>
+
+      <!-- Future Events Calendar -->
+      <!-- TODO: why are the months sorting correctly?? -->
+      <div ng-repeat="(month, events) in calendar">
+        <div class="item item-darker item-divider">{{ month | moment.formatLong }}</div>
+        <a class="item item-thumbnail-left" 
+           ng-repeat="event in events | orderBy:'orderingDate'" 
+           type="item-text-wrap" 
+           href="#/main/projects/{{event.projectId}}">
+
+          <img class="thumbnail" src="{{ event.photo }}">
+          <h2>{{ event.title }}</h2>
+          <p>
+            {{ event.projectTitle }}</br>
+            Due {{ event.date | moment.fromNow }}
+          </p>
+        </a>
+      <div>
+    </list>
+  </content>
+
+</view>

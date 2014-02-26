@@ -1,0 +1,29 @@
+<!--
+  Detailed view of project displaying project overview, client info, and timeline.
+  This template loads for the 'main.new-timeline' state (app.js)
+-->
+<view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+
+  <content has-header="true">
+    
+    <list>
+      <!-- Milestone List -->
+      <!-- TODO: this orderBy could provide unusual UX  -->
+      <div ng-repeat="milestone in timeline | orderBy:'date'">
+        <div class="item item-divider">Milestone {{ $index + 1 }}</div>
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input ng-model="milestone.title" type="text" placeholder="Milestone">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input ng-model="milestone.date" type="date">
+        </label>
+      </div>
+    </list>
+      
+  </content>
+
+</view>
