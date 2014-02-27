@@ -1,24 +1,19 @@
 // TODO: navigation helper for going to pages and goinb back
 
-// angular.module('frankie.controllers', []);
-// angular.module('frankie.services', []);
-// angular.module('frankie.directives', []);
-// angular.module('frankie.filters', []);
 angular.module('frankie', [
+  'templates-app',
+  'templates-common',
   'ionic',
-  // 'ngTouch',
-  'frankie.signin'
-  // 'frankie.main',
-  // 'frankie.controllers',
-  // 'frankie.directives',
-  // 'frankie.filters'
+  'frankie.signin',
+  'frankie.signup',
+  'frankie.main'
 ])
 
 
 // States
 // ==================================
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($urlRouterProvider) {
   
   // $stateProvider
 

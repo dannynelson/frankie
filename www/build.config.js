@@ -20,15 +20,13 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: [ 'src/app/app.js', 'src/app/signin/signin.js'],
-    // js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
+    js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
     jsunit: [ 'src/**/*.spec.js' ],
     
     coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
     coffeeunit: [ 'src/**/*.spec.coffee' ],
 
-    atpl: [ 'src/app/signin/signin.tpl.html' ],
-    // atpl: [ 'src/app/**/*.tpl.html' ],
+    atpl: [ 'src/app/**/*.tpl.html' ],
     ctpl: [ 'src/common/**/*.tpl.html' ],
 
     html: [ 'src/index.html' ],
@@ -67,12 +65,14 @@ module.exports = {
       'vendor/js/ionic.js',
       'vendor/js/angular/angular.js',
       'vendor/js/ionic-angular.js',
+      'vendor/js/moment.min.js',
       'vendor/js/**/*.js', '!vendor/js/**/*.min.js'
     ],
     css: [
-      'vendor/css/*.css'
+      'vendor/css/ionic.css'
     ],
-    assets: [
+    assets: [],
+    fonts: [
       'vendor/fonts/ionicons.*'
     ]
   },

@@ -1,4 +1,4 @@
-angular.module('frankie.services')
+angular.module('resources.archives', [])
 
 .factory('archives', function() {
   var archives = [];
