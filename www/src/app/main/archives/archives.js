@@ -8,7 +8,7 @@ angular.module('frankie.main.archives', ['frankie.main', 'resources.projects'])
     controller: 'ArchivesCtrl',
     resolve: {
       archives: function (Projects) {
-        return Projects.getArchives();
+        return Projects.archives();
       }
     }
   });
@@ -18,18 +18,10 @@ angular.module('frankie.main.archives', ['frankie.main', 'resources.projects'])
 
   // Get Data
   // -------------------------------
-  $scope.projects = archives.all();
+  $scope.projects = archives;
 
   // Header
   // -------------------------------
   $scope.title = 'Archives';
-  $scope.leftButtons = [{
-    type: 'button-icon button-clear button-assertive',
-    content: '<i class="icon ion-navicon"></i>',
-    tap: function(e) {
-      $scope.sideMenuController.toggleLeft();
-    }
-  }];
-  $scope.rightButtons = [];
 
 });

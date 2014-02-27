@@ -19,20 +19,11 @@ angular.module('frankie.main.projects', ['frankie.main', 'resources.projects', '
 
   // Get Data
   // -------------------------------
-  $scope.projects = Projects.all();
+  $scope.projects = projects;
 
   // Header
   // -------------------------------
   $scope.title = 'Projects';
-  $scope.leftButtons = [
-    {
-      type: 'button-icon button-clear button-assertive',
-      content: '<i class="icon ion-navicon"></i>',
-      tap: function(e) {
-        $scope.sideMenuController.toggleLeft();
-      }
-    }
-  ];
   $scope.rightButtons = [
     {
       type: 'button-icon button-clear button-assertive',

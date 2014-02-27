@@ -1,34 +1,35 @@
-angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 'resources.currentProject'])
+angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 'resources.currentProject', 'resources.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
     url: '/projects/:id',
     templateUrl: 'main/project-detail/project-detail.tpl.html',
-    controller: 'ProjectDetailCtrl'
+    controller: 'ProjectDetailCtrl',
+    resolve: {
+      project: function (Projects, $stateParams, currentProject) {
+        var project = Projects.get($stateParams.id);
+        currentProject.create(project);
+        return project;
+      }
+    }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $location, $rootScope, currentProject, projects, archives) {
+.controller('ProjectDetailCtrl', function($scope, $location, $rootScope, project) {
   
-  // Get Data
-  // -------------------------------
-  $scope.project = projects.get($stateParams.id);
-  // set currentProject, so that related views can reference the same object
-  currentProject.create($scope.project);
+  $scope.project = project;
 
   // Header
   // -------------------------------
   $scope.title = $scope.project.title;
   $scope.leftButtons = [];
-  $scope.rightButtons = [
-    {
-      type: 'button-clear button-assertive',
-      content: '<button>edit</button>',
-      tap: function(e) {
-        $location.url('/main/new-project/edit');
-      }
+  $scope.rightButtons = [{
+    type: 'button-clear button-assertive',
+    content: '<button>edit</button>',
+    tap: function(e) {
+      $location.url('/main/new-project/edit');
     }
-  ];
+  }];
 
   // Listeners
   // -------------------------------
@@ -49,9 +50,7 @@ angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 
   $scope.completeProject = function (project) {
     // save project to archives
     project.completed = true;
-    archives.add(project);
     // delete project by ID from collection
-    projects.remove(project.id);
     $rootScope.$viewHistory.backView.go();
   };
 
