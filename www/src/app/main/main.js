@@ -1,4 +1,4 @@
-angular.module('frankie.main', ['frankie.main.projects'])
+angular.module('frankie.main', [])
 
 .config(function($stateProvider) {
   $stateProvider.state('main', {

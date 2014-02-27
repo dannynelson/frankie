@@ -1,4 +1,12 @@
-angular.module('frankie.controllers')
+angular.module('frankie.main.newTimeline', ['frankie.main'])
+
+.config(function($stateProvider) {
+  $stateProvider.state('main.newTimeline', {
+    url: '/new-timeline',
+    templateUrl: 'main/new-timeline/new-timeline.tpl.html',
+    controller: 'NewTimelineCtrl'
+  });
+})
 
 .controller('NewTimelineCtrl', function($scope, $location, currentProject, currentDate) {
   

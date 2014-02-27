@@ -1,4 +1,12 @@
-angular.module('frankie.controllers')
+angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment'])
+
+.config(function($stateProvider) {
+  $stateProvider.state('main.projectDetail', {
+    url: '/projects/:id',
+    templateUrl: 'main/project-detail/project-detail.tpl.html',
+    controller: 'ProjectDetailCtrl'
+  });
+})
 
 .controller('ProjectDetailCtrl', function($scope, $stateParams, $location, $rootScope, currentProject, projects, archives) {
   

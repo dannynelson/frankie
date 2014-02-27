@@ -1,4 +1,12 @@
-angular.module('frankie.controllers')
+angular.module('frankie.main.calendar', ['frankie.main'])
+
+.config(function($stateProvider) {
+  $stateProvider.state('main.calendar', {
+    url: '/calendar',
+    templateUrl: 'main/calendar/calendar.tpl.html',
+    controller: 'CalendarCtrl'
+  });
+})
 
 .controller('CalendarCtrl', function($scope, $location, makeCalendar) {
 

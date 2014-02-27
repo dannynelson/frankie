@@ -1,4 +1,12 @@
-angular.module('frankie.controllers')
+angular.module('frankie.main.newMilestone', ['frankie.main'])
+
+.config(function($stateProvider) {
+  $stateProvider.state('main.newMilestone', {
+    url: '/new-milestone/:id',
+    templateUrl: 'main/new-milestone/new-milestone.tpl.html',
+    controller: 'NewMilestoneCtrl'
+  });
+})
 
 .controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, photo, currentProject) {
   

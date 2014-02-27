@@ -1,4 +1,4 @@
-angular.module('frankie.signin', ['ionic'])
+angular.module('frankie.signin', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('signin', {

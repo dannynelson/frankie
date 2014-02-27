@@ -1,3 +1,3 @@
 angular.module('resources.user', [])
 
-.factory('user', function() {});
+.factory('User', function() {});

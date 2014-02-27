@@ -1,115 +1,36 @@
 // TODO: navigation helper for going to pages and goinb back
+// TODO: new project related files in separate template
+// TODO: shared controller between projects/archives/calendar?
+// TODO: shared template between projects and archives
+// TODO: auto load template url with tpl.js
+// TODO: autoload title and buttons into each controller with state
 
 angular.module('frankie', [
+  // app-wide dependencies
+  'ionic',
   'templates-app',
   'templates-common',
-  'ionic',
+
+  // app modules
   'frankie.signin',
   'frankie.signup',
-  'frankie.main'
+  'frankie.main.projects',
+  'frankie.main.calendar',
+  'frankie.main.archives',
+  'frankie.main.help',
+  'frankie.main.account',
+  'frankie.main.projectDetail',
+  'frankie.main.newMilestone',
+  'frankie.main.newProject',
+  'frankie.main.newTimeline'
 ])
 
-
-// States
-// ==================================
-
 .config(function($urlRouterProvider) {
-  
-  // $stateProvider
-
-    // Signin Signup Views
-    // ------------------------------
-    // .state('signin', {
-    //   url: "/signin",
-    //   // abstract means we can never directly activate this template, it is just a wrapper for other templates
-    //   templateUrl: 'templates/signin.html',
-    //   controller: 'SigninCtrl'
-    // })
-
-    // .state('signup', {
-    //   url: "/signup",
-    //   // abstract means we can never directly activate this template, it is just a wrapper for other templates
-    //   templateUrl: 'templates/signup.html',
-    //   controller: 'SignupCtrl'
-    // })
-
-    // Side Tabs Views
-    // ------------------------------
-    // setup an abstract state for the side menu
-    // .state('main', {
-    //   url: "/main",
-    //   abstract: true,
-    //   templateUrl: "templates/main.html"
-    // })
-
-    // .state('main.projects', {
-    //   url: '/projects',
-    //   templateUrl: 'templates/projects.html',
-    //   controller: 'ProjectsCtrl'
-    // })
-
-    // .state('main.calendar', {
-    //   url: '/calendar',
-    //   templateUrl: 'templates/calendar.html',
-    //   controller: 'CalendarCtrl'
-    // })
-
-    // .state('main.archives', {
-    //   url: '/archives',
-    //   templateUrl: 'templates/projects.html',
-    //   controller: 'ArchivesCtrl'
-    // })
-
-    // .state('main.help', {
-    //   url: '/help',
-    //   templateUrl: 'templates/help.html',
-    //   controller: 'HelpCtrl'
-    // })
-
-    // .state('main.account', {
-    //   url: '/account',
-    //   templateUrl: 'templates/account.html',
-    //   controller: 'AccountCtrl'
-    // })
-
-    // // Sub Views
-    // // ------------------------------
-    // .state('main.project-detail', {
-    //   url: '/projects/:id',
-    //   templateUrl: 'templates/project-detail.html',
-    //   controller: 'ProjectDetailCtrl'
-    // })
-
-    // .state('main.new-project', {
-    //   // add type to specify edit/new
-    //   url: '/new-project/:type',
-    //   templateUrl: 'templates/new-project.html',
-    //   controller: 'NewProjectCtrl'
-    // })
-
-    // .state('main.new-timeline', {
-    //   url: '/new-timeline',
-    //   templateUrl: 'templates/new-timeline.html',
-    //   controller: 'NewTimelineCtrl'
-    // })
-
-    // .state('main.milestone', {
-    //   url: '/new-milestone/:id',
-    //   templateUrl: 'templates/new-milestone.html',
-    //   controller: 'NewMilestoneCtrl'
-    // });
-
-  // if none of the above states are matched, use this as the fallback
+  // if no state is matched, go to signin
   $urlRouterProvider.otherwise('/signin');
-
 })
 
-
-// Initialization
-// ==================================
-
 .run(function($ionicPlatform) {
-
   // change status bar to light color
   $ionicPlatform.ready(function() {
     StatusBar.styleLightContent();

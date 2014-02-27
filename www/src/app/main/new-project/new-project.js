@@ -1,6 +1,14 @@
 // TODO: create a separate state for this not in main
+angular.module('frankie.main.newProject', ['frankie.main'])
 
-angular.module('frankie.controllers')
+.config(function($stateProvider) {
+  $stateProvider.state('main.newProject', {
+    // add type to specify edit/new
+    url: '/new-project/:type',
+    templateUrl: 'main/new-project/new-project.tpl.html',
+    controller: 'NewProjectCtrl'
+  });
+})
 
 .controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, projects, currentProject, photo) {
   

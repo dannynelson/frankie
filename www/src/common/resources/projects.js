@@ -1,6 +1,6 @@
 angular.module('resources.projects', [])
 
-.factory('projects', function() {
+.factory('Projects', function() {
   // Some fake testing data
   var projects = [
     {
@@ -88,6 +88,9 @@ angular.module('resources.projects', [])
 
   return {
     all: function () {
+      return projects;
+    },
+    archives: function () {
       return projects;
     },
     add: function (project) {
