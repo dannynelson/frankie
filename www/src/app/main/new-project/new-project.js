@@ -1,5 +1,5 @@
 // TODO: create a separate state for this not in main
-angular.module('frankie.main.newProject', ['frankie.main'])
+angular.module('frankie.main.newProject', ['frankie.main', 'services.photo', 'resources.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newProject', {
@@ -10,7 +10,7 @@ angular.module('frankie.main.newProject', ['frankie.main'])
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, projects, currentProject, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Projects, currentProject, photo) {
   
   // Get Data
   // ----------------------------
@@ -47,14 +47,14 @@ angular.module('frankie.main.newProject', ['frankie.main'])
 
   // Methods
   // ----------------------------
-  // save current project to projects collection
+  // save current project to Projects collection
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
     if ($stateParams.type === 'new') {
-      projects.add(project);
+      Projects.add(project);
     } else if ($scope.mode === 'edit') {
-      projects.update(project);
+      Projects.update(project);
     }
     currentProject.clear();
     $rootScope.$viewHistory.backView.go();

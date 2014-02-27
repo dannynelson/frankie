@@ -1,4 +1,4 @@
-angular.module('frankie.services')
+angular.module('resources.currentProject', [])
 
 .factory('currentProject', function(currentDate) {
   

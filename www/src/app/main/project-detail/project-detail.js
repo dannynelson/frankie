@@ -1,4 +1,4 @@
-angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment'])
+angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 'resources.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {

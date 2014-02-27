@@ -1,7 +1,7 @@
 // TODO: only add new events when created, don't completely reload calendar each time
-angular.module('frankie.services')
+angular.module('services.makeCalendar', ['services.currentDate', 'resources.projects'])
 
-.factory('makeCalendar', function(projects, currentDate) {
+.factory('makeCalendar', function(Projects, currentDate) {
   
   // Create a calendar from all project events
   var create = function () {
@@ -13,7 +13,7 @@ angular.module('frankie.services')
     var overDue = [];
 
     // Make Events:
-    projects.all().forEach(function (project) {
+    Projects.all().forEach(function (project) {
       // Class for creating events
       var Event = function (title, date) {
         this.projectId = project.id,

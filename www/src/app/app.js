@@ -8,6 +8,7 @@
 angular.module('frankie', [
   // app-wide dependencies
   'ionic',
+  // 'ngClick',
   'templates-app',
   'templates-common',
 

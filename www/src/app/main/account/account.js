@@ -1,4 +1,4 @@
-angular.module('frankie.main.account', ['frankie.main'])
+angular.module('frankie.main.account', ['frankie.main', 'resources.user'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.account', {
@@ -8,7 +8,7 @@ angular.module('frankie.main.account', ['frankie.main'])
   });
 })
 
-.controller('AccountCtrl', function($scope, user) {
+.controller('AccountCtrl', function($scope, User) {
 
   // Header
   // -------------------------------

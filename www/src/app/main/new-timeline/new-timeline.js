@@ -1,4 +1,4 @@
-angular.module('frankie.main.newTimeline', ['frankie.main'])
+angular.module('frankie.main.newTimeline', ['frankie.main', 'resources.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newTimeline', {
