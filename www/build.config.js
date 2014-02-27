@@ -66,6 +66,7 @@ module.exports = {
     js: [
       'vendor/js/ionic.js',
       'vendor/js/angular/angular.js',
+      'vendor/js/ionic-angular.js',
       'vendor/js/**/*.js', '!vendor/js/**/*.min.js'
     ],
     css: [
