@@ -1,3 +1,5 @@
+// TODO: create a separate state for this not in main
+
 angular.module('frankie.controllers')
 
 .controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, $ionicActionSheet, $location, projects, currentProject, photo) {

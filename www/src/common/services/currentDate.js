@@ -1,4 +1,4 @@
-angular.module('frankie.services')
+angular.module('services.currentDate', [])
 
 .factory('currentDate', function() {
   // generate current date

@@ -10,7 +10,7 @@ angular.module('frankie.services')
     add: function (project) {
       // Test to see if project exists
       archives.push(project);
-    },
+    }
     // update: function (project) {
     //   // Search through archives, and replace one with matching ID
     //   for (var i = 0; i < archives.length; i++) {

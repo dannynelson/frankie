@@ -1,4 +1,4 @@
-angular.module('frankie.services')
+angular.module('services.photo', [])
 
 .factory('photo', function($ionicActionSheet) {
   
@@ -27,7 +27,7 @@ angular.module('frankie.services')
       // The various non-destructive button choices
       buttons: [
         { text: 'Take Photo' },
-        { text: 'Choose Existing' },
+        { text: 'Choose Existing' }
       ],
 
       // The text of the cancel button
@@ -47,7 +47,7 @@ angular.module('frankie.services')
           getPhoto('PHOTOLIBRARY', onSuccess);
         }
         return true;
-      },
+      }
     });
   };
 

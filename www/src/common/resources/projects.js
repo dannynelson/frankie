@@ -1,4 +1,4 @@
-angular.module('frankie.services')
+angular.module('resources.projects', [])
 
 .factory('projects', function() {
   // Some fake testing data
@@ -19,11 +19,11 @@ angular.module('frankie.services')
       timeline: [
         {
           title: 'Remove Wallpaper',
-          date: '2014-2-10',
+          date: '2014-2-10'
         },
         {
           title: 'Install New Toilets',
-          date: '2014-2-15',
+          date: '2014-2-15'
         }
       ],
       user_id: 1,
@@ -46,11 +46,11 @@ angular.module('frankie.services')
       timeline: [
         {
           title: 'Select new kitchen tiles',
-          date: '2014-2-25',
+          date: '2014-2-25'
         },
         {
           title: 'Replace cabinets',
-          date: '2014-2-30',
+          date: '2014-2-30'
         }
       ],
       user_id: 1,
@@ -73,11 +73,11 @@ angular.module('frankie.services')
       timeline: [
         {
           title: 'Take client to select tile colors',
-          date: '2014-1-29',
+          date: '2014-1-29'
         },
         {
           title: 'Remove old kitchen tiles',
-          date: '2014-2-12',
+          date: '2014-2-12'
         }
       ],
       user_id: 1,

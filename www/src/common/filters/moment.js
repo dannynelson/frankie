@@ -1,5 +1,5 @@
 // all dates should be in YYYY-MM-DD format
-angular.module('frankie.filters')
+angular.module('filters.moment', [])
 
 // converts to time from now, e.g. in a month
 .filter('moment.fromNow', function() {

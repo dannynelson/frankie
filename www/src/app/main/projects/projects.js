@@ -1,10 +1,21 @@
-angular.module('frankie.controllers')
+// TODO: lazy load the template directories
+
+angular.module('frankie.main.projects', ['resources.projects', 'filters.moment'])
+
+.config(function($stateProvider) {
+  $stateProvider.state('main.projects', {
+    url: '/projects',
+    templateUrl: 'main/projects/projects.tpl.html',
+    controller: 'ProjectsCtrl'
+  });
+})
 
 .controller('ProjectsCtrl', function($scope, $location, projects) {
 
   // Get Data
   // -------------------------------
   $scope.projects = projects.all();
+
   // Header
   // -------------------------------
   $scope.title = 'Projects';

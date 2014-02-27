@@ -1,7 +1,7 @@
 // TODO: only add new events when created, don't completely reload calendar each time
 angular.module('frankie.services')
 
-.factory('calendar', function(projects, currentDate) {
+.factory('makeCalendar', function(projects, currentDate) {
   
   // Create a calendar from all project events
   var create = function () {
@@ -47,7 +47,7 @@ angular.module('frankie.services')
       // otherwise, add to upcoming events
       // - Add 1 to date so that moment.js displays renders month correctly (YYYY-MM+1)
       var date = myEvent.date.slice(0, -3).split('-');
-      date[1] = String(parseInt(date[1]) + 1);
+      date[1] = String(parseInt(date[1], 10) + 1);
       date[1] = date[1].length === 1 ? '0' + date[1] : date[1];
       date = date.join('-');
 

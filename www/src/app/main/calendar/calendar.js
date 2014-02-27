@@ -1,11 +1,11 @@
 angular.module('frankie.controllers')
 
-.controller('CalendarCtrl', function($scope, $location, calendar) {
+.controller('CalendarCtrl', function($scope, $location, makeCalendar) {
 
   // Get Data
   // -------------------------------
   // Over-due calendar events
-  var calendar = calendar.create();
+  var calendar = makeCalendar.create();
   $scope.overDue = calendar.overDue;
   $scope.calendar = calendar.upcoming;
 
