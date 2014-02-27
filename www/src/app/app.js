@@ -7,15 +7,15 @@
 
 angular.module('frankie', [
   // app-wide dependencies
+  // ionic includes ui-router and ng-animate
   'ionic',
   // 'ngClick',
   'templates-app',
   'templates-common',
 
-  // app modules
+  // app modules - these are the leaves of the frankie dependency tree
   'frankie.signin',
   'frankie.signup',
-  'frankie.main',
   'frankie.main.projects',
   'frankie.main.calendar'
   // 'frankie.main.archives',

@@ -2,16 +2,16 @@
   View for creating a new project, or editing an existing project.
   This template loads for the 'main.new-project' state (app.js)
 -->
-<view title="title" 
+<ion-view title="title" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons"
       hide-back-button="true">
 
   <!-- Modal content area -->
-  <content has-header="true">
+  <ion-content has-header="true">
     <form ng-submit="save(project)">
       <!-- Main content -->
-      <list>
+      <ion-list>
         <!-- Overview -->
         <div class="item item-divider"></div>
         <div class="item item-input">
@@ -69,10 +69,10 @@
         <div class="item item-divider"></div>
         <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
 
-      </list> 
+      </ion-list> 
       
     </form>
 
-  </content>
+  </ion-content>
 
-</view>
+</ion-view>

@@ -2,14 +2,14 @@
   Account information for managing profile, email, and password
   This template loads for the 'main.account' state (app.js)
 -->
-<view title="title" 
+<ion-view title="title" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons"
       hide-back-button="true">
 
-  <content has-header="true">
+  <ion-content has-header="true">
     <form>
-      <list>
+      <ion-list>
         <div class="item item-divider"></div>
         <a class="item item-avatar" type="item-text-wrap" href="#/tab/profile/{{client.id}}">
           <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
@@ -28,9 +28,9 @@
           Change Password
         </a>
         
-      </list>
+      </ion-list>
 
     </form>
 
-  </content>
-</view>
+  </ion-content>
+</ion-view>

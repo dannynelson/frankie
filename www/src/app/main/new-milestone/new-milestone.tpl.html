@@ -2,15 +2,15 @@
   View for completing a milestone. Allows you to enter photo and notes.
   This template loads for the 'main.new-milestone' state (app.js)
 -->
-<view title="title" 
+<ion-view title="title" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons"
       hide-back-button="false">
 
-  <content has-header="true">
+  <ion-content has-header="true">
     
     <!-- Main content -->
-    <list>
+    <ion-list>
       <!-- Photo -->
       <div class="item item-divider">Photo</div>
       <div class="button button-full button-light no-margin"
@@ -34,8 +34,8 @@
               ng-click="completeMilestone(milestone)">
         Complete Milestone
       </button>
-    </list>
+    </ion-list>
       
-  </content>
+  </ion-content>
 
-</view>
+</ion-view>

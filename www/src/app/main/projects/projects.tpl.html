@@ -2,14 +2,14 @@
   Index of all active projects
   This template loads for the 'main.projects' state (app.js)
 -->
-<view title="title" 
+<ion-view title="title" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons"
       hide-back-button="true">
 
-  <content has-header="true">
+  <ion-content has-header="true">
 
-    <list>  
+    <ion-list>  
       <!-- Search form -->
       <div class="item item-input-inset search-item">
         </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
@@ -28,6 +28,6 @@
           <span ng-hide="project.completed">Due {{ project.end | moment.fromNow }}</span>
         </p>
       </a>
-    </list>
-  </content>
-</view>
+    </ion-list>
+  </ion-content>
+</ion-view>

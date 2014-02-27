@@ -1,25 +1,23 @@
-angular.module('frankie.main.calendar', ['services.makeCalendar'])
+angular.module('frankie.main.calendar', ['frankie.main', 'services.makeCalendar'])
 
 .config(function($stateProvider) {
-  debugger;
   $stateProvider.state('main.calendar', {
     url: '/calendar',
     templateUrl: 'main/calendar/calendar.tpl.html',
-    controller: 'CalendarCtrl'
-    // resolve: {
-    //   calendar: function (makeCalendar) {
-    //     return makeCalendar.create();
-    //   }
-    // }
+    controller: 'CalendarCtrl',
+    resolve: {
+      calendar: function (makeCalendar) {
+        return makeCalendar.create();
+      }
+    }
   });
 })
 
-.controller('CalendarCtrl', function($scope, $location, makeCalendar) {
+.controller('CalendarCtrl', function($scope, $location, calendar) {
 
   // Get Data
   // -------------------------------
   // Over-due calendar events
-  var calendar = makeCalendar.create(); 
   $scope.overDue = calendar.overDue;
   $scope.calendar = calendar.upcoming;
 

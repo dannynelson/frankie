@@ -2,13 +2,13 @@
   Detailed view of project displaying project overview, client info, and timeline.
   This template loads for the 'main.new-timeline' state (app.js)
 -->
-<view title="title" 
+<ion-view title="title" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons">
 
-  <content has-header="true">
+  <ion-content has-header="true">
     
-    <list>
+    <ion-list>
       <!-- Milestone List -->
       <!-- TODO: this orderBy could provide unusual UX  -->
       <div ng-repeat="milestone in timeline | orderBy:'date'">
@@ -22,8 +22,8 @@
           <input ng-model="milestone.date" type="date">
         </label>
       </div>
-    </list>
+    </ion-list>
       
-  </content>
+  </ion-content>
 
-</view>
+</ion-view>
