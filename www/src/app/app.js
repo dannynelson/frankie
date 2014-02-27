@@ -15,19 +15,46 @@ angular.module('frankie', [
   // app modules
   'frankie.signin',
   'frankie.signup',
+  'frankie.main',
   'frankie.main.projects',
-  'frankie.main.calendar',
-  'frankie.main.archives',
-  'frankie.main.help',
-  'frankie.main.account',
-  'frankie.main.projectDetail',
-  'frankie.main.newMilestone',
-  'frankie.main.newProject',
-  'frankie.main.newTimeline'
+  'frankie.main.calendar'
+  // 'frankie.main.archives',
+  // 'frankie.main.help',
+  // 'frankie.main.account',
+  // 'frankie.main.projectDetail',
+  // 'frankie.main.newMilestone',
+  // 'frankie.main.newProject',
+  // 'frankie.main.newTimeline'
 ])
 
-.config(function($urlRouterProvider) {
+.config(function($urlRouterProvider, $stateProvider) {
   // if no state is matched, go to signin
+  // $stateProvider
+  // .state('main', {
+  //   url: "/main",
+  //   abstract: true,
+  //   templateUrl: "main/main.tpl.html"
+  // })
+  // .state('main.projects', {
+  //   url: '/projects',
+  //   templateUrl: 'main/projects/projects.tpl.html',
+  //   controller: 'ProjectsCtrl'
+  //   // resolve: {
+  //   //   projects: function (Projects) {
+  //   //     return Projects.all();
+  //   //   }
+  //   // }
+  // })
+  // .state('main.calendar', {
+  //     url: '/calendar',
+  //     templateUrl: 'main/calendar/calendar.tpl.html',
+  //     controller: 'CalendarCtrl'
+  //     // resolve: {
+  //     //   calendar: function (makeCalendar) {
+  //     //     return makeCalendar.create();
+  //     //   }
+  //     // }
+  //   });
   $urlRouterProvider.otherwise('/signin');
 })
 

@@ -62,11 +62,11 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'vendor/js/ionic.js',
-      'vendor/js/angular/angular.js',
-      'vendor/js/ionic-angular.js',
-      'vendor/js/moment.min.js',
-      'vendor/js/**/*.js', '!vendor/js/**/*.min.js'
+      'vendor/js/ionic.bundle.js',
+      // 'vendor/js/angular/angular.js',
+      // 'vendor/js/ionic-angular.js',
+      'vendor/js/moment.js',
+      // 'vendor/js/**/*.js', '!vendor/js/**/*.min.js'
     ],
     css: [
       'vendor/css/ionic.css'
