@@ -1,6 +1,6 @@
 angular.module('frankie.signin', [])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider) {
   $stateProvider.state('signin', {
     url: "/signin",
     templateUrl: 'signin/signin.tpl.html',

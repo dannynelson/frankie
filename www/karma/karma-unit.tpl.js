@@ -24,9 +24,9 @@ module.exports = function ( karma ) {
 
     // plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor' ],
 
-    preprocessors: {
-      '**/*.coffee': 'coffee',
-    },
+    // preprocessors: {
+    //   '**/*.coffee': 'coffee',
+    // },
 
     /**
      * How to report, by default.

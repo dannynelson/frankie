@@ -1,6 +1,6 @@
 // TODO: lazy load the template directories
 
-angular.module('frankie.main.projects', ['frankie.main', 'resources.projects', 'filters.moment'])
+angular.module('frankie.main.projects', ['ionic', 'frankie.main', 'resources.projects', 'filters.moment'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projects', {
