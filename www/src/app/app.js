@@ -26,6 +26,7 @@ angular.module('frankie', [
   'frankie.main.account',
   'frankie.main.projectDetail',
   'frankie.main.newMilestone',
+  'frankie.main.newClient',
   'frankie.main.newProject',
   'frankie.main.newTimeline'
 ])
@@ -36,8 +37,8 @@ angular.module('frankie', [
 
 .run(function($ionicPlatform) {
   // change status bar to light color
-  $ionicPlatform.ready(function() {
-    StatusBar.styleLightContent();
-  });
+  // $ionicPlatform.ready(function() {
+  //   StatusBar.styleLightContent();
+  // });
 });
 

@@ -15,7 +15,7 @@ angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $location, $rootScope, project) {
+.controller('ProjectDetailCtrl', function($scope, $location, $rootScope, project, currentProject) {
   
   $scope.project = project;
 
@@ -35,6 +35,7 @@ angular.module('frankie.main.projectDetail', ['frankie.main', 'filters.moment', 
   // -------------------------------
   // clear currentProject when back button pressed
   $scope.$on('back', function(event) {
+    debugger;
     currentProject.clear();
   });
 

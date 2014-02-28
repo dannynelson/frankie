@@ -1,4 +1,4 @@
-angular.module('frankie.main.newClient', ['frankie.main', 'services.currentProject', 'services.currentDate'])
+angular.module('frankie.main.newClient', ['frankie.main', 'resources.currentProject', 'services.currentDate'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newClient', {
