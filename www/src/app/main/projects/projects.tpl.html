@@ -1,0 +1,33 @@
+<!--
+  Index of all active projects
+  This template loads for the 'main.projects' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <ion-content has-header="true">
+
+    <ion-list>  
+      <!-- Search form -->
+      <div class="item item-input-inset search-item">
+        </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
+      </div>
+
+      <!-- Project List -->
+      <a class="item item-thumbnail-left" 
+         ng-repeat="project in projects | filter:liveSearch" 
+         type="item-text-wrap" 
+         href="#/main/projects/{{project.id}}">
+        <img class="thumbnail" src="{{ project.photo }}">
+        <h2>{{ project.title }}</h2>
+        <p>
+          ${{ project.price }}</br>
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">Due {{ project.end | moment.fromNow }}</span>
+        </p>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

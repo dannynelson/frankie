@@ -1,0 +1,78 @@
+<!--
+  View for creating a new project, or editing an existing project.
+  This template loads for the 'main.new-project' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <!-- Modal content area -->
+  <ion-content has-header="true">
+    <form ng-submit="save(project)">
+      <!-- Main content -->
+      <ion-list>
+        <!-- Overview -->
+        <div class="item item-divider"></div>
+        <div class="item item-input">
+          <span class="input-label">Title</span>
+          <input ng-model="project.title" type="text" placeholder="MyProjet">
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Price</span>
+          $<input ng-model="project.price" type="number" placeholder="150">
+        </label>
+        <label class="item item-input">
+          <textarea ng-model="project.notes" placeholder="Notes" rows="4"></textarea>
+        </label>
+
+        <!-- Photo -->
+        <div class="item item-divider"></div>
+        <div class="button button-full button-light no-margin"
+             ng-click="getPhoto()">
+          <i ng-hide="project.photo" class="ion-camera camera"></i>
+          <img ng-show="project.photo" ng-src="{{ project.photo }}" class="photo"></img>
+        </div>
+      
+        <!-- Dates -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Start</span>
+            <input ng-model="project.start" type="date" class="pull-right">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">End</span>
+            <input ng-model="project.end" type="date" class="pull-right">
+        </label>
+      
+        <!-- Client Info -->
+        <div class="item item-divider"></div>
+        <a class="item" href="#/main/new-client">
+          <h2>Client Info</h2>
+          <span ng-hide="project.client.first" class="item-note">
+            No Client
+          </span>
+          <span ng-show="project.client.first" class="item-note">
+            {{ project.client.first + ' ' + project.client.last }}
+          </span>
+        </a>
+      
+        <!-- Timeline -->
+        <div class="item item-divider"></div>
+        <a class="item" href="#/main/new-timeline">
+          <h2>Timeline</h2>
+          <span class="item-note">
+            {{ project.timeline.length || 0 }} Milestones
+          </span>
+        </a>
+      
+        <div class="item item-divider"></div>
+        <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
+
+      </ion-list> 
+      
+    </form>
+
+  </ion-content>
+
+</ion-view>

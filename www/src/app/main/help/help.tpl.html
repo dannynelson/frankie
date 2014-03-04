@@ -1,0 +1,36 @@
+<!--
+  Account information for managing profile, email, and password
+  This template loads for the 'main.account' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <ion-content has-header="true">
+    <form>
+      <ion-list>
+        <div class="item item-divider"></div>
+        <a class="item item-avatar" type="item-text-wrap" href="#/tab/profile/{{client.id}}">
+          <img src="http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif">
+          <h2>Ryan Stellar</h2>
+         <!--  <p>${{project.price}}</p> -->
+          <p>Joined february 15th</p>
+        </a>
+        
+        <div class="item item-divider"></div>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-email"></i>
+          Change Email
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-unlocked"></i>
+          Change Password
+        </a>
+        
+      </ion-list>
+
+    </form>
+
+  </ion-content>
+</ion-view>
