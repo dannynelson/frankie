@@ -31,6 +31,7 @@ angular.module('frankie', [
   'frankie.main.newTimeline'
 ])
 
+
 .config(function($urlRouterProvider, $stateProvider) {
   $urlRouterProvider.otherwise('/signin');
 })

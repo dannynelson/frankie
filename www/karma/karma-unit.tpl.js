@@ -61,6 +61,8 @@ module.exports = function ( karma ) {
      */
     browsers: [
       'PhantomJS'
-    ]
+    ],
+
+    singleRun: false
   });
 };

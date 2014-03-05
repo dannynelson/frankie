@@ -5,8 +5,9 @@ describe("frankie.main", function () {
     module('frankie.main');
   });
 
+
   describe('MainCtrl', function() {
-    var $scope;
+    var $scope, $controller;
 
     beforeEach(function () {
       inject(function($injector) {
@@ -23,6 +24,7 @@ describe("frankie.main", function () {
     }));
   });
 
+
   describe('MenuCtrl', function() {
     var $scope, $controller, $location;
 
@@ -36,7 +38,7 @@ describe("frankie.main", function () {
         $controller = $injector.get('$controller');
         $location = $injector.get('$location');
         var MenuCtrl = $controller('MenuCtrl', {
-          $scope: $scope,
+          $scope: $scope
         });
       });
 

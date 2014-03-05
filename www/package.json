@@ -1,13 +1,7 @@
 {
-  "author": "Josh David Miller",
-  "name": "ng-boilerplate",
+  "author": "Danny Nelson",
+  "name": "frankie",
   "version": "0.3.1",
-  "homepage": "http://bit.ly/ng-boilerplate",
-  "licenses": {
-    "type": "MIT",
-    "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
-  },
-  "bugs": "https://github.com/joshdmiller/ng-boilerplate/issues",
   "repository": {
     "type": "git",
     "url": "git@github.com:joshdmiller/ng-boilerplate.git"

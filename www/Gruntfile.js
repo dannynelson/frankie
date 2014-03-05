@@ -308,6 +308,8 @@ module.exports = function (grunt) {
       ],
       options: {
         curly: false,
+        debug: true,
+        expr: true,
         immed: true,
         newcap: true,
         noarg: true,
@@ -455,7 +457,7 @@ module.exports = function (grunt) {
        * plugin should auto-detect.
        */
       options: {
-        livereload: true
+        singleRun: true
       },
 
       /**
@@ -466,7 +468,7 @@ module.exports = function (grunt) {
         files: 'Gruntfile.js',
         tasks: [ 'jshint:gruntfile' ],
         options: {
-          livereload: false
+          singleRun: false
         }
       },
 
@@ -538,9 +540,9 @@ module.exports = function (grunt) {
         files: [
           '<%= app_files.jsunit %>'
         ],
-        tasks: [ 'jshint:test', 'karma:unit:run' ],
+        tasks: [ 'karma:unit:run' ],
         options: {
-          livereload: false
+          singleRun: false
         }
       },
 
@@ -554,7 +556,7 @@ module.exports = function (grunt) {
         ],
         tasks: [ 'coffeelint:test', 'karma:unit:run' ],
         options: {
-          livereload: false
+          singleRun: false
         }
       }
     }
@@ -581,12 +583,14 @@ module.exports = function (grunt) {
    * The `build` task gets your app ready to run for development and testing.
    */
   grunt.registerTask( 'build', [
-    'clean', 'html2js', 'coffeelint', 'coffee', 'recess:build',
+    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
     // 'concat:build_css', 
     'copy:build_vendorcss', 'copy:build_app_assets', 'copy:build_vendor_fonts',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
-    'karma:continuous'
+    // 'karma:continuous'
   ]);
+
+  grunt.registerTask('test', [])
 
   /**
    * The `compile` task gets your app ready for deployment by concatenating and
