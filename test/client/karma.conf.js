@@ -3,11 +3,12 @@ module.exports = function(config) {
     basePath: '../..',
 
     // sinon-chai includes chai
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai-sinon'],
 
     files: [
       'node_modules/ionic/release/js/ionic.bundle.js',
-      'node_modules/angular-mocks/angular-mocks.js',
+      // keep a safe version of angular mocks in this directory until they fix the bug
+      'test/client/angular-mocks.js',
       'phonegap/www/templates/**/*.js',
       'client/**/*.js',
       // Watched files (reload on change, but don't serve)
