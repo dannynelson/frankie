@@ -1,0 +1,28 @@
+<!--
+  Detailed view of project displaying project overview, client info, and timeline.
+  This template loads for the 'main.new-timeline' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+
+  <ion-content has-header="true">
+
+    <!-- Address -->
+    <div class="item item-divider"></div>
+    <div class="item item-input">
+      <span class="input-label">Street</span>
+      <input ng-model="address.street" type="text" placeholder="111 Market St.">
+    </div>
+    <label class="item item-input">
+      <span class="input-label">City</span>
+      <input ng-model="address.city" type="text" placeholder="San Francisco">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Zip Code</span>
+      <input ng-model="address.zip" type="number" placeholder="94321">
+    </label>
+
+  </ion-content>
+
+</ion-view>

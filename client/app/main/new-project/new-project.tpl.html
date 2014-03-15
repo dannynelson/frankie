@@ -56,9 +56,16 @@
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
-      
+        <a class="item" href="#/main/new-address">
+          <h2>Address</h2>
+          <span ng-hide="project.address.street" class="item-note">
+            No Address
+          </span>
+          <span ng-show="project.address.street" class="item-note">
+            {{ project.address.street }}
+          </span>
+        </a>
         <!-- Timeline -->
-        <div class="item item-divider"></div>
         <a class="item" href="#/main/new-timeline">
           <h2>Timeline</h2>
           <span class="item-note">

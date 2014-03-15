@@ -4,12 +4,17 @@ angular.module('main.newTimeline', ['resources.currentProject'])
   $stateProvider.state('main.newTimeline', {
     url: '/new-timeline',
     templateUrl: 'main/new-timeline/new-timeline.tpl.html',
-    controller: 'NewTimelineCtrl'
+    controller: 'NewTimelineCtrl',
+    resolve: {
+      timeline: function(currentProject) {
+        return currentProject.get('timeline');
+      }
+    }
   });
 })
 
-.controller('NewTimelineCtrl', function($scope, $location, currentProject, currentDate) {
-  $scope.timeline = currentProject.get('timeline');
+.controller('NewTimelineCtrl', function($scope, $location, timeline, currentDate) {
+  $scope.timeline = timeline;
 
   $scope.title = 'Timeline';
   $scope.leftButtons = [];

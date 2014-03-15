@@ -1,4 +1,4 @@
-xdescribe('ProjectsCtrl', function() {
+describe('ProjectsCtrl', function() {
   var $scope, capturedUrl;
 
   beforeEach(function () {

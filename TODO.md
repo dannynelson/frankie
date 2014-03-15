@@ -1,6 +1,8 @@
-TODO: navigation helper for going to pages and goinb back
-TODO: new project related files in separate template
-TODO: shared controller between projects/archives/calendar?
-TODO: shared template between projects and archives
-TODO: auto load template url with tpl.js
-TODO: autoload title and buttons into each controller with state
+- navigation helper for going to pages and goinb back
+- new project related files in separate template
+- shared controller between projects/archives/calendar?
+- shared template between projects and archives
+- auto load template url with tpl.js
+- autoload title and buttons into each controller with state
+- add address to project detail?
+- option to remove photo once it is uploaded

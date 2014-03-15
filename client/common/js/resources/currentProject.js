@@ -7,7 +7,8 @@ angular.module('resources.currentProject', [])
       start: currentDate,
       end: currentDate,
       timeline: [],
-      client: {}
+      client: {},
+      address: {}
     };
   };
 

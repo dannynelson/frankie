@@ -3,6 +3,7 @@ angular.module('main', [
   'main.archives',
   'main.calendar',
   'main.help',
+  'main.newAddress',
   'main.newClient',
   'main.newMilestone',
   'main.newProject',
