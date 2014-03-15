@@ -1,9 +1,12 @@
-### NPM ###
-node_modules
-bower_components
+### Project Specific ###
+phonegap/www
 
+### Generic ###
+vendor
+node_modules
+.sass-cache/
+npm-debug.log
 *.keystore
 *.sw*
 platforms/^.*
-
 .DS_Store

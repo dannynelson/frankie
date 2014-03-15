@@ -1,0 +1,123 @@
+
+// New Defaults
+// -----------------------------------------------
+
+$positive:              #273552 !default;
+$assertive:             #ff6b26 !default;
+$light:                 #fff    !default;
+$stable:                #E4E4E4 !default;
+$dark:                  #5C5C5C !default;
+$darker:                #3B3B3B !default;
+
+$item-thumbnail-width:             100px !default;
+$item-thumbnail-height:            70px !default;
+$item-thumbnail-border-radius:     3px !default;
+$item-divider-color:               #D4D4D4 !default;
+
+$font-size-base:  16px !default;
+
+// Imports
+// -----------------------------------------------
+
+@import "../../../node_modules/ionic/scss/ionic";
+
+// Overrides and Extensions
+// -----------------------------------------------
+
+$item-darker-bg:                   lighten($darker, 7%);
+
+.darker-bg {
+  background-color: $darker !important;
+}
+
+// override to add border-radius variable
+.item-thumbnail-left {
+  > img:first-child, > .item-image {
+    border-radius: $item-thumbnail-border-radius;
+  }
+}
+
+.pane, .view {
+  background-color: $stable;
+}
+
+// Change item divider text to match iOS
+.item-divider {
+  color: $dark;
+  background-color: $stable;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+// must come after item divider
+.item-darker { 
+  @include item-style($item-darker-bg, $item-dark-border, $item-dark-text);
+}
+
+.input-label {
+  color: $positive;
+}
+
+// Make all labels positive color
+h2 {
+  color: $positive;
+}
+.item h2 {
+  font-weight: bold;
+}
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  font-size: $font-size-base;
+  color: $dark;
+}
+
+.item-note {
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  // float: right;
+  color: $dark;
+  font-size: $font-size-base;
+}
+
+.button.button-assertive.button-clear {
+  font-weight: 500;
+}
+
+$item-avitar-width-wide: 60px;
+.item-avatar {
+  padding-left: $item-avitar-width-wide + ($item-padding * 2);
+  min-height: $item-avitar-height + ($item-padding * 2);
+
+  img:first-child, .item-img {
+    position: absolute;
+    top: $item-padding;
+    left: $item-padding;
+    max-width: $item-avitar-width-wide;
+    max-height: $item-avitar-height;
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
+// override bottom margin, because it wasn't helping anything
+p {
+  margin: 0
+}

@@ -1,0 +1,16 @@
+/* FRANKIE logo styling on signin page  */
+.title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 65px;
+  line-height: 70px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  color: #ff6b26;
+}
+
+/* center, and set max width to signin form */
+.signin-form {
+  max-width: 325px;
+  margin: auto;
+}

@@ -1,0 +1,80 @@
+<!--
+  Detailed view of project displaying project overview, client info, and timeline.
+  This template loads for the 'main.project-detail' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+      
+  <ion-content has-header="true">
+    <ion-list>
+      
+      <!-- Project Overview -->
+      <div class="item item-divider">
+        <!-- Project -->
+      </div>
+      <div class="item item-thumbnail-left" type="item-text-wrap">
+        <img class="thumbnail" src="{{ project.photo }}">
+        <h2>{{ project.title }}</h2>
+        <p>
+          ${{ project.price }}</br>
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">{{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}</span>
+        </p>
+      </div>
+      <div class="padding paragraph-item">
+        {{ project.notes }}
+      </div>
+
+      <!-- Client -->
+      <div ng-show="project.client.first">
+        <div class="item item-divider">
+          <!-- Client -->
+        </div>
+        <div class="item item-icon-left">
+          <i class="icon ion-person"></i>
+          <h2>{{ project.client.first + ' ' +  project.client.last }}</h2>
+          <span class="icons-right">
+            <!-- call -->
+            <i class="ion-ios7-telephone extra-large positive"
+               ng-click="contact('tel', project.client.phone)">
+            </i>
+            <!-- email -->
+            <i class="ion-email extra-large padding-left positive"
+               ng-click="contact('mailto', project.client.email)">
+            </i>
+            <!-- text -->
+            <i class="ion-chatboxes extra-large padding-left positive"
+               ng-click="contact('sms', project.client.phone)">
+            </i>
+          </span>
+        </div>
+      </div>
+      
+      <!-- Timeline -->
+      <div ng-show="project.timeline.length">
+        <div class="item item-divider">
+          <!-- Timeline -->
+        </div>
+        <ion-list>
+          <a class="item item-avatar" ng-repeat="milestone in project.timeline" type="item-text-wrap" href="#/main/new-milestone/{{ $index }}">
+            <img 
+            ng-src="{{ milestone.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
+            <h2>{{ milestone.title }}</h2>
+            <p ng-hide="milestone.completed">Due {{ milestone.date | moment.fromNow }}</p>
+            <p ng-show="milestone.completed">Completed</p>
+          </a>
+        </ion-list>
+      </div>
+      
+      <!-- Complete Project -->
+      <div class="item item-divider"></div>
+      <button type="submit"
+              class="button button-full button-light assertive-text"
+              ng-click="completeProject(project)">
+        Complete Project
+      </button>
+      
+    </ion-list>
+  </ion-content>
+</ion-view>
