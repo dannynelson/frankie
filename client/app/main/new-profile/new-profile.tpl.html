@@ -1,0 +1,60 @@
+<!--
+  View for creating a new project, or editing an existing project.
+  This template loads for the 'main.new-project' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <!-- Modal content area -->
+  <ion-content has-header="true">
+    <form ng-submit="save(project)">
+      <!-- Main content -->
+      <ion-list>
+        <!-- Overview -->
+        <div class="item item-divider"></div>
+        <div class="item item-input">
+          <span class="input-label">Name</span>
+          <input ng-model="user.name" type="text" placeholder="Frankie Joe">
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input ng-model="user.title" type="text" placeholder="Plumber">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Company</span>
+          <input ng-model="user.company" type="text" placeholder="Frankie's Plumbing">
+        </label>
+        <label class="item item-input">
+          <textarea ng-model="user.bio" placeholder="A short bio about your experience" rows="4"></textarea>
+        </label>
+
+        <!-- Photo -->
+        <div class="item item-divider"></div>
+        <div class="button button-full button-light no-margin"
+             ng-click="getPhoto()">
+          <i ng-hide="project.photo" class="ion-camera camera"></i>
+          <img ng-show="project.photo" ng-src="{{ project.photo }}" class="photo"></img>
+        </div>
+      
+        <!-- Contact Info -->
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <span class="input-label">Phone</span>
+          <input ng-model="user.phone | phone" type="number" placeholder="111-111-1111">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Location</span>
+          <input ng-model="user.location" type="text" placeholder="Frankie's Plumbing">
+        </label>
+      
+        <div class="item item-divider"></div>
+        <button type="submit" class="button button-full button-assertive">Save Project</button>
+
+        <div class="item item-divider"></div>
+
+      </ion-list> 
+    </form>
+  </ion-content>
+</ion-view>

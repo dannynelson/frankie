@@ -9,9 +9,11 @@ $stable:                #E4E4E4 !default;
 $dark:                  #5C5C5C !default;
 $darker:                #3B3B3B !default;
 
-$item-thumbnail-width:             100px !default;
-$item-thumbnail-height:            70px !default;
+// For project thumbnails
+$item-thumbnail-width-wide:             100px !default;
+$item-thumbnail-height-short:             70px !default;
 $item-thumbnail-border-radius:     3px !default;
+
 $item-divider-color:               #D4D4D4 !default;
 
 $font-size-base:  16px !default;
@@ -24,6 +26,7 @@ $font-size-base:  16px !default;
 // Overrides and Extensions
 // -----------------------------------------------
 
+$font-size-paragraph:  15px !default;
 $item-darker-bg:                   lighten($darker, 7%);
 
 .darker-bg {
@@ -34,6 +37,20 @@ $item-darker-bg:                   lighten($darker, 7%);
 .item-thumbnail-left {
   > img:first-child, > .item-image {
     border-radius: $item-thumbnail-border-radius;
+  }
+}
+// create wider and shorter alternative for project thumbnails
+.item-thumbnail-left-wide {
+  padding-left: $item-thumbnail-width-wide + $item-thumbnail-margin + $item-padding;
+  min-height: $item-thumbnail-height-short + ($item-thumbnail-margin * 2);
+  > img:first-child, > .item-image {
+    position: absolute;
+    top: $item-thumbnail-margin;
+    left: $item-thumbnail-margin;
+    max-width: $item-thumbnail-width-wide;
+    max-height: $item-thumbnail-height-short;
+    border-radius: $item-thumbnail-border-radius;
+    width: 100%;
   }
 }
 
@@ -141,6 +158,7 @@ p {
   font-weight: bold;
 }
 
+// Make text of all items a lighter shade
 a.item {
   color: $dark;
 }
@@ -148,4 +166,9 @@ a.item {
 // Add extra padding for the item dividers with text
 .padding-top-extra {
   padding-top: 15px;
+}
+
+// Remove grey focus color
+.item-input.item.active {
+  background-color: $light;
 }

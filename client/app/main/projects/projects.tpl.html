@@ -8,19 +8,23 @@
       hide-back-button="true">
 
   <ion-content has-header="true">
+    <!-- Search form -->
+    <div class="item item-input-inset search-item">
+      </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
+    </div>
+
+    <!-- Courtesy Message -->
+    <div ng-show="!projects.length" class="courtesy-message">
+      {{ courtesyMessage }}
+    </div>
 
     <ion-list>  
-      <!-- Search form -->
-      <div class="item item-input-inset search-item">
-        </i><input ng-model="liveSearch" type="search" value="" placeholder="search" class="topcoat-search-input">
-      </div>
-
       <!-- Project List -->
-      <a class="item item-thumbnail-left" 
+      <a class="item item-thumbnail-left-wide" 
          ng-repeat="project in projects | filter:liveSearch" 
          type="item-text-wrap" 
          href="#/main/projects/{{project.id}}">
-        <img class="thumbnail" src="{{ project.photo }}">
+        <img class="thumbnail" ng-src="{{ project.photo }}">
         <h2>{{ project.title }}</h2>
         <p>
           ${{ project.price }}</br>

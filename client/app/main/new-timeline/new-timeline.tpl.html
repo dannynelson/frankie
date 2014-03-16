@@ -9,18 +9,21 @@
   <ion-content has-header="true">
     
     <ion-list>
+      <!-- Courtesy Message -->
+      <div ng-show="!timeline.length" class="courtesy-message">
+        {{ courtesyMessage }}
+      </div>
       <!-- Milestone List -->
       <!-- TODO: this orderBy could provide unusual UX  -->
       <div ng-repeat="milestone in timeline | orderBy:'date'">
-        <div class="item item-divider">Milestone {{ $index + 1 }}</div>
         <label class="item item-input">
-          <span class="input-label">Title</span>
-          <input ng-model="milestone.title" type="text" placeholder="Milestone">
+          <span class="input-label">Milestone {{ $index + 1 }}</span>
+          <input ng-model="milestone.title" type="text" placeholder="Description">
         </label>
-        <label class="item item-input">
+<!--         <label class="item item-input">
           <span class="input-label">Date</span>
           <input ng-model="milestone.date" type="date">
-        </label>
+        </label> -->
       </div>
     </ion-list>
       

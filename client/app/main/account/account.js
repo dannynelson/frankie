@@ -4,12 +4,16 @@ angular.module('main.account', ['resources.user'])
   $stateProvider.state('main.account', {
     url: '/account',
     templateUrl: 'main/account/account.tpl.html',
-    controller: 'AccountCtrl'
+    controller: 'AccountCtrl',
+    resolve: {
+      user: function(User) {
+        return User.get();
+      }
+    }
   });
 })
 
-.controller('AccountCtrl', function($scope, User) {
+.controller('AccountCtrl', function($scope, user) {
   $scope.title = 'Account';
+  $scope.user = user;
 });
-
-

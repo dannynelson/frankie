@@ -23,7 +23,7 @@
           <input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
-          <textarea ng-model="project.notes" placeholder="Notes" rows="4"></textarea>
+          <textarea ng-model="project.notes" placeholder="Some notes about the project" rows="4"></textarea>
         </label>
 
         <!-- Photo -->
@@ -47,12 +47,8 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-<!--         <a class="item item-icon-left" href="#">
-          <i class="icon ion-email"></i>
-          Change Email
-        </a> -->
         <a class="item item-icon-left" href="#/main/new-client">
-          <i class="icon ion-person"></i>
+          <i class="icon ion-person positive"></i>
           <h2>Client Info</h2>
           <span ng-hide="project.client.first" class="item-note">
             No Client
@@ -62,7 +58,7 @@
           </span>
         </a>
         <a class="item item-icon-left" href="#/main/new-address">
-          <i class="icon ion-location"></i>
+          <i class="icon ion-location positive"></i>
           <h2>Address</h2>
           <span ng-hide="project.address.street" class="item-note">
             No Address
@@ -73,7 +69,7 @@
         </a>
         <!-- Timeline -->
         <a class="item item-icon-left" href="#/main/new-timeline">
-          <i class="icon ion-checkmark"></i>
+          <i class="icon ion-checkmark positive"></i>
           <h2>Timeline</h2>
           <span class="item-note">
             {{ project.timeline.length || 0 }} Milestones

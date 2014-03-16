@@ -1,0 +1,70 @@
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons">
+
+  <ion-content has-header="true">
+    <form>
+      <ion-list>
+        <!-- Profile overview -->
+        <div class="item item-divider padding-top-extra">
+          Profile Overview
+        </div>
+        <div class="item item-thumbnail-left" type="item-text-wrap">
+          <img class="thumbnail" 
+               ng-src="{{ user.profilePhoto || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
+          <h2>{{ user.name }}</h2>
+          <p>
+            {{ user.title }}</br>
+            {{ user.company }}
+          </p>
+        </div>
+        <div class="paragraph-item">
+          {{ user.bio }}
+        </div>
+
+        <!-- Details -->
+        <div class="item item-divider padding-top-extra">
+          Profile Details
+        </div>
+        <div class="item">
+          Years of Experience
+          <span class="item-note">
+            {{ user.yearsExp || 0 }}
+          </span>
+        </div>
+        <div class="item">
+          Client Rating
+          <span class="item-note">
+            {{ user.rating || 0 }}
+          </span>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="item item-divider padding-top-extra">
+          Contact Info
+        </div>
+        <div class="item">
+          Phone
+          <span class="item-note">
+            {{ user.phone | phone }}
+          </span>
+        </div>
+        <div class="item">
+          Email
+          <span class="item-note">
+            {{ user.email }}
+          </span>
+        </div>
+        <div class="item">
+          Location
+          <span class="item-note">
+            {{ user.location }}
+          </span>
+        </div>
+
+        <div class="item item-divider padding-top-extra">
+      </ion-list>
+    </form>
+
+  </ion-content>
+</ion-view>

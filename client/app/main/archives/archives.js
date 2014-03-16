@@ -17,4 +17,5 @@ angular.module('main.archives', ['resources.projects'])
 .controller('ArchivesCtrl', function($scope, $location, archives) {
   $scope.projects = archives;
   $scope.title = 'Archives';
+  $scope.courtesyMessage = 'You currently don\'t have any archives. You will see projects show up here after you complete them.';
 });

@@ -7,13 +7,14 @@
 /* Your app's CSS, go crazy, make it your own */
 
 .item p {
-  font-size: 15px;
+  font-size: $font-size-paragraph;
 }
 
 .paragraph-item {
-  font-size: 15px;
-  background-color: white;
-  color: #666;
+  @extend .padding;
+  font-size: $font-size-paragraph;
+  background-color: $light;
+  color: $dark;
 }
 
 /* Helpers */
@@ -67,4 +68,12 @@ i.extra-large {
 .search-item {
   background-color: $stable;
   padding: 5px;
+}
+
+// message shown when they do not have any items
+.courtesy-message {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 16px;
+  color: grey;
 }

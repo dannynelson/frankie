@@ -8,21 +8,28 @@
       hide-back-button="true">
 
   <ion-content has-header="true" class="darker-bg">
+    <!-- Courtesy Message -->
+    <div ng-show="!projects.length" class="courtesy-message">
+      {{ courtesyMessage }}
+    </div>
+
     <ion-list>
       <!-- Over Due Events -->
-      <div class="item item-darker item-divider">Over Due</div>
-      <a class="item item-thumbnail-left" 
-         ng-repeat="event in overDue | orderBy:'orderingDate'" 
-         type="item-text-wrap" 
-         href="#/main/projects/{{ event.projectId }}">
+      <div ng-show="overDue.length">
+        <div class="item item-darker item-divider">Over Due</div>
+        <a class="item item-thumbnail-left" 
+           ng-repeat="event in overDue | orderBy:'orderingDate'" 
+           type="item-text-wrap" 
+           href="#/main/projects/{{ event.projectId }}">
 
-        <img class="thumbnail" src="{{ event.photo }}">
-        <h2>{{ event.title }}</h2>
-        <p>
-          {{ event.projectTitle }}</br>
-          Due {{ event.date | moment.fromNow }}
-        </p>
-      </a>
+          <img class="thumbnail" src="{{ event.photo }}">
+          <h2>{{ event.title }}</h2>
+          <p>
+            {{ event.projectTitle }}</br>
+            Due {{ event.date | moment.fromNow }}
+          </p>
+        </a>
+      </div>
 
       <!-- Future Events Calendar -->
       <!-- TODO: why are the months sorting correctly?? -->
@@ -41,6 +48,7 @@
           </p>
         </a>
       <div>
+
     </ion-list>
   </ion-content>
 

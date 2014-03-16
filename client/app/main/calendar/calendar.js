@@ -18,6 +18,7 @@ angular.module('main.calendar', ['services.makeCalendar'])
   $scope.calendar = calendar.upcoming;
 
   $scope.title = 'Calendar';
+  $scope.courtesyMessage = 'You don\'t have any events for your calendar. Create a project to see some events show up here.';
 });
 
 

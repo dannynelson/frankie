@@ -6,13 +6,18 @@ angular.module('main.newProject', ['services.photo', 'resources.currentProject']
     // add type to specify edit/new
     url: '/new-project/:type',
     templateUrl: 'main/new-project/new-project.tpl.html',
-    controller: 'NewProjectCtrl'
+    controller: 'NewProjectCtrl',
+    resolve: {
+      project: function(currentProject) {
+        return currentProject.all();
+      }
+    }
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Projects, currentProject, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Projects, currentProject, project, photo) {
   // $stateParams.type is either 'new', or 'edit'
-  $scope.project = currentProject.all();
+  $scope.project = project;
 
   $scope.title = (function (type) {
     // capitalize first letter

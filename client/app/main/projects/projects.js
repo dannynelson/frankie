@@ -27,6 +27,7 @@ angular.module('main.projects', ['filters.moment', 'resources.projects'])
       $location.url('/main/new-project/new');
     }
   }];
+  $scope.courtesyMessage = 'You currently don\'t have any projects. Click the button in the top right to create a one.';
 });
 
 
