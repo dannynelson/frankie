@@ -43,9 +43,9 @@ $item-darker-bg:                   lighten($darker, 7%);
 
 // Change item divider text to match iOS
 .item-divider {
-  color: $dark;
+  color: $positive;
   background-color: $stable;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -97,20 +97,29 @@ input[type="color"] {
   font-size: $font-size-base;
 }
 
-.button.button-assertive.button-clear {
+.button-assertive {
   font-weight: 500;
 }
 
-$item-avitar-width-wide: 60px;
+// $item-avitar-width-wide: 60px;
 .item-avatar {
-  padding-left: $item-avitar-width-wide + ($item-padding * 2);
-  min-height: $item-avitar-height + ($item-padding * 2);
+  // padding-left: $item-avitar-width-wide + ($item-padding * 2);
+  // min-height: $item-avitar-height + ($item-padding * 2);
 
-  img:first-child, .item-img {
+  // img:first-child, .item-img {
+  //   position: absolute;
+  //   top: $item-padding;
+  //   left: $item-padding;
+  //   max-width: $item-avitar-width-wide;
+  //   max-height: $item-avitar-height;
+  //   width: 100%;
+  //   border-radius: 4px;
+  // }
+  i:first-child, .item-img {
     position: absolute;
     top: $item-padding;
     left: $item-padding;
-    max-width: $item-avitar-width-wide;
+    max-width: $item-avitar-width;
     max-height: $item-avitar-height;
     width: 100%;
     border-radius: 4px;
@@ -120,4 +129,18 @@ $item-avitar-width-wide: 60px;
 // override bottom margin, because it wasn't helping anything
 p {
   margin: 0
+}
+
+// Make all nav buttons slightly heavier
+.button.button-assertive.button-clear {
+  font-weight: 500;
+}
+
+// Make text on all in-page buttons slightly more bold
+.button .button-full .button-assertive {
+  font-weight: bold;
+}
+
+a.item {
+  color: $dark;
 }

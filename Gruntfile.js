@@ -84,18 +84,12 @@ module.exports = function (grunt) {
             dest: '<%= distdir %>/assets',
             src : '**',
             expand: true,
-            cwd: 'client/common/assets'
+            cwd: 'client/assets'
           }
         ]
       },
       phonegap: {
         files: [
-          {
-            dest: '<%= distdir %>',
-            src : ['res/**'],
-            expand: true,
-            cwd: 'client/'
-          },
           {
             dest: '<%= distdir %>',
             src : ['fonts/**'],
@@ -104,9 +98,9 @@ module.exports = function (grunt) {
           },
           {
             dest: '<%= distdir %>',
-            src : ['config.xml'],
+            src : ['**'],
             expand: true,
-            cwd: 'client/'
+            cwd: 'client/phonegap'
           }
         ]
       }

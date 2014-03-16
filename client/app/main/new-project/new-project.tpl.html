@@ -20,7 +20,7 @@
         </div>
         <label class="item item-input">
           <span class="input-label">Price</span>
-          $<input ng-model="project.price" type="number" placeholder="150">
+          <input ng-model="project.price" type="number" placeholder="150">
         </label>
         <label class="item item-input">
           <textarea ng-model="project.notes" placeholder="Notes" rows="4"></textarea>
@@ -47,7 +47,12 @@
       
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item" href="#/main/new-client">
+<!--         <a class="item item-icon-left" href="#">
+          <i class="icon ion-email"></i>
+          Change Email
+        </a> -->
+        <a class="item item-icon-left" href="#/main/new-client">
+          <i class="icon ion-person"></i>
           <h2>Client Info</h2>
           <span ng-hide="project.client.first" class="item-note">
             No Client
@@ -56,7 +61,8 @@
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
-        <a class="item" href="#/main/new-address">
+        <a class="item item-icon-left" href="#/main/new-address">
+          <i class="icon ion-location"></i>
           <h2>Address</h2>
           <span ng-hide="project.address.street" class="item-note">
             No Address
@@ -66,7 +72,8 @@
           </span>
         </a>
         <!-- Timeline -->
-        <a class="item" href="#/main/new-timeline">
+        <a class="item item-icon-left" href="#/main/new-timeline">
+          <i class="icon ion-checkmark"></i>
           <h2>Timeline</h2>
           <span class="item-note">
             {{ project.timeline.length || 0 }} Milestones
@@ -74,7 +81,9 @@
         </a>
       
         <div class="item item-divider"></div>
-        <button type="submit" class="button button-full button-light assertive-text">Save Project</button>
+        <button type="submit" class="button button-full button-assertive">Save Project</button>
+
+        <div class="item item-divider"></div>
 
       </ion-list> 
       

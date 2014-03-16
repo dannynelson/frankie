@@ -1,8 +1,14 @@
-- navigation helper for going to pages and goinb back
-- new project related files in separate template
-- shared controller between projects/archives/calendar?
-- shared template between projects and archives
-- auto load template url with tpl.js
-- autoload title and buttons into each controller with state
-- add address to project detail?
-- option to remove photo once it is uploaded
+## Immediate
+
+- Convert all buttons to assertive
+- Milestones as checklist
+- Display address in project details
+- Analytics page
+- Profile detail page
+- Research Parse vs Express backend
+- Implement backend
+
+## Nice to Have
+
+- Highlight overdue dates
+- Create template from project summary (used on three separate pages)

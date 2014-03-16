@@ -1,9 +1,9 @@
-angular.module('signin', [])
+angular.module('landing.signin', [])
 
 .config(function($stateProvider) {
-  $stateProvider.state('signin', {
+  $stateProvider.state('landing.signin', {
     url: "/signin",
-    templateUrl: 'signin/signin.tpl.html',
+    templateUrl: 'landing/signin/signin.tpl.html',
     controller: 'SigninCtrl'
   });
 })

@@ -5,12 +5,11 @@ angular.module('frankie', [
   'templates.common',
   // app modules
   'main',
-  'signin',
-  'signup'
+  'landing',
 ])
 
 .config(function($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/signin');
+  $urlRouterProvider.otherwise('/landing/signin');
 })
 
 .run(function($ionicPlatform) {

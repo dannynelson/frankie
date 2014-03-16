@@ -7,7 +7,7 @@ angular.module('resources.projects', [])
       id: 0,
       title: 'Sallys Bathroom Remodel',
       price: 500,
-      notes: '10x10 bathroom, there is a leak in the ceiling.',
+      notes: '10x10 bathroom, there is a leak in the ceiling. Client is leaving on vacation Sept. 3.',
       start: '2014-01-15',
       end: '2014-02-15',
       client: {
@@ -15,6 +15,11 @@ angular.module('resources.projects', [])
         last: 'schmoe',
         phone: 8583374505,
         email: 'danielnelsonguitar@gmail.com'
+      },
+      address: {
+        street: '12687 Gibraltar Dr.',
+        city: 'San Diego',
+        zip: '92128'
       },
       timeline: [
         {
@@ -34,7 +39,7 @@ angular.module('resources.projects', [])
       id: 1,
       title: 'Johnson Kitchen Repair',
       price: 1500,
-      notes: '10x10 bathroom, there is a leak in the ceiling.',
+      notes: '10x10 bathroom, there is a leak in the ceiling. Client is leaving on vacation Sept. 3.',
       start: '2014-01-15',
       end: '2014-02-15',
       client: {
@@ -42,6 +47,11 @@ angular.module('resources.projects', [])
         last: 'schmoe',
         phone: 8583374505,
         email: 'danielnelsonguitar@gmail.com'
+      },
+      address: {
+        street: '12687 Gibraltar Dr.',
+        city: 'San Diego',
+        zip: '92128'
       },
       timeline: [
         {
@@ -70,6 +80,7 @@ angular.module('resources.projects', [])
         phone: 8583374505,
         email: 'danielnelsonguitar@gmail.com'
       },
+      address: {},
       timeline: [
         {
           title: 'Take client to select tile colors',
