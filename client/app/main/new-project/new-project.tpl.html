@@ -2,8 +2,8 @@
   View for creating a new project, or editing an existing project.
   This template loads for the 'main.new-project' state (app.js)
 -->
-<ion-view title="title" 
-      left-buttons="leftButtons" 
+<ion-view title="title"
+      left-buttons="leftButtons"
       right-buttons="rightButtons"
       hide-back-button="true">
 
@@ -16,7 +16,7 @@
         <div class="item item-divider"></div>
         <div class="item item-input">
           <span class="input-label">Title</span>
-          <input ng-model="project.title" type="text" placeholder="MyProjet">
+          <input ng-model="project.title" type="text" placeholder="MyProject">
         </div>
         <label class="item item-input">
           <span class="input-label">Price</span>
@@ -33,7 +33,7 @@
           <i ng-hide="project.photo" class="ion-camera camera"></i>
           <img ng-show="project.photo" ng-src="{{ project.photo }}" class="photo"></img>
         </div>
-      
+
         <!-- Dates -->
         <div class="item item-divider"></div>
         <label class="item item-input">
@@ -44,7 +44,7 @@
           <span class="input-label">End</span>
             <input ng-model="project.end" type="date" class="pull-right">
         </label>
-      
+
         <!-- Client Info -->
         <div class="item item-divider"></div>
         <a class="item item-icon-left" href="#/main/new-client">
@@ -75,14 +75,14 @@
             {{ project.timeline.length || 0 }} Milestones
           </span>
         </a>
-      
+
         <div class="item item-divider"></div>
         <button type="submit" class="button button-full button-assertive">Save Project</button>
 
         <div class="item item-divider"></div>
 
-      </ion-list> 
-      
+      </ion-list>
+
     </form>
 
   </ion-content>
