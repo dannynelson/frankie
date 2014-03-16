@@ -33,6 +33,7 @@ angular.module('resources.projects', [])
       ],
       user_id: 1,
       completed: false,
+      completedDate: null,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
@@ -65,6 +66,7 @@ angular.module('resources.projects', [])
       ],
       user_id: 1,
       completed: false,
+      completedDate: null,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     },
     {
@@ -93,6 +95,7 @@ angular.module('resources.projects', [])
       ],
       user_id: 1,
       completed: false,
+      completedDate: null,
       photo:'http://files.parse.com/758426d3-6cd9-483a-91c7-96baf4137c16/6135dce2-752a-4fb8-ab31-95801752ddb5-photo.jpg'
     }
   ];
@@ -100,6 +103,11 @@ angular.module('resources.projects', [])
   return {
     all: function () {
       return projects;
+    },
+    filter: function(key, value) {
+      return projects.filter(function(project) {
+        return project[key] === value;
+      });
     },
     archives: function () {
       return projects;

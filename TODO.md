@@ -7,6 +7,7 @@
 - Profile detail page
 - Research Parse vs Express backend
 - Implement backend
+- save date when project completed
 
 ## Nice to Have
 

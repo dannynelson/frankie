@@ -1,0 +1,52 @@
+<!--
+  Account information for managing profile, email, and password
+  This template loads for the 'main.account' state (app.js)
+-->
+<ion-view title="title" 
+      left-buttons="leftButtons" 
+      right-buttons="rightButtons"
+      hide-back-button="true">
+
+  <ion-content has-header="true">
+    <div class="list">
+
+      <div class="item item-divider padding-top-extra">Pending Projects</div>
+      <div class="item">
+        Total
+        <span class="badge badge-assertive analytics-badge">{{ uncompletedProjects.length }}</span>
+      </div>
+      <div class="item">
+        Overdue
+        <span class="badge badge-assertive analytics-badge">{{ totalOverdue(uncompletedProjects) }}</span>
+      </div>
+      <div class="item">
+        Upcoming
+        <span class="badge badge-assertive analytics-badge">{{ uncompletedProjects.length - totalOverdue(uncompletedProjects) }}</span>
+      </div>
+      <div class="item">
+        Pending Income
+        <span class="badge badge-assertive analytics-badge">${{ totalIncome(uncompletedProjects) }}</span>
+      </div>
+
+      <div class="item item-divider padding-top-extra">Completed Projects</div>
+      <div class="item">
+        Total
+        <span class="badge badge-assertive analytics-badge">{{ completedProjects.length }}</span>
+      </div>
+      <div class="item">
+        Completed Past Deadline
+        <span class="badge badge-assertive analytics-badge">{{ completedLate(completedProjects) }}</span>
+      </div>
+      <div class="item">
+        Completed On Time
+        <span class="badge badge-assertive analytics-badge">{{ completedProjects.length - completedLate(completedProjects) }}</span>
+      </div>
+      <div class="item">
+        Earned Income
+        <span class="badge badge-assertive analytics-badge">${{ totalIncome(completedProjects) }}</span>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

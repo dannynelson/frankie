@@ -144,3 +144,8 @@ p {
 a.item {
   color: $dark;
 }
+
+// Add extra padding for the item dividers with text
+.padding-top-extra {
+  padding-top: 15px;
+}
