@@ -1,7 +1,7 @@
-angular.module('main.new-profile', ['resources.user', 'filters.phone', 'services.photo'])
+angular.module('main.newProfile', ['resources.user', 'filters.phone', 'services.photo'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.new-profile', {
+  $stateProvider.state('main.newProfile', {
     url: '/new-profile',
     templateUrl: 'main/new-profile/new-profile.tpl.html',
     controller: 'NewProfileCtrl',
@@ -14,7 +14,7 @@ angular.module('main.new-profile', ['resources.user', 'filters.phone', 'services
 })
 
 .controller('NewProfileCtrl', function($scope, user, photo) {
-  $scope.title = 'New Profile';
+  $scope.title = 'Edit Profile';
   $scope.leftButtons = [];
   $scope.rightButtons = [];
   $scope.user = user;

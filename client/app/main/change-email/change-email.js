@@ -1,7 +1,7 @@
-angular.module('main.change-email', ['resources.user'])
+angular.module('main.changeEmail', ['resources.user'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.change-email', {
+  $stateProvider.state('main.changeEmail', {
     url: '/change-email',
     templateUrl: 'main/change-email/change-email.tpl.html',
     controller: 'ChangeEmailCtrl'

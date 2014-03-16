@@ -3,17 +3,18 @@ angular.module('main', [
   'main.analytics',
   'main.archives',
   'main.calendar',
-  'main.change-email',
-  'main.change-password',
+  'main.changeEmail',
+  'main.changePassword',
   'main.help',
   'main.newAddress',
   'main.newClient',
   'main.newMilestone',
+  'main.newProfile',
   'main.newProject',
   'main.newTimeline',
   'main.profile',
   'main.projectDetail',
-  'main.projects',
+  'main.projects'
 ])
 
 .config(function($stateProvider) {

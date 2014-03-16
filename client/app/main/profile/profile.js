@@ -13,14 +13,14 @@ angular.module('main.profile', ['resources.user', 'filters.phone'])
   });
 })
 
-.controller('ProfileCtrl', function($scope, user) {
+.controller('ProfileCtrl', function($scope, $location, user) {
   $scope.title = 'Profile';
   $scope.leftButtons = [];
   $scope.rightButtons = [{
     type: 'button-clear button-assertive',
     content: '<button>edit</button>',
     tap: function(e) {
-      $location.url('/main/edit-profile');
+      $location.url('/main/new-profile');
     }
   }];
   $scope.user = user;
