@@ -2,6 +2,68 @@ angular.module('resources.projects', [])
 
 .factory('Projects', function() {
   // Some fake testing data
+  // var Project = Parse.Object.extend("Project");
+  // var project = new Project();
+  // var projectQuery = new Parse.Query(Project);
+
+  // var getAll = function(column, value, successCallback) {
+  //   projectQuery.equalTo(column, value);
+  //   projectQuery.find({
+  //     success: successCallback,
+  //     error: function(error) {
+  //       alert("Error: " + error.code + " " + error.message);
+  //     }
+  //   });
+  // };
+
+  // var getFirst = function(column, value, successCallback) {
+  //   projectQuery.equalTo(column, value);
+  //   projectQuery.first({
+  //     success: successCallback,
+  //     error: function(error) {
+  //       alert("Error: " + error.code + " " + error.message);
+  //     }
+  //   });
+  // };
+
+  // var getById = function(id, successCallback) {
+  //   projectQuery.get(id, {
+  //     success: successCallback,
+  //     error: function(error) {
+  //       alert("Error: " + error.code + " " + error.message);
+  //     }
+  //   });
+  // };
+
+  // var save = function(projectAttributes, successCallback) {
+  //   project.set(projectAttributes);
+  //   project.set("user", Parse.User.current());
+  //   project.setACL(new Parse.ACL(Parse.User.current()));
+  //   project.save(null, {
+  //     success: successCallback,
+  //     error: function(object, error) {
+  //       alert('Failed to create new object, with error code: ' + error.description);
+  //     }
+  //   });
+  // };
+
+  // var update = function(parseProject, attributes, successCallback) {
+  //   parseProject.set(attributes);
+  //   parseProject.save(null, {
+  //     success: successCallback,
+  //     error: function(object, error) {
+  //       alert('Failed to create new object, with error code: ' + error.description);
+  //     }
+  //   });
+  // };
+
+  // return {
+  //   get: getAll,
+  //   getById: getById,
+  //   save: save,
+  //   update: update
+  // };
+
   var projects = [
     {
       id: 0,

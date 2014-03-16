@@ -9,7 +9,7 @@
 
   <ion-content has-header="true" class="darker-bg">
     <!-- Courtesy Message -->
-    <div ng-show="!projects.length" class="courtesy-message">
+    <div ng-show="!overDue && !calendar" class="courtesy-message">
       {{ courtesyMessage }}
     </div>
 
