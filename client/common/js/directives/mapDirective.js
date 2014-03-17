@@ -6,12 +6,20 @@ angular.module('directives.map', [])
         replace: true,
         template: '<div></div>',
         link: function(scope, element, attrs) {
+            var myLatLng = new google.maps.LatLng(32.7153292, -117.1572551);
             var myOptions = {
-                zoom: 6,
-                center: new google.maps.LatLng(46.87916, -3.32910),
+                zoom: 11,
+                center: myLatLng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             var map = new google.maps.Map(element[0], myOptions);
+
+            // To add the marker to the map, use the 'map' property
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title:"Hello World!"
+            });
         }
     };
 })
