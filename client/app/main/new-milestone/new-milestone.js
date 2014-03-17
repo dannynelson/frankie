@@ -1,4 +1,4 @@
-angular.module('main.newMilestone', ['services.photo', 'resources.currentProject'])
+angular.module('main.newMilestone', ['services.photo', 'services.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newMilestone', {

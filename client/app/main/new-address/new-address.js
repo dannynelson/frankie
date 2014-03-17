@@ -1,4 +1,4 @@
-angular.module('main.newAddress', ['resources.currentProject'])
+angular.module('main.newAddress', ['services.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newAddress', {

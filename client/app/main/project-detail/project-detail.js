@@ -1,4 +1,4 @@
-angular.module('main.projectDetail', ['filters.moment', 'resources.currentProject', 'resources.project'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'resources.project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {

@@ -1,4 +1,4 @@
-angular.module('main.newTimeline', ['resources.currentProject'])
+angular.module('main.newTimeline', ['services.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newTimeline', {

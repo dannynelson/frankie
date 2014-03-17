@@ -1,7 +1,11 @@
-angular.module('resources.currentProject', [])
+/**
+ * A service for sharing the current current project scaffold
+ * and sharing across multiple scopes
+ */
+
+angular.module('services.currentProject', [])
 
 .factory('currentProject', function(currentDate) {
-  
   var makeProject = function () {
     return {
       start: currentDate,
@@ -15,17 +19,8 @@ angular.module('resources.currentProject', [])
   var project = makeProject();
 
   return {
-    set: function (key, value) {
-      project[key] = value;
-    },
-    get: function (key) {
-      return project[key];
-    },
     all: function () {
       return project;
-    },
-    create: function(projectJSON) {
-      project = projectJSON;
     },
     clear: function() {
       project = makeProject();

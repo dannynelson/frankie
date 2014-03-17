@@ -1,4 +1,4 @@
-angular.module('main.newClient', ['resources.currentProject', 'services.currentDate'])
+angular.module('main.newClient', ['services.currentProject', 'services.currentDate'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newClient', {

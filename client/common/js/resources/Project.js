@@ -1,13 +1,15 @@
-angular.module('resources.project', ['resources.user'])
+angular.module('resources.project', [])
 
-.factory('Project', function($q, User) {
+.factory('Project', function($q) {
   // Some fake testing data
   var Project = Parse.Object.extend('Project');
   var projectQuery = new Parse.Query(Project);
+  // projects saved so that we don't need to constantly reload
+  var projects = [];
+  var currentProject;
 
   // var currentProject;
 
-  // var projects = [];
   // var project = new Project();
 
   // var getById = function(id, successCallback) {
