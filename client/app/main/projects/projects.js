@@ -9,7 +9,7 @@ angular.module('main.projects', ['filters.moment', 'resources.project'])
     controller: 'ProjectsCtrl',
     resolve: {
       projects: function (Project) {
-        return Project.all();
+        return Project.find('completed', false);
         // return Projects.find('completed', false);
       }
     }
