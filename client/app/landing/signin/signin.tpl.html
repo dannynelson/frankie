@@ -6,24 +6,24 @@
   <ion-content class="positive-bg">
     
     <div class="title">FRANKIE</div>
-
-    <div class="signin-form">
+    <form class="signin-form"
+          ng-submit="signin(user)">
       <div class="list list-inset">
         <div class="item item-input">
-          <input type="text" placeholder="Username">
+          <input type="text" ng-model="user.username" placeholder="Username">
         </div>
         <div class="item item-input">
-          <input type="password" placeholder="Password">
+          <input type="password" ng-model="user.password" placeholder="Password">
         </div>
       </div>
       <div class="padding-horizontal">
-        <a class="button button-block button-assertive" href="#/main/projects">Signin</a>
+        <input type="submit" text="Signin" class="button button-block button-assertive"></input>
       </div>
       <center>
         <a class="button button-clear button-assertive" href="#/landing/forgot-password">Forgot Password?</a>
         <a class="button button-clear button-assertive" href="#/landing/signup">Create an Account</a>
       </center>
-    </div>
+    </form>
 
   </ion-content>
 

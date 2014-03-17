@@ -68,8 +68,9 @@ angular.module('resources.user', [])
     getCurrent: function() {
       if (!user) {
         user = Parse.User.current() || new Parse.User();
+        user = user.attributes;
       }
-      return user.attributes;
+      return user;
     }
   };
 });

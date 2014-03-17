@@ -15,3 +15,4 @@
 
 - Highlight overdue dates
 - Create template from project summary (used on three separate pages)
+- convert everything to state

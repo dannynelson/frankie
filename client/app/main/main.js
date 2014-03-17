@@ -14,7 +14,9 @@ angular.module('main', [
   'main.newTimeline',
   'main.profile',
   'main.projectDetail',
-  'main.projects'
+  'main.projects',
+  // common
+  'resources.user'
 ])
 
 .config(function($stateProvider) {
@@ -39,10 +41,16 @@ angular.module('main', [
   $scope.rightButtons = [];
 })
 
-.controller('MenuCtrl', function($scope, $location) {
+.controller('MenuCtrl', function($scope, $location, $state, User) {
   // Add navigation helper within side-menu
   $scope.goTo = function(path) {
     $scope.sideMenuController.toggleLeft();
     $location.url('/' + path);
+  };
+  $scope.signout = function() {
+    debugger;
+    User.signout();
+    // $state.go('landing.signing');
+    $location.url('/landing/signin');
   };
 });
