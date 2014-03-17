@@ -17,8 +17,7 @@ angular.module('directives.map', [])
             // To add the marker to the map, use the 'map' property
             var marker = new google.maps.Marker({
                 position: myLatLng,
-                map: map,
-                title:"Hello World!"
+                map: map
             });
         }
     };
