@@ -1,30 +1,14 @@
-angular.module('resources.projects', [])
+angular.module('resources.project', ['resources.user'])
 
-.factory('Projects', function() {
+.factory('Project', function($q, User) {
   // Some fake testing data
-  // var Project = Parse.Object.extend("Project");
-  // var project = new Project();
+  // var Project = Parse.Object.extend('Project');
   // var projectQuery = new Parse.Query(Project);
 
-  // var getAll = function(column, value, successCallback) {
-  //   projectQuery.equalTo(column, value);
-  //   projectQuery.find({
-  //     success: successCallback,
-  //     error: function(error) {
-  //       alert("Error: " + error.code + " " + error.message);
-  //     }
-  //   });
-  // };
+  // var currentProject;
 
-  // var getFirst = function(column, value, successCallback) {
-  //   projectQuery.equalTo(column, value);
-  //   projectQuery.first({
-  //     success: successCallback,
-  //     error: function(error) {
-  //       alert("Error: " + error.code + " " + error.message);
-  //     }
-  //   });
-  // };
+  // var projects = [];
+  // var project = new Project();
 
   // var getById = function(id, successCallback) {
   //   projectQuery.get(id, {
@@ -58,11 +42,61 @@ angular.module('resources.projects', [])
   // };
 
   // return {
-  //   get: getAll,
-  //   getById: getById,
-  //   save: save,
-  //   update: update
+  //   find: function(column, value) {
+  //     var d = $q.defer();
+  //     projectQuery.equalTo(column, value);
+  //     projectQuery.find({
+  //       success: function(retrievedProjects) {
+  //         projects = retrievedProjects;
+  //         d.resolve(projects);
+  //       },
+  //       error: function(error) {
+  //         alert("Error: " + error.code + " " + error.message);
+  //         d.reject(error);
+  //       }
+  //     });
+  //     return d.promise;
+  //   },
+
+  //   get: function(id, successCallback) {
+  //     var d = $q.defer();
+  //     projectQuery.get(id, {
+  //       success: function(project) {
+  //         currentProject = project;
+  //         d.resolve(project);
+  //       },
+  //       error: function(error) {
+  //         alert("Error: " + error.code + " " + error.message);
+  //         d.reject(error);
+  //       }
+  //     });
+  //     return d.promise;
+  //   },
+
+  //   save: function(projectAttributes, successCallback) {
+  //     var project = new Project();
+  //     project.set(projectAttributes);
+  //     project.set("user", Parse.User.current());
+  //     project.setACL(new Parse.ACL(Parse.User.current()));
+  //     project.save(null, {
+  //       success: successCallback,
+  //       error: function(object, error) {
+  //         alert('Failed to create new object, with error code: ' + error.description);
+  //       }
+  //     });
+  //   },
+
+  //   update: function(currentProject, attributes, successCallback) {
+  //     currentProject.set(attributes);
+  //     currentProject.save(null, {
+  //       success: successCallback,
+  //       error: function(object, error) {
+  //         alert('Failed to create new object, with error code: ' + error.description);
+  //       }
+  //     });
+  //   }
   // };
+
 
   var projects = [
     {

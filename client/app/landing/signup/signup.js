@@ -1,4 +1,4 @@
-angular.module('landing.signup', [])
+angular.module('landing.signup', ['resources.user'])
 
 .config(function($stateProvider) {
   $stateProvider.state('landing.signup', {
@@ -8,6 +8,13 @@ angular.module('landing.signup', [])
   });
 })
 
-.controller('SignupCtrl', function($scope) {
+.controller('SignupCtrl', function($scope, $state, User) {
+  $scope.user = {};
   $scope.title = 'Create an Account';
+  $scope.signup = function(user) {
+    debugger;
+    User.signup(user, function() {
+      $state.go('main.projects');
+    });
+  };
 });

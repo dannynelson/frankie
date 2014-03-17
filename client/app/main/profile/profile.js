@@ -7,7 +7,7 @@ angular.module('main.profile', ['resources.user', 'filters.phone'])
     controller: 'ProfileCtrl',
     resolve: {
       user: function(User) {
-        return User.get();
+        return User.getAttributes();
       }
     }
   });

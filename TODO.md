@@ -10,6 +10,8 @@
 - make sure all ng-shows and ng-hides are setup
 - required phone input
 - get rid of stupid highlight when clicked thing
+- ionic not showing title
+- add animation on login
 
 ## Nice to Have
 

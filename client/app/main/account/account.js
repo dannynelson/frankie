@@ -7,7 +7,7 @@ angular.module('main.account', ['resources.user'])
     controller: 'AccountCtrl',
     resolve: {
       user: function(User) {
-        return User.get();
+        return User.getAttributes();
       }
     }
   });

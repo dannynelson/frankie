@@ -1,27 +1,18 @@
-angular.module('landing.signin', ['resources.user'])
+angular.module('landing.signin', ['resources.user', 'main.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('landing.signin', {
     url: "/signin",
     templateUrl: 'landing/signin/signin.tpl.html',
-    controller: 'SigninCtrl',
-    resolve: {
-      user: function(User) {
-        // debugger;
-        return User.getCurrent();
-        // if (user) {
-        //   $location.url('/main/projects');
-        // }
-        // return user;
-      }
-    }
+    controller: 'SigninCtrl'
   });
 })
 
-.controller('SigninCtrl', function ($scope, $state, user, User) {
+.controller('SigninCtrl', function ($scope, $state, User) {
   $scope.title = '';
-  $scope.user = user;
+  $scope.user = {};
   $scope.signin = function(user) {
+    debugger;
     User.signin(user.username, user.password, function() {
       $state.go('main.projects');
     });

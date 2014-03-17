@@ -17,29 +17,23 @@ angular.module('resources.user', [])
   //   bio: 'I am super awesome at plumbing. I fix pipes and stuff.'
   // };
   
-  var user;
-
   return {
+    // onSuccess(retrievedUser)
     signin: function(username, password, onSuccess) {
       Parse.User.logIn(username, password, {
-        success: function(retrievedUser) {
-          user = retrievedUser;
-          onSuccess();
-        },
+        success: onSuccess,
         error: function(retrievedUser, error) {
           alert("Invalid Username or Password");
         }
       });
     },
 
-    signup: function(username, password, onSuccess) {
-      user.set({
-        username: username,
-        password: password
-      });
-      user.signUp(null, {
+    // user attributes must include username and password
+    signup: function(userAttributes, onSuccess) {
+      var newUser = new Parse.User();
+      newUser.set(userAttributes);
+      newUser.signUp(null, {
         success: function(retrievedUser) {
-          user = retrievedUser;
           alert('account created');
           onSuccess();
         },
@@ -54,6 +48,7 @@ angular.module('resources.user', [])
     },
 
     resetPassword: function(onSuccess) {
+      var user = Parse.User.current();
       Parse.User.requestPasswordReset(user.get('email'), {
         success: function() {
           alert("Request Sent");
@@ -66,11 +61,8 @@ angular.module('resources.user', [])
     },
 
     getCurrent: function() {
-      if (!user) {
-        user = Parse.User.current() || new Parse.User();
-        user = user.attributes;
-      }
-      return user;
+      // Parse.User.current() does not do an ajax call
+      return Parse.User.current().attributes;
     }
   };
 });

@@ -1,6 +1,6 @@
 angular.module('main', [
   'main.account',
-  'main.analytics',
+  // 'main.analytics',
   'main.archives',
   'main.calendar',
   'main.changeEmail',
@@ -41,16 +41,15 @@ angular.module('main', [
   $scope.rightButtons = [];
 })
 
-.controller('MenuCtrl', function($scope, $location, $state, User) {
+.controller('MenuCtrl', function($scope, $state, User) {
   // Add navigation helper within side-menu
-  $scope.goTo = function(path) {
+  $scope.goTo = function(state) {
     $scope.sideMenuController.toggleLeft();
-    $location.url('/' + path);
+    $state.go(state);
   };
   $scope.signout = function() {
-    debugger;
     User.signout();
-    // $state.go('landing.signing');
-    $location.url('/landing/signin');
+    $state.go('landing.signin');
+    // $location.url('/landing/signin');
   };
 });

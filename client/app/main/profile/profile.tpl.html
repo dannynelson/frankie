@@ -12,9 +12,9 @@
         <div class="item item-thumbnail-left" type="item-text-wrap">
           <img class="thumbnail" 
                ng-src="{{ user.profilePhoto || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
-          <h2>{{ user.name }}</h2>
+          <h2>{{ user.name || 'anonymous' }}</h2>
           <p>
-            {{ user.title }}</br>
+            {{ user.title || 'no title' }}</br>
             {{ user.company }}
           </p>
         </div>
@@ -29,13 +29,13 @@
         <div class="item">
           Years of Experience
           <span class="item-note">
-            {{ user.yearsExp || 0 }}
+            {{ user.yearsExp }}
           </span>
         </div>
         <div class="item">
           Client Rating
           <span class="item-note">
-            {{ user.rating || 0 }}
+            {{ user.rating }}
           </span>
         </div>
 

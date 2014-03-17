@@ -13,14 +13,14 @@
         <div class="item item-divider"></div>
         <a class="item item-avatar" type="item-text-wrap" href="#/main/profile">
           <img ng-src="{{ user.profilePhoto || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
-          <h2>{{ user.name }}</h2>
-          <p>{{ user.title }}</p>
+          <h2>{{ user.name || 'Anonymous' }}</h2>
+          <p>{{ user.title || 'no title' }}</p>
         </a>
         
         <div class="item item-divider"></div>
         <a class="item item-icon-left" href="#/main/change-email">
           <i class="icon ion-email positive"></i>
-          Change Email
+          Change Username
         </a>
         <a class="item item-icon-left" href="#/main/change-password">
           <i class="icon ion-unlocked positive"></i>

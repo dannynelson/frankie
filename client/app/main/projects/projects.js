@@ -1,6 +1,6 @@
 // TODO: lazy load the template directories
 
-angular.module('main.projects', ['filters.moment', 'resources.projects'])
+angular.module('main.projects', ['filters.moment', 'resources.project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projects', {
@@ -8,8 +8,9 @@ angular.module('main.projects', ['filters.moment', 'resources.projects'])
     templateUrl: 'main/projects/projects.tpl.html',
     controller: 'ProjectsCtrl',
     resolve: {
-      projects: function (Projects) {
-        return Projects.all();
+      projects: function (Project) {
+        return Project.all();
+        // return Projects.find('completed', false);
       }
     }
   });

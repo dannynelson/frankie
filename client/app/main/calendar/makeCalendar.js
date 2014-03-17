@@ -1,5 +1,5 @@
 // TODO: only add new events when created, don't completely reload calendar each time
-angular.module('services.makeCalendar', ['services.currentDate', 'resources.projects'])
+angular.module('services.makeCalendar', ['services.currentDate', 'resources.project'])
 
 .factory('makeCalendar', function(Projects, currentDate) {
   
