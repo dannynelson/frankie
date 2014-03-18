@@ -1,6 +1,7 @@
 angular.module('frankie', [
   // app-wide dependencies
   'ionic',
+  // 'restangular',
   'templates.app',
   'templates.common',
   // app modules

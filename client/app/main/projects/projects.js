@@ -11,7 +11,7 @@ angular.module('main.projects', ['filters.moment', 'services.projects'])
 })
 
 .controller('ProjectsCtrl', function($scope, $location, Project) {
-  $scope.projects = Project.getProjects();
+  $scope.projects = Project;
 
   $scope.$on('projectsUpdated', function() {
     $scope.$apply(function() {

@@ -9,9 +9,9 @@ module.exports = function (grunt) {
 
     src: {
       vendor: [
-        'node_modules/ionic/release/js/ionic.bundle.js',
-        'node_modules/moment/moment.js',
-        'node_modules/lodash/lodash.js',
+        'bower_components/ionic/release/js/ionic.bundle.js',
+        'bower_components/restangular/dist/restangular.js',
+        'bower_components/moment/moment.js',
       ],
       js: [
         'client/**/!(*spec).js'
