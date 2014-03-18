@@ -55,7 +55,7 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
         if ($stateParams.type === 'new') {
           projectCollection.add(retrievedProject);
         }
-        currentProject.clear();
+        // currentProject.clear();
         $rootScope.$viewHistory.backView.go();
       },
       error: function(project, error) {
