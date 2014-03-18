@@ -17,7 +17,6 @@ angular.module('main.projects', ['filters.moment', 'resources.project'])
 })
 
 .controller('ProjectsCtrl', function($scope, $location, projects) {
-  debugger;
   $scope.projects = projects;
 
   $scope.title = 'Projects';

@@ -7,8 +7,8 @@ angular.module('main.archives', ['resources.project'])
     templateUrl: 'main/projects/projects.tpl.html',
     controller: 'ArchivesCtrl',
     resolve: {
-      archives: function (Projects) {
-        return Projects.archives();
+      archives: function (Project) {
+        return Project.find('completed', true);
       }
     }
   });
