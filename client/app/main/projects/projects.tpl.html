@@ -24,15 +24,15 @@
          ng-repeat="project in projects | filter:liveSearch" 
          type="item-text-wrap" 
          href="#/main/projects/{{project.id}}">
-        <img class="thumbnail" ng-src="{{ project.get('photo') }}">
-        <h2>{{ project.get('title') }}</h2>
+        <img class="thumbnail" ng-src="{{ project.photo }}">
+        <h2>{{ project.title }}</h2>
         <p>
-          ${{ project.get('price') }}</br>
-          <span ng-show="project.get('completed')">
+          ${{ project.price }}</br>
+          <span ng-show="project.completed">
             Completed
           </span>
-          <span ng-hide="project.get('completed')">
-            Due {{ project.get('end') | moment.fromNow }}
+          <span ng-hide="project.completed">
+            Due {{ project.end | moment.fromNow }}
           </span>
         </p>
       </a>

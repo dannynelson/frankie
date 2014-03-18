@@ -1,9 +1,13 @@
 angular.module('models.Project', ['services.currentDate', 'models.Client', 'models.Timeline', 'models.User'])
 
 .factory('Project', function($q, $rootScope, $resource, User, Client, Timeline, currentDate) {
-  var Project = $resource('https://api.parse.com/1/classes/Project');
+  return $resource('https://api.parse.com/1/classes/Project/:objectId');
 
+  // var projects = Project.get(function() {
+  //   debugger;
+  // });
 
+  // return projects;
   // var projects = [];
   // var Project = Restangular.all('Project');
   // debugger;
