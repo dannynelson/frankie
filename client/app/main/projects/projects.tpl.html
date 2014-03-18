@@ -23,13 +23,17 @@
       <a class="item item-thumbnail-left-wide" 
          ng-repeat="project in projects | filter:liveSearch" 
          type="item-text-wrap" 
-         href="#/main/projects/{{project.get('id')}}">
+         href="#/main/projects/{{project.id}}">
         <img class="thumbnail" ng-src="{{ project.get('photo') }}">
         <h2>{{ project.get('title') }}</h2>
         <p>
           ${{ project.get('price') }}</br>
-          <span ng-show="project.get('completed')">Completed</span>
-          <span ng-hide="project.get('completed')">Due {{ project.get('end') | moment.fromNow }}</span>
+          <span ng-show="project.get('completed')">
+            Completed
+          </span>
+          <span ng-hide="project.get('completed')">
+            Due {{ project.get('end') | moment.fromNow }}
+          </span>
         </p>
       </a>
     </ion-list>

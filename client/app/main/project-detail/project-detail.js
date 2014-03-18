@@ -6,21 +6,20 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     templateUrl: 'main/project-detail/project-detail.tpl.html',
     controller: 'ProjectDetailCtrl',
     resolve: {
-      project: function (Projects, $stateParams, currentProject) {
-        var project = Projects.get($stateParams.id);
-        currentProject.create(project);
-        return project;
+      project: function(Project, $stateParams) {
+        return Project.get($stateParams.id);
       }
     }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $location, $rootScope, project, currentProject) {
-  $scope.project = project;
+.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, project, currentProject) {
+  currentProject.create(project);
+  $scope.project = project.attributes;
 
   // Header
   // -------------------------------
-  $scope.title = $scope.project.title;
+  $scope.title = project.get('title');
   $scope.leftButtons = [];
   $scope.rightButtons = [{
     type: 'button-clear button-assertive',
@@ -34,7 +33,6 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   // -------------------------------
   // clear currentProject when back button pressed
   $scope.$on('back', function(event) {
-    debugger;
     currentProject.clear();
   });
 
@@ -47,10 +45,8 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     window.location.href = method + ':' + address;
   };
 
-  $scope.completeProject = function (project) {
-    // save project to archives
+  $scope.completeProject = function(project) {
     project.completed = true;
-    // delete project by ID from collection
     $rootScope.$viewHistory.backView.go();
   };
 

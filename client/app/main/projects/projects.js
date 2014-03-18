@@ -9,6 +9,7 @@ angular.module('main.projects', ['filters.moment', 'resources.project'])
     controller: 'ProjectsCtrl',
     resolve: {
       projects: function (Project) {
+        debugger;
         return Project.find('completed', false);
       }
     }
@@ -16,6 +17,7 @@ angular.module('main.projects', ['filters.moment', 'resources.project'])
 })
 
 .controller('ProjectsCtrl', function($scope, $location, projects) {
+  debugger;
   $scope.projects = projects;
 
   $scope.title = 'Projects';
