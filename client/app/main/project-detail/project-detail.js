@@ -7,6 +7,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     controller: 'ProjectDetailCtrl',
     resolve: {
       project: function(projects, $stateParams) {
+        debugger;
         return projects.get($stateParams.id);
       }
     }

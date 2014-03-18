@@ -8,15 +8,15 @@ angular.module('main.projects', ['filters.moment', 'services.projects'])
     templateUrl: 'main/projects/projects.tpl.html',
     controller: 'ProjectsCtrl',
     resolve: {
-      projects: function (projects) {
-        return projects;
+      projectData: function (projects) {
+        return projects.all();
       }
     }
   });
 })
 
-.controller('ProjectsCtrl', function($scope, $location, projects) {
-  $scope.projects = projects.models;
+.controller('ProjectsCtrl', function($scope, $location, projectData) {
+  $scope.projects = projectData.models;
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{
