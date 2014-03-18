@@ -1,4 +1,4 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'models.Project'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
@@ -6,14 +6,15 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     templateUrl: 'main/project-detail/project-detail.tpl.html',
     controller: 'ProjectDetailCtrl',
     resolve: {
-      project: function(Project, $stateParams) {
-        return Project.getByIndex($stateParams.id);
+      project: function(projects, $stateParams) {
+        return projects.get($stateParams.id);
       }
     }
   });
 })
 
 .controller('ProjectDetailCtrl', function($scope, $rootScope, $location, project, currentProject) {
+  debugger;
   currentProject.create(project);
   $scope.project = project.attributes;
 

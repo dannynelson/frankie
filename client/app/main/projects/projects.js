@@ -6,17 +6,17 @@ angular.module('main.projects', ['filters.moment', 'services.projects'])
   $stateProvider.state('main.projects', {
     url: '/projects',
     templateUrl: 'main/projects/projects.tpl.html',
-    controller: 'ProjectsCtrl'
-    // resolve: {
-    //   projects: function (Project) {
-    //     return Project.find('completed', false);
-    //   }
-    // }
+    controller: 'ProjectsCtrl',
+    resolve: {
+      projects: function (projects) {
+        return projects;
+      }
+    }
   });
 })
 
 .controller('ProjectsCtrl', function($scope, $location, projects) {
-  $scope.projects = projects.fetch();
+  $scope.projects = projects.models;
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{
