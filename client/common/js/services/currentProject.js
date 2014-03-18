@@ -12,7 +12,8 @@ angular.module('services.currentProject', [])
       end: currentDate,
       timeline: [],
       client: {},
-      address: {}
+      address: {},
+      completed: false
     };
   };
 

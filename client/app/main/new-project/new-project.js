@@ -6,18 +6,13 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
     // add type to specify edit/new
     url: '/new-project/:type',
     templateUrl: 'main/new-project/new-project.tpl.html',
-    controller: 'NewProjectCtrl',
-    resolve: {
-      project: function(currentProject) {
-        return currentProject.all();
-      }
-    }
+    controller: 'NewProjectCtrl'
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Project, currentProject, project, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Project, currentProject, photo) {
   // $stateParams.type is either 'new', or 'edit'
-  $scope.project = project;
+  $scope.project = currentProject.all();
 
   $scope.title = (function (type) {
     // capitalize first letter
@@ -45,18 +40,16 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
+    var onSuccess = function() {
+      currentProject.clear();
+      $rootScope.$viewHistory.backView.go();
+    };
     if ($stateParams.type === 'new') {
-      Project.save(project, function() {
-        
-      });
+      Project.save(project, onSuccess);
     }
     if ($stateParams.type === 'edit') {
-      Projects.update(project, function() {
-
-      });
+      Projects.update(project, onSuccess);
     }
-    currentProject.clear();
-    $rootScope.$viewHistory.backView.go();
   };
 
   $scope.getPhoto = function () {

@@ -5,6 +5,7 @@ coverage
 ### Generic ###
 vendor
 node_modules
+bower_components
 .sass-cache/
 npm-debug.log
 *.keystore

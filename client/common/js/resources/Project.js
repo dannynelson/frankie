@@ -76,6 +76,7 @@ angular.module('resources.project', [])
     },
 
     save: function(projectAttributes, successCallback) {
+      debugger;
       var project = new Project();
       project.set(projectAttributes);
       project.set("user", Parse.User.current());
