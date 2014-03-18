@@ -12,7 +12,6 @@ angular.module('landing.signin', ['models.User', 'main.projects'])
   $scope.title = '';
   $scope.user = {};
   $scope.signin = function(user) {
-    debugger;
     User.logIn(user.username, user.password, {
       success: function() {
         $state.go('main.projects');

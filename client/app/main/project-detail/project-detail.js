@@ -6,22 +6,21 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     templateUrl: 'main/project-detail/project-detail.tpl.html',
     controller: 'ProjectDetailCtrl',
     resolve: {
-      project: function(projects, $stateParams) {
-        debugger;
-        return projects.get($stateParams.id);
+      projectData: function (projects) {
+        return projects.all();
       }
     }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, project, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $rootScope, $location, projectData, currentProject) {
   debugger;
-  currentProject.create(project);
-  $scope.project = project.attributes;
+  $scope.project = projectData.get($stateParams.id);
+  currentProject.create($scope.project);
 
   // Header
   // -------------------------------
-  $scope.title = project.get('title');
+  $scope.title = $scope.project.get('title');
   $scope.leftButtons = [];
   $scope.rightButtons = [{
     type: 'button-clear button-assertive',

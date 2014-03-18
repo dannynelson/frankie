@@ -6,13 +6,22 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
     // add type to specify edit/new
     url: '/new-project/:type',
     templateUrl: 'main/new-project/new-project.tpl.html',
-    controller: 'NewProjectCtrl'
+    controller: 'NewProjectCtrl',
+    resolve: {
+      projectCollection: function (projects) {
+        return projects.all();
+      },
+      currentProject: function (currentProject) {
+        return currentProject.all();
+      }
+    }
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, Project, currentProject, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, projectCollection, currentProject, photo) {
   // $stateParams.type is either 'new', or 'edit'
-  $scope.project = currentProject.all();
+  $scope.project = currentProject.attributes;
+  // debugger;
 
   $scope.title = (function (type) {
     // capitalize first letter
@@ -40,16 +49,19 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
-    var onSuccess = function() {
-      currentProject.clear();
-      $rootScope.$viewHistory.backView.go();
-    };
-    if ($stateParams.type === 'new') {
-      Project.save(project, onSuccess);
-    }
-    if ($stateParams.type === 'edit') {
-      Projects.update(project, onSuccess);
-    }
+    debugger;
+    currentProject.save(project, {
+      success: function(retrievedProject) {
+        if ($stateParams.type === 'new') {
+          projectCollection.add(retrievedProject);
+        }
+        currentProject.clear();
+        $rootScope.$viewHistory.backView.go();
+      },
+      error: function(project, error) {
+        alert('Failed to create new object, with error code: ' + error.description);
+      }
+    });
   };
 
   $scope.getPhoto = function () {

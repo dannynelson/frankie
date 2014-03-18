@@ -6,21 +6,21 @@
 angular.module('services.currentProject', ['models.Project'])
 
 .factory('currentProject', function(Project) {
-  var project = new Project();
+  var currentProject = new Project();
 
   return {
     all: function () {
-      return project;
+      return currentProject;
     },
 
     // overwrite old project
     clear: function() {
-      project = new Project();
+      currentProject = new Project();
     },
 
     // creates currentProject from existing Parse object
     create: function(existingProject) {
-      project = existingProject;
+      currentProject = existingProject;
     }
 
     // adds user and ACL for new project
