@@ -1,24 +1,23 @@
 // TODO: only add new events when created, don't completely reload calendar each time
-angular.module('services.makeCalendar', ['services.currentDate', 'resources.project'])
+angular.module('services.makeCalendar', ['services.currentDate'])
 
-.factory('makeCalendar', function(Projects, currentDate) {
+.factory('makeCalendar', function(currentDate) {
   
   // Create a calendar from all project events
-  var create = function () {
+  var create = function (projects) {
     var events = [];
-    // convert current date to milliseconds, for easier comparison
     currentDate = + new Date(currentDate);
     // Calendar categories
     var upcoming = {};
     var overDue = [];
 
     // Make Events:
-    Projects.all().forEach(function (project) {
+    projects.forEach(function (project) {
       // Class for creating events
       var Event = function (title, date) {
-        this.projectId = project.id,
-        this.projectTitle = project.title,
-        this.photo = project.photo,
+        this.projectId = project.get('id'),
+        this.projectTitle = project.get('title'),
+        this.photo = project.get('photo'),
         this.title = title,
         // date formatted for moment.js
         this.date = date;
@@ -26,11 +25,10 @@ angular.module('services.makeCalendar', ['services.currentDate', 'resources.proj
         this.orderingDate = + new Date(date);
       };
       // Add start/end project events
-      events.push(new Event('Start Project', project.start));
-      events.push(new Event('Finish Project', project.end));
+      events.push(new Event('Finish Project', project.get('end')));
       // Add timeline events
-      if (project.timeline.length) {
-        project.timeline.forEach(function (milestone) {
+      if (project.get('timeline').length) {
+        project.get('timeline').forEach(function (milestone) {
           events.push(new Event(milestone.title, milestone.date));
         });
       }
@@ -60,7 +58,6 @@ angular.module('services.makeCalendar', ['services.currentDate', 'resources.proj
       overDue: overDue
     };
   };
-  // $rootScope.$on("eventCreated", service.SaveState);
 
   return {
     create: create

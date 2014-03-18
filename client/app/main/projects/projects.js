@@ -10,7 +10,6 @@ angular.module('main.projects', ['filters.moment', 'resources.project'])
     resolve: {
       projects: function (Project) {
         return Project.find('completed', false);
-        // return Projects.find('completed', false);
       }
     }
   });

@@ -1,4 +1,4 @@
-angular.module('main.calendar', ['services.makeCalendar'])
+angular.module('main.calendar', ['services.makeCalendar', 'resources.project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.calendar', {
@@ -6,14 +6,15 @@ angular.module('main.calendar', ['services.makeCalendar'])
     templateUrl: 'main/calendar/calendar.tpl.html',
     controller: 'CalendarCtrl',
     resolve: {
-      calendar: function (makeCalendar) {
-        return makeCalendar.create();
+      projects: function (Project) {
+        return Project.find('completed', false);
       }
     }
   });
 })
 
-.controller('CalendarCtrl', function($scope, $location, calendar) {
+.controller('CalendarCtrl', function($scope, $location, makeCalendar, projects) {
+  var calendar = makeCalendar.create(projects);
   $scope.overDue = calendar.overDue;
   $scope.calendar = calendar.upcoming;
 
