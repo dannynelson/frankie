@@ -1,4 +1,4 @@
-angular.module('main.archives', ['resources.project'])
+angular.module('main.archives', ['models.Project'])
 
 // Shares the same template as projects
 .config(function($stateProvider) {

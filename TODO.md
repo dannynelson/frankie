@@ -12,6 +12,7 @@
 - get rid of stupid highlight when clicked thing
 - ionic not showing title
 - add animation on login
+- currentDate to function
 
 ## Nice to Have
 

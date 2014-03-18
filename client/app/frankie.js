@@ -7,7 +7,7 @@ angular.module('frankie', [
   'main',
   'landing',
   // common
-  'resources.user'
+  'models.User'
 ])
 
 .config(function($urlRouterProvider, $stateProvider) {

@@ -1,4 +1,4 @@
-angular.module('main.analytics', ['resources.project', 'services.currentDate'])
+angular.module('main.analytics', ['models.Project', 'services.currentDate'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.analytics', {

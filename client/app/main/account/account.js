@@ -1,4 +1,4 @@
-angular.module('main.account', ['resources.user'])
+angular.module('main.account', ['models.User'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.account', {

@@ -1,24 +1,22 @@
 // TODO: lazy load the template directories
 
-angular.module('main.projects', ['filters.moment', 'resources.project'])
+angular.module('main.projects', ['filters.moment', 'services.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projects', {
     url: '/projects',
     templateUrl: 'main/projects/projects.tpl.html',
-    controller: 'ProjectsCtrl',
-    resolve: {
-      projects: function (Project) {
-        debugger;
-        return Project.find('completed', false);
-      }
-    }
+    controller: 'ProjectsCtrl'
+    // resolve: {
+    //   projects: function (Project) {
+    //     return Project.find('completed', false);
+    //   }
+    // }
   });
 })
 
 .controller('ProjectsCtrl', function($scope, $location, projects) {
-  debugger;
-  $scope.projects = projects;
+  $scope.projects = projects.fetch();
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{

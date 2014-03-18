@@ -1,4 +1,4 @@
-angular.module('landing.signup', ['resources.user'])
+angular.module('landing.signup', ['models.User'])
 
 .config(function($stateProvider) {
   $stateProvider.state('landing.signup', {

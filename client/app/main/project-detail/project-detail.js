@@ -1,4 +1,4 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'resources.project'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'models.Project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
@@ -7,7 +7,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     controller: 'ProjectDetailCtrl',
     resolve: {
       project: function(Project, $stateParams) {
-        return Project.get($stateParams.id);
+        return Project.getByIndex($stateParams.id);
       }
     }
   });

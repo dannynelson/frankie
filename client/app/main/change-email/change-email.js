@@ -1,4 +1,4 @@
-angular.module('main.changeEmail', ['resources.user'])
+angular.module('main.changeEmail', ['models.User'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.changeEmail', {

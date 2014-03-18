@@ -1,4 +1,4 @@
-angular.module('main.changePassword', ['resources.user'])
+angular.module('main.changePassword', ['models.User'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.changePassword', {

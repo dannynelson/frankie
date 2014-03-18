@@ -1,49 +1,77 @@
-angular.module('resources.project', [])
+angular.module('models.ProjectCollection', ['models.Project'])
 
-.factory('Project', function($q) {
-  // Some fake testing data
-  var Project = Parse.Object.extend('Project');
-  var projectQuery = new Parse.Query(Project);
-  var projects = [];
+.factory('ProjectCollection', function($q, Project) {
+  
+  return Parse.Collection.extend({
+    model: Project
+  });
+
+  // Construct a query to get the current user's todo items
+  // var projects = new ProjectCollection();
+  // var query = new Parse.Query(Project);
+  // query.equalTo("user", Parse.User.current());
+  // projects.query = query;
+  // projects.fetch();
+
+  // initial query
+  // projectQuery.find({
+  //   success: function(retrievedProjects) {
+  //     projects = retrievedProjects;
+  //   },
+  //   error: function(error) {
+  //     alert("Error: " + error.code + " " + error.message);
+  //   }
+  // });
+
+  // var findAll = function(column, value) {
+  //   var d = $q.defer();
+  //   projectQuery.equalTo(column, value);
+  //   projectQuery.find({
+  //     success: function(retrievedProjects) {
+  //       projects = retrievedProjects;
+  //       d.resolve(projects);
+  //     },
+  //     error: function(error) {
+  //       alert("Error: " + error.code + " " + error.message);
+  //       d.reject(error);
+  //     }
+  //   });
+  //   return d.promise;
+  // };
+  // var getById = function(id) {
+  //   var d = $q.defer();
+  //   projectQuery.get(id, {
+  //     success: function(project) {
+  //       d.resolve(project);
+  //     },
+  //     error: function(error) {
+  //       alert("Error: " + error.code + " " + error.message);
+  //       d.reject(error);
+  //     }
+  //   });
+  //   return d.promise;
+  // };
   // projects saved so that we don't need to constantly reload
 
-  return {
-    find: function(column, value) {
-      var d = $q.defer();
-      projectQuery.equalTo(column, value);
-      projectQuery.find({
-        success: function(retrievedProjects) {
-          debugger;
-          projects = retrievedProjects;
-          d.resolve(projects);
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-          d.reject(error);
-        }
-      });
-      return d.promise;
-    },
+  // return {
+  //   getProjects: function() {
+  //     return projects.filter(function(project) {
+  //       return project.get('completed') === false;
+  //     });
+  //   },
 
-    // select by index from current projects
-    getByIndex: function(i) {
+  //   getArchives: function() {
+  //     return projects.filter(function(project) {
+  //       return project.get('completed') === true;
+  //     });
+  //   },
 
-    },
+  //   // select by index from current projects
+  //   getProjectByIndex: function(i) {
+  //     return projects[i];
+  //   }
 
-    get: function(id) {
-      var d = $q.defer();
-      projectQuery.get(id, {
-        success: function(project) {
-          d.resolve(project);
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-          d.reject(error);
-        }
-      });
-      return d.promise;
-    },
-  };
+  // };
 
 
   // var projects = [
