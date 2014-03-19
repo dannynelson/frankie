@@ -3,10 +3,11 @@
  * and sharing across multiple scopes
  */
 
-angular.module('services.currentProject', ['resources.Project'])
+angular.module('services.currentProject', ['resources.Project', 'services.currentDate'])
 
-.factory('currentProject', function(Project) {
-  var currentProject = new Project();
+.factory('currentProject', function(Project, currentDate) {
+  var currentProject;
+
   return {
     get: function() {
       return currentProject;
@@ -15,7 +16,14 @@ angular.module('services.currentProject', ['resources.Project'])
       currentProject = existingProject;
     },
     reset: function() {
-      currentProject = new Project();
+      currentProject = new Project({
+        start: currentDate,
+        end: currentDate,
+        client: {},
+        address: {},
+        timeline: [],
+        completed: false
+      });
     }
   };
 });

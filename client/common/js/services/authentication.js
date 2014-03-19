@@ -4,7 +4,6 @@ angular.module('services.auth', ['resources.User', 'resources.Login'])
   return {
     // user must have username and password properties
     signin: function(user, onSuccess) {
-      debugger;
       Login.get({
         username: user.username,
         password: user.password
@@ -20,9 +19,8 @@ angular.module('services.auth', ['resources.User', 'resources.Login'])
         onSuccess();
       });
     },
-    signout: function(onSuccess) {
+    signout: function() {
       delete $http.defaults.headers.common['X-Parse-Session-Token'];
-      onSuccess();
     }
   };
 });

@@ -1,5 +1,5 @@
 angular.module('resources.User', [])
 
-.factory('User', function($resource, $http) {
+.factory('User', function($resource) {
   return $resource('https://api.parse.com/1/users');
 });

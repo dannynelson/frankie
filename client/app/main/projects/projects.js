@@ -1,6 +1,6 @@
 // TODO: lazy load the template directories
 
-angular.module('main.projects', ['filters.moment', 'services.projects'])
+angular.module('main.projects', ['filters.moment', 'resources.Project', 'services.loading'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projects', {
@@ -10,7 +10,9 @@ angular.module('main.projects', ['filters.moment', 'services.projects'])
     resolve: {
       projects: function($q, Project) {
         var defer = $q.defer();
-        Project.get(function(response) {
+        Project.get({
+          where: '{"completed":false}'
+        }, function(response) {
           defer.resolve(response.results);
         });
         return defer.promise;
@@ -19,14 +21,21 @@ angular.module('main.projects', ['filters.moment', 'services.projects'])
   });
 })
 
-.controller('ProjectsCtrl', function($scope, $location, projects) {
+.controller('ProjectsCtrl', function($scope, $location, projects, loading) {
   $scope.projects = projects;
-
-  // $scope.$on('projectsUpdated', function() {
-  //   $scope.$apply(function() {
-  //     $scope.projects = Project.getProjects();
-  //   });
+  // loading.show();
+  // Project.get(function(response) {
+  //   $scope.projects = response.results;
+  //   loading.hide();
   // });
+
+  $scope.$on('projectsUpdated', function(newProjects) {
+    // debugger;
+    // $scope.$apply();
+    // $scope.$apply(function() {
+      $scope.projects = newProjects;
+    // });
+  });
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{

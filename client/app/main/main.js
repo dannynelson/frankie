@@ -16,7 +16,7 @@ angular.module('main', [
   'main.projectDetail',
   'main.projects',
   // common
-  'resources.User'
+  'services.auth'
 ])
 
 .config(function($stateProvider) {
@@ -41,15 +41,14 @@ angular.module('main', [
   $scope.rightButtons = [];
 })
 
-.controller('MenuCtrl', function($scope, $state, User) {
+.controller('MenuCtrl', function($scope, $state, auth) {
   // Add navigation helper within side-menu
   $scope.goTo = function(state) {
     $scope.sideMenuController.toggleLeft();
     $state.go(state);
   };
   $scope.signout = function() {
-    User.signout();
+    auth.signout();
     $state.go('landing.signin');
-    // $location.url('/landing/signin');
   };
 });

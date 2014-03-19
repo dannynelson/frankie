@@ -13,6 +13,7 @@
 - ionic not showing title
 - add animation on login
 - currentDate to function
+- set ACL on objects
 
 ## Nice to Have
 
