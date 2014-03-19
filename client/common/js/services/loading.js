@@ -10,7 +10,7 @@ angular.module('services.loading', ['ionic'])
         animation: 'fade-in',
         showBackdrop: true,
         maxWidth: 200,
-        showDelay: 400
+        showDelay: 300
       });
     },
     hide: function() {

@@ -1,4 +1,4 @@
-angular.module('main.archives', ['resources.Project'])
+angular.module('main.archives', ['services.projects'])
 
 // Shares the same template as projects
 .config(function($stateProvider) {
@@ -7,8 +7,8 @@ angular.module('main.archives', ['resources.Project'])
     templateUrl: 'main/projects/projects.tpl.html',
     controller: 'ArchivesCtrl',
     resolve: {
-      archives: function (Project) {
-        return Project.find('completed', true);
+      archives: function (projects) {
+        return projects.get({completed: true});
       }
     }
   });

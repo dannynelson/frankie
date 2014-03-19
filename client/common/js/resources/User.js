@@ -1,7 +1,10 @@
 angular.module('resources.User', [])
 
 .factory('User', function($resource) {
-  return $resource('https://api.parse.com/1/users', null, {
+  var address = 'https://api.parse.com/1/users';
+  var params = null;
+  var actions = {
     update: {method:'PUT'}
-  });
+  };
+  return $resource(address, params, actions);
 });

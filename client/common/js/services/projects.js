@@ -1,40 +1,57 @@
-angular.module('services.projects', ['resources.Project', 'services.loading'])
+angular.module('services.projects', ['resources.Project', 'services.loading', 'services.currentUser'])
 
-.factory('projects', function($rootScope, Project, loading) {
+.factory('projects', function($q, Project, loading) {
+  
   var projects = [];
 
-  loading.show();
-  Project.get(function(response) {
-    projects = response.results;
-    $rootScope.$broadcast('projectsUpdated', projects);
-    loading.hide();
-  });
+  var query = {
+    // user: {
+    //   __type: 'Pointer',
+    //   className: '_User',
+    //   objectId: 'gwhGqiyLjR'
+    // },
+    completed: false
+  };
 
-  return projects;
+  var fetched = false;
+  var fetchProjects = function() {
+    loading.show();
+    var defer = $q.defer();
 
-  // return {
-  //   all: function() {
-  //     if (!fetched) {
-  //       var d = $q.defer();
-  //       projects.fetch({
-  //         success: function(collection) {
-  //           fetched = true;
-  //           d.resolve(collection);
-  //         }
-  //       });
-  //       return d.promise;
-  //     } else {
-  //       return projects;
-  //     }
-  //   }
-  // };
+    Project.get({
+      where: JSON.stringify(query)
+    }, function(response) {
+      projects = response.results;
+      fetched = true;
+      defer.resolve(response.results);
+      loading.hide();
+    });
 
+    return defer.promise;
+  };
 
-  // var d = $q.defer();
-  // projects.fetch({
-  //   success: function(collection) {
-  //     d.resolve(collection.models);
-  //   }
-  // });
-  // return d.promise;
+  return {
+    all: function() {
+      if (!fetched) {
+        return fetchProjects();
+      } else {
+        return projects;
+      }
+    },
+    add: function(newProject, onSuccess) {
+      // var project = new Project(newProject);
+      newProject.$save(function(retrievedProject) {
+        projects.push(retrievedProject);
+        onSuccess();
+      });
+    },
+    update: function(existingProject, onSuccess) {
+      existingProject.$update({objectId: existingProject.objectId}, function(retrievedProject) {
+        fetchProjects().then(function(retrievedProjects) {
+          projects = retrievedProjects;
+          onSuccess();
+        });
+      });
+    }
+  };
 });

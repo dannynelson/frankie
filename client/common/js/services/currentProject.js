@@ -1,7 +1,5 @@
 /**
- * A service for creating the current project scaffold
- * and sharing across multiple scopes
- *
+ * An instance of resource Project for sharing through app
  * Better than local storage because it is readily sharable between controllers without saving first
  */
 
@@ -10,7 +8,7 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
 .factory('currentProject', function(Project, currentUser, currentDate) {
   var user = currentUser.get();
   var currentProject;
-
+  debugger;
   return {
     get: function() {
       return currentProject;
@@ -22,7 +20,11 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
       currentProject = new Project({
         start: currentDate,
         end: currentDate,
-        user: user.objectId,
+        user: {
+          '__type': 'Pointer',
+          'className': '_User',
+          'objectId': user.objectId
+        },
         client: {},
         address: {},
         timeline: [],
