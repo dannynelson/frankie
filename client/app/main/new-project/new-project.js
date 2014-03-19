@@ -45,7 +45,8 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
-    project.$save(function(retrievedProject) {
+    var method = $stateParams.type === 'new' ? '$save' : '$update';
+    project[method]({objectId: project.objectId}, function(retrievedProject) {
       $rootScope.$viewHistory.backView.go();
     });
   };

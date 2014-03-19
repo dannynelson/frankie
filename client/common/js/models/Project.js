@@ -1,7 +1,9 @@
 angular.module('models.Project', ['services.currentDate', 'models.Client', 'models.Timeline', 'models.User'])
 
 .factory('Project', function($q, $rootScope, $resource, User, Client, Timeline, currentDate) {
-  return $resource('https://api.parse.com/1/classes/Project/:objectId');
+  return $resource('https://api.parse.com/1/classes/Project/:objectId', null, {
+    update: {method:'PUT'}
+  });
 
   // var projects = Project.get(function() {
   //   debugger;
