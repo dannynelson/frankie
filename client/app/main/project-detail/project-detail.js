@@ -1,21 +1,31 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.projects'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'models.Project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
     url: '/projects/:id',
     templateUrl: 'main/project-detail/project-detail.tpl.html',
-    controller: 'ProjectDetailCtrl'
+    controller: 'ProjectDetailCtrl',
+    resolve: {
+      project: function(Project, $stateParams) {
+        return Project.get({objectId: $stateParams.id});
+      }
+    }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $rootScope, $location, Project, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $rootScope, $location, project, currentProject) {
   debugger;
-  $scope.project = Project.getByIndex($stateParams.id);
-  currentProject.create($scope.project);
+  $scope.project = project;
+  currentProject.set(project);
+  // debugger;
+  // Project.get({objectId: $stateParams.id}, function(project) {
+  //   $scope.project = project;
+  //   debugger;
+  // });
 
   // Header
   // -------------------------------
-  $scope.title = $scope.project.get('title');
+  $scope.title = project.title;
   $scope.leftButtons = [];
   $scope.rightButtons = [{
     type: 'button-clear button-assertive',

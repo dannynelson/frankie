@@ -23,7 +23,7 @@
       <a class="item item-thumbnail-left-wide" 
          ng-repeat="project in projects | filter:liveSearch" 
          type="item-text-wrap" 
-         href="#/main/projects/{{project.id}}">
+         href="#/main/projects/{{project.objectId}}">
         <img class="thumbnail" ng-src="{{ project.photo }}">
         <h2>{{ project.title }}</h2>
         <p>

@@ -10,57 +10,57 @@
         Project Overview
       </div>
       <div class="item item-thumbnail-left-wide" type="item-text-wrap">
-        <img class="thumbnail" ng-src="{{ project.get('photo') }}">
-        <h2>{{ project.get('title') }}</h2>
+        <img class="thumbnail" ng-src="{{ project.photo }}">
+        <h2>{{ project.title }}</h2>
         <p>
-          ${{ project.get('price') }}</br>
-          <span ng-show="project.get('completed')">Completed</span>
-          <span ng-hide="project.get('completed')">{{ project.get('start') | moment.formatShort }} - {{ project.get('end') | moment.formatShort }}</span>
+          ${{ project.price }}</br>
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">{{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}</span>
         </p>
       </div>
       <div class="paragraph-item">
-        {{ project.get('notes') }}
+        {{ project.notes }}
       </div>
       
       <!-- Address -->
-      <div ng-show="project.get('address').get('city') && project.get('client').get('first')" class="item item-divider padding-top-extra">
+      <div ng-show="project.address.city && project.client.first" class="item item-divider padding-top-extra">
         Contact Info.
       </div>
-      <a ng-show="project.get('address').get('city')" class="item item-icon-left item-icon-right" href="#">
+      <a ng-show="project.address.city" class="item item-icon-left item-icon-right" href="#">
         <i class="icon ion-navigate positive"></i>
-        {{ project.get('address').city }}, {{ project.get('address').zip }}
+        {{ project.address.city }}, {{ project.address.zip }}
         <i class="icon ion-location assertive"></i>
       </a>
       <!-- Client -->
-      <div ng-show="project.get('client').get('first')">
+      <div ng-show="project.client.first">
         <div class="item item-icon-left">
           <i class="icon ion-person positive"></i>
-          {{ project.get('client').first + ' ' +  project.get('client').last }}
+          {{ project.client.first + ' ' +  project.client.last }}
           <span class="icons-right">
             <!-- call -->
             <i class="ion-ios7-telephone extra-large assertive"
-               ng-click="contact('tel', project.get('client').phone)">
+               ng-click="contact('tel', project.client.phone)">
             </i>
             <!-- email -->
             <i class="ion-email extra-large padding-left assertive"
-               ng-click="contact('mailto', project.get('client').email)">
+               ng-click="contact('mailto', project.client.email)">
             </i>
             <!-- text -->
             <i class="ion-chatboxes extra-large padding-left assertive"
-               ng-click="contact('sms', project.get('client').phone)">
+               ng-click="contact('sms', project.client.phone)">
             </i>
           </span>
         </div>
       </div>
       
       <!-- Timeline -->
-      <div ng-show="project.get('timeline').length">
+      <div ng-show="project.timeline.length">
         <div class="item item-divider padding-top-extra">
           Project Timeline
         </div>
         <ion-list>
           <a class="item item-icon-left"
-             ng-repeat="milestone in project.get('timeline')"
+             ng-repeat="milestone in project.timeline"
              href="#/main/new-milestone/{{ $index }}">
              <i ng-hide="milestone.completed" class="icon ion-checkmark stable"></i>
              <i ng-show="milestone.completed" class="icon ion-checkmark assertive"></i>

@@ -7,20 +7,16 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
     url: '/new-project/:type',
     templateUrl: 'main/new-project/new-project.tpl.html',
     controller: 'NewProjectCtrl',
-    resolve: {
-      projectCollection: function (projects) {
-        return projects.all();
-      },
-      currentProject: function (currentProject) {
-        return currentProject.all();
-      }
-    }
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, projectCollection, currentProject, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, currentProject, Project, photo) {
   // $stateParams.type is either 'new', or 'edit'
-  $scope.project = currentProject.attributes;
+  // if it is edit, current project defined in project detail view
+  if ($stateParams.type === 'new') {
+    currentProject.reset();
+  }
+  $scope.project = currentProject.get();
   // debugger;
 
   $scope.title = (function (type) {
@@ -49,18 +45,8 @@ angular.module('main.newProject', ['services.photo', 'services.currentProject'])
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
-    debugger;
-    currentProject.save(project, {
-      success: function(retrievedProject) {
-        if ($stateParams.type === 'new') {
-          projectCollection.add(retrievedProject);
-        }
-        // currentProject.clear();
-        $rootScope.$viewHistory.backView.go();
-      },
-      error: function(project, error) {
-        alert('Failed to create new object, with error code: ' + error.description);
-      }
+    project.$save(function(retrievedProject) {
+      $rootScope.$viewHistory.backView.go();
     });
   };
 
