@@ -15,9 +15,9 @@ angular.module('services.makeCalendar', ['services.currentDate'])
     projects.forEach(function (project) {
       // Class for creating events
       var Event = function (title, date) {
-        this.projectId = project.get('id'),
-        this.projectTitle = project.get('title'),
-        this.photo = project.get('photo'),
+        this.projectId = project.id,
+        this.projectTitle = project.title,
+        this.photo = project.photo,
         this.title = title,
         // date formatted for moment.js
         this.date = date;
@@ -25,10 +25,10 @@ angular.module('services.makeCalendar', ['services.currentDate'])
         this.orderingDate = + new Date(date);
       };
       // Add start/end project events
-      events.push(new Event('Finish Project', project.get('end')));
+      events.push(new Event('Finish Project', project.end));
       // Add timeline events
-      if (project.get('timeline').length) {
-        project.get('timeline').forEach(function (milestone) {
+      if (project.timeline.length) {
+        project.timeline.forEach(function (milestone) {
           events.push(new Event(milestone.title, milestone.date));
         });
       }

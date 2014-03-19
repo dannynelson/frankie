@@ -1,5 +1,6 @@
 ## Immediate
 
+- make sure nothing loads unless current user has loaded!!!
 - alternative if there is no project photo
 - Profile detail page
 - Research Parse vs Express backend

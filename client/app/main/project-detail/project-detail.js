@@ -17,11 +17,6 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   debugger;
   $scope.project = project;
   currentProject.set(project);
-  // debugger;
-  // Project.get({objectId: $stateParams.id}, function(project) {
-  //   $scope.project = project;
-  //   debugger;
-  // });
 
   // Header
   // -------------------------------

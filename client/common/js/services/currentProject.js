@@ -6,9 +6,7 @@
 angular.module('services.currentProject', ['resources.Project', 'services.currentDate', 'services.currentUser'])
 
 .factory('currentProject', function(Project, currentUser, currentDate) {
-  var user = currentUser.get();
   var currentProject;
-  debugger;
   return {
     get: function() {
       return currentProject;
@@ -17,6 +15,7 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
       currentProject = existingProject;
     },
     reset: function() {
+      var user = currentUser.get();
       currentProject = new Project({
         start: currentDate,
         end: currentDate,

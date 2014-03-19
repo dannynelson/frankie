@@ -1,5 +1,5 @@
 // TODO: create a separate state for this not in main
-angular.module('main.newProject', ['services.photo', 'services.loading', 'services.currentProject'])
+angular.module('main.newProject', ['services.photo', 'services.loading', 'services.loading', 'services.currentProject'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newProject', {
@@ -10,14 +10,14 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, loading, currentProject, Project, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, currentProject, projects, photo) {
   // $stateParams.type is either 'new', or 'edit'
   // if it is edit, current project defined in project detail view
   if ($stateParams.type === 'new') {
     currentProject.reset();
   }
+  debugger;
   $scope.project = currentProject.get();
-  // debugger;
 
   $scope.title = (function (type) {
     // capitalize first letter
@@ -45,10 +45,8 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   // clear currentProject 
   // go back to previous view
   $scope.save = function (project) {
-    loading.show();
     var method = $stateParams.type === 'new' ? 'add' : 'update';
     projects[method](project, function() {
-      loading.hide();
       $rootScope.$viewHistory.backView.go();
     });
   };

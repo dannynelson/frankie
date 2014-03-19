@@ -1,4 +1,4 @@
-angular.module('main.calendar', ['services.makeCalendar', 'resources.Project'])
+angular.module('main.calendar', ['services.makeCalendar', 'services.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.calendar', {
@@ -6,8 +6,8 @@ angular.module('main.calendar', ['services.makeCalendar', 'resources.Project'])
     templateUrl: 'main/calendar/calendar.tpl.html',
     controller: 'CalendarCtrl',
     resolve: {
-      projects: function (Project) {
-        return Project.find('completed', false);
+      projects: function (projects) {
+        return projects.all();
       }
     }
   });

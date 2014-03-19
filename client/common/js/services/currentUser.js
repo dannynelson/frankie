@@ -4,10 +4,10 @@
 
 angular.module('services.currentUser', ['resources.User'])
 
-.factory('currentUser', function(User) {
+.factory('currentUser', function($q, User) {
   var currentUser;
   return {
-    get: function() {
+    get: function(onSuccess) {
       return currentUser;
     },
     set: function(user) {

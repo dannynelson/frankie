@@ -35,16 +35,14 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
       if (!fetched) {
         return fetchProjectsAndHideLoading();
       } else {
+        loading.hide();
         return projects;
       }
     },
     add: function(newProject, onSuccess) {
-      // var project = new Project(newProject);
       loading.show();
       newProject.$save(function(retrievedProject) {
-        loading.hide();
-        projects.push(retrievedProject);
-        onSuccess();
+        fetchProjectsAndHideLoading().then(onSuccess);
       });
     },
     update: function(existingProject, onSuccess) {
