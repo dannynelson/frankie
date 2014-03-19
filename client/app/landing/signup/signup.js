@@ -12,7 +12,6 @@ angular.module('landing.signup', ['models.User'])
   $scope.user = {};
   $scope.title = 'Create an Account';
   $scope.signup = function(user) {
-    debugger;
     User.signup(user, function() {
       $state.go('main.projects');
     });

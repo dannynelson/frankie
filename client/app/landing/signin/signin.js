@@ -12,15 +12,8 @@ angular.module('landing.signin', ['models.User', 'main.projects'])
   $scope.title = '';
   $scope.user = {};
   $scope.signin = function(user) {
-    User.login(user.username, user.password, function() {
+    User.signin(user.username, user.password, function() {
       $state.go('main.projects');
     });
-    //   success: function() {
-        
-    //   },
-    //   error: function(retrievedUser, error) {
-    //     alert("Invalid Username or Password");
-    //   }
-    // });
   };
 });
