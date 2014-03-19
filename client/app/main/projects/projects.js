@@ -9,9 +9,8 @@ angular.module('main.projects', ['filters.moment', 'resources.Project', 'service
     controller: 'ProjectsCtrl',
     resolve: {
       projects: function($q, Project) {
-        debugger;
         var defer = $q.defer();
-        Project.$get({
+        Project.get({
           where: '{"completed":false}'
         }, function(response) {
           defer.resolve(response.results);
