@@ -20,7 +20,6 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
         username: user.username,
         password: user.password
       }, function(user) {
-        debugger;
         saveUser(user);
         onSuccess();
       });

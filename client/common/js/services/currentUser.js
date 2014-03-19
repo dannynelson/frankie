@@ -1,4 +1,4 @@
-angular.module('services.currentUser', [])
+angular.module('services.currentUser', ['resources.User'])
 
 .factory('currentUser', function() {
   var currentUser = null;
@@ -7,7 +7,7 @@ angular.module('services.currentUser', [])
       return currentUser;
     },
     set: function(user) {
-      currentUser = user;
+      currentUser = new User(user);
     }
   };
 });

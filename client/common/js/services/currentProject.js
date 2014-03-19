@@ -5,9 +5,10 @@
  * Better than local storage because it is readily sharable between controllers without saving first
  */
 
-angular.module('services.currentProject', ['resources.Project', 'services.currentDate'])
+angular.module('services.currentProject', ['resources.Project', 'services.currentDate', 'services.currentUser'])
 
-.factory('currentProject', function(Project, currentDate) {
+.factory('currentProject', function(Project, currentUser, currentDate) {
+  var user = currentUser.get();
   var currentProject;
 
   return {
@@ -21,16 +22,17 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
       currentProject = new Project({
         start: currentDate,
         end: currentDate,
+        user: user.objectId,
         client: {},
         address: {},
         timeline: [],
         completed: false,
-        ACL: {
-          
-          read: true,
-          write: true
-        }
+        ACL: {}
       });
+      currentProject.ACL[user.objectId] = {
+        read: true,
+        write: true
+      };
     }
   };
 });

@@ -11,7 +11,6 @@ angular.module('landing.signin', ['resources.User', 'services.auth', 'main.proje
 .controller('SigninCtrl', function ($scope, $state, auth) {
   $scope.user = {};
   $scope.signin = function(user) {
-    debugger;
     auth.signin(user, function() {
       $state.go('main.projects');
     });
