@@ -12,7 +12,7 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
       return currentProject;
     },
     set: function(existingProject) {
-      currentProject = existingProject;
+      currentProject = new Project(existingProject);
     },
     reset: function() {
       var user = currentUser.get();

@@ -13,7 +13,4 @@ angular.module('landing', [
   });
 })
 
-.controller('LandingCtrl', function($scope) {
-  $scope.leftButtons = [];
-  $scope.rightButtons = [];
-});
+.controller('LandingCtrl', function($scope) {});

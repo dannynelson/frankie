@@ -1,4 +1,4 @@
-angular.module('main.analytics', ['resources.Project', 'services.currentDate'])
+angular.module('main.analytics', ['services.projects', 'services.currentDate'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.analytics', {
@@ -6,11 +6,11 @@ angular.module('main.analytics', ['resources.Project', 'services.currentDate'])
     templateUrl: 'main/analytics/analytics.tpl.html',
     controller: 'AnalyticsCtrl',
     resolve: {
-      completedProjects: function(Projects) {
-        return Projects.filter('completed', true);
+      completedProjects: function(projects) {
+        return projects.all();
       },
-      uncompletedProjects: function(Projects) {
-        return Projects.filter('completed', false);
+      uncompletedProjects: function(projects) {
+        return projects.allArchives();
       }
     }
   });
@@ -19,7 +19,6 @@ angular.module('main.analytics', ['resources.Project', 'services.currentDate'])
 .controller('AnalyticsCtrl', function($scope, completedProjects, uncompletedProjects, currentDate) {
   $scope.completedProjects = completedProjects;
   $scope.uncompletedProjects = uncompletedProjects;
-  $scope.title = 'Analytics';
 
   $scope.totalIncome = function(projects) {
     return projects.reduce(function(accum, project) {

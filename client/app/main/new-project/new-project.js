@@ -16,7 +16,6 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   if ($stateParams.type === 'new') {
     currentProject.reset();
   }
-  debugger;
   $scope.project = currentProject.get();
 
   $scope.title = (function (type) {

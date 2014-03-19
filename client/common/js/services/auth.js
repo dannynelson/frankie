@@ -38,7 +38,6 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
       if (localStorage.sessionToken) {
         $http.defaults.headers.common['X-Parse-Session-Token'] = localStorage.sessionToken;
         $http.get('https://api.parse.com/1/users/me').success(function(user) {
-          debugger;
           currentUser.set(user);
         });
       }

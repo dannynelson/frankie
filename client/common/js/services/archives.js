@@ -39,9 +39,11 @@ angular.module('services.archives', ['resources.ProjectCollection', 'resources.P
         return archives;
       }
     },
-    add: function(newArchive, onSuccess) {
+    add: function(newProject, onSuccess) {
+      newProject.completed = true;
+      var project = new Project(newProject);
       loading.show();
-      newProject.$save(function(retrievedProject) {
+      project.$save(function(retrievedProject) {
         fetchArchivesAndHideLoading().then(onSuccess);
       });
     }

@@ -14,7 +14,6 @@ angular.module('main.newProfile', ['resources.User', 'filters.phone', 'services.
 })
 
 .controller('NewProfileCtrl', function($scope, user, photo) {
-  $scope.title = 'Edit Profile';
   $scope.leftButtons = [];
   $scope.rightButtons = [];
   $scope.user = user;

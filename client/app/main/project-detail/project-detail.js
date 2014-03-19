@@ -1,4 +1,4 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'resources.Project'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
@@ -6,15 +6,14 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     templateUrl: 'main/project-detail/project-detail.tpl.html',
     controller: 'ProjectDetailCtrl',
     resolve: {
-      project: function(Project, $stateParams) {
-        return Project.get({objectId: $stateParams.id});
+      project: function($stateParams, projects) {
+        return projects.find($stateParams.id);
       }
     }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $stateParams, $rootScope, $location, project, currentProject) {
-  debugger;
+.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, project, projects, currentProject) {
   $scope.project = project;
   currentProject.set(project);
 
@@ -47,8 +46,8 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   };
 
   $scope.completeProject = function(project) {
-    project.completed = true;
-    $rootScope.$viewHistory.backView.go();
+    projects.archive(project, function() {
+      $rootScope.$viewHistory.backView.go();
+    });
   };
-
 });

@@ -8,6 +8,4 @@ angular.module('landing.forgotPassword', [])
   });
 })
 
-.controller('ForgotPasswordCtrl', function($scope) {
-  $scope.title = 'Forgot Password?';
-});
+.controller('ForgotPasswordCtrl', function($scope) {});

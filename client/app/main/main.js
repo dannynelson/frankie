@@ -38,7 +38,6 @@ angular.module('main', [
       $scope.sideMenuController.toggleLeft();
     }
   }];
-  $scope.rightButtons = [];
 })
 
 .controller('MenuCtrl', function($scope, $state, auth) {
