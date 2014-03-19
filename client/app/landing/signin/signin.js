@@ -1,4 +1,4 @@
-angular.module('landing.signin', ['resources.User', 'services.auth'])
+angular.module('landing.signin', ['resources.User', 'services.auth', 'main.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('landing.signin', {

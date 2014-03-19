@@ -1,6 +1,8 @@
 /**
  * A service for creating the current project scaffold
  * and sharing across multiple scopes
+ *
+ * Better than local storage because it is readily sharable between controllers without saving first
  */
 
 angular.module('services.currentProject', ['resources.Project', 'services.currentDate'])
@@ -22,7 +24,12 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
         client: {},
         address: {},
         timeline: [],
-        completed: false
+        completed: false,
+        ACL: {
+          
+          read: true,
+          write: true
+        }
       });
     }
   };
