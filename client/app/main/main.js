@@ -16,7 +16,7 @@ angular.module('main', [
   'main.projectDetail',
   'main.projects',
   // common
-  'models.User'
+  'resources.User'
 ])
 
 .config(function($stateProvider) {

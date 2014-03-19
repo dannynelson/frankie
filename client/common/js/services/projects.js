@@ -1,4 +1,4 @@
-angular.module('services.projects', ['models.ProjectCollection', 'models.Project', 'models.User'])
+angular.module('services.projects', ['resources.ProjectCollection', 'resources.Project', 'resources.User'])
 
 .factory('projects', function($q, Project, ProjectCollection, User) {
   var fetched = false;

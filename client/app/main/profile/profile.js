@@ -1,4 +1,4 @@
-angular.module('main.profile', ['models.User', 'filters.phone'])
+angular.module('main.profile', ['resources.User', 'filters.phone'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.profile', {

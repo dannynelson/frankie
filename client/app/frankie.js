@@ -9,7 +9,7 @@ angular.module('frankie', [
   'main',
   'landing',
   // common
-  'models.User'
+  'resources.User'
 ])
 
 .config(function($urlRouterProvider, $httpProvider, RestangularProvider) {

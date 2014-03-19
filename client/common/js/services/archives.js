@@ -1,4 +1,4 @@
-angular.module('services.archives', ['models.ProjectCollection', 'models.Project', 'models.User'])
+angular.module('services.archives', ['resources.ProjectCollection', 'resources.Project', 'resources.User'])
 
 .factory('archives', function(Project, ProjectCollection, User) {
   var fetched = false;

@@ -1,4 +1,4 @@
-angular.module('main.calendar', ['services.makeCalendar', 'models.Project'])
+angular.module('main.calendar', ['services.makeCalendar', 'resources.Project'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.calendar', {

@@ -1,4 +1,4 @@
-angular.module('models.ProjectCollection', ['models.Project'])
+angular.module('resources.ProjectCollection', ['resources.Project'])
 
 .factory('ProjectCollection', function($q, Project) {
   

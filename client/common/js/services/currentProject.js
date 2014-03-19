@@ -3,7 +3,7 @@
  * and sharing across multiple scopes
  */
 
-angular.module('services.currentProject', ['models.Project'])
+angular.module('services.currentProject', ['resources.Project'])
 
 .factory('currentProject', function(Project) {
   var currentProject = new Project();

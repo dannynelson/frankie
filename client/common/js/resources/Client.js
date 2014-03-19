@@ -1,4 +1,5 @@
-angular.module('models.Client', [])
+
+angular.module('resources.Client', [])
 
 .factory('Client', function($q) {
   return Parse.Object.extend('Client');

@@ -1,4 +1,4 @@
-angular.module('landing.signin', ['models.User', 'main.projects'])
+angular.module('landing.signin', ['resources.User', 'services.auth'])
 
 .config(function($stateProvider) {
   $stateProvider.state('landing.signin', {
@@ -8,11 +8,11 @@ angular.module('landing.signin', ['models.User', 'main.projects'])
   });
 })
 
-.controller('SigninCtrl', function ($scope, $state, User) {
-  $scope.title = '';
+.controller('SigninCtrl', function ($scope, $state, auth) {
   $scope.user = {};
   $scope.signin = function(user) {
-    User.signin(user.username, user.password, function() {
+    debugger;
+    auth.signin(user, function() {
       $state.go('main.projects');
     });
   };

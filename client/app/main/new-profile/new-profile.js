@@ -1,4 +1,4 @@
-angular.module('main.newProfile', ['models.User', 'filters.phone', 'services.photo'])
+angular.module('main.newProfile', ['resources.User', 'filters.phone', 'services.photo'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newProfile', {
