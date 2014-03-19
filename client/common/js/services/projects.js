@@ -14,17 +14,16 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
   };
 
   var fetched = false;
-  var fetchProjects = function() {
-    loading.show();
+  var fetchProjectsAndHideLoading = function(onSuccess) {
     var defer = $q.defer();
 
     Project.get({
       where: JSON.stringify(query)
     }, function(response) {
+      loading.hide();
       projects = response.results;
       fetched = true;
-      defer.resolve(response.results);
-      loading.hide();
+      defer.resolve(projects);
     });
 
     return defer.promise;
@@ -32,25 +31,26 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
 
   return {
     all: function() {
+      loading.show();
       if (!fetched) {
-        return fetchProjects();
+        return fetchProjectsAndHideLoading();
       } else {
         return projects;
       }
     },
     add: function(newProject, onSuccess) {
       // var project = new Project(newProject);
+      loading.show();
       newProject.$save(function(retrievedProject) {
+        loading.hide();
         projects.push(retrievedProject);
         onSuccess();
       });
     },
     update: function(existingProject, onSuccess) {
+      loading.show();
       existingProject.$update({objectId: existingProject.objectId}, function(retrievedProject) {
-        fetchProjects().then(function(retrievedProjects) {
-          projects = retrievedProjects;
-          onSuccess();
-        });
+        fetchProjectsAndHideLoading().then(onSuccess);
       });
     }
   };

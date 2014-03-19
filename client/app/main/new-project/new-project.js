@@ -46,8 +46,8 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   // go back to previous view
   $scope.save = function (project) {
     loading.show();
-    var method = $stateParams.type === 'new' ? '$save' : '$update';
-    project[method]({objectId: project.objectId}, function(retrievedProject) {
+    var method = $stateParams.type === 'new' ? 'add' : 'update';
+    projects[method](project, function() {
       loading.hide();
       $rootScope.$viewHistory.backView.go();
     });
