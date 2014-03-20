@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         'bower_components/angular-resource/angular-resource.js'
       ],
       js: [
-        'client/**/!(*spec).js'
+        'client/{app,common}/**/!(*spec).js'
       ],
       // can only compile one SASS file
       sass: [
@@ -90,19 +90,29 @@ module.exports = function (grunt) {
           }
         ]
       },
+      // ionic: {
+      //   files: [
+      //     {
+      //       dest: '<%= distdir %>/lib',
+      //       src : '**',
+      //       expand: true,
+      //       cwd: 'bower_components/ionic/release'
+      //     }
+      //   ]
+      // },
       phonegap: {
         files: [
-          {
-            dest: '<%= distdir %>',
-            src : ['fonts/**'],
-            expand: true,
-            cwd: 'node_modules/ionic/release/'
-          },
           {
             dest: '<%= distdir %>',
             src : ['**'],
             expand: true,
             cwd: 'client/phonegap'
+          },
+          {
+            dest: '<%= distdir %>',
+            src : ['fonts/**'],
+            expand: true,
+            cwd: 'bower_components/ionic/release'
           }
         ]
       }
@@ -196,7 +206,8 @@ module.exports = function (grunt) {
     sass: {
       compile: {
         src: '<%= src.sass %>',
-        dest: '<%= distdir %>/<%= pkg.name %>.css'
+        // This css file must be nested in directory so that it can access fonts correctly
+        dest: '<%= distdir %>/css/<%= pkg.name %>.css'
       }
     },
 
