@@ -12,7 +12,6 @@ module.exports = function (grunt) {
         'bower_components/ionic/release/js/ionic.bundle.js',
         'bower_components/momentjs/moment.js',
         'bower_components/lodash/dist/lodash.js',
-        'bower_components/restangular/dist/restangular.js',
         'bower_components/angular-resource/angular-resource.js'
       ],
       js: [
@@ -222,7 +221,7 @@ module.exports = function (grunt) {
       }
     }
   });
-  
+
   // Print a timestamp (useful for when watching)
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());

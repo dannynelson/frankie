@@ -6,20 +6,18 @@
     <title>Frankie</title>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-    <!-- Load parse sdk -->
-    <script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
     <!-- All vendor and app sass files compiled by grunt into one css file -->
     <link href="<%= grunt.config.get('pkg.name') %>.css" rel="stylesheet">
     <!-- All vendor and app js files compiled by grunt into one js file -->
     <script src="<%= grunt.config.get('pkg.name') %>.js"></script>
   </head>
 
-  <!-- 
+  <!--
     'frankie' is the name of this angular module (js/app.js)
   -->
   <body animation="nav-title-slide-ios7">
 
-    <!-- 
+    <!--
       The views will be rendered in the <nav-view> directive below
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
