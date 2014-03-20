@@ -9,6 +9,6 @@ angular.module('main.changeEmail', ['resources.User'])
 })
 
 .controller('ChangeEmailCtrl', function($scope, User) {
-  $scope.title = 'Change Email';
   $scope.leftButtons = [];
+  $scope.rightButtons = [];
 });

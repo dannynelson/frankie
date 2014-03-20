@@ -13,17 +13,17 @@
         <img class="thumbnail" ng-src="{{ project.photo }}">
         <h2>{{ project.title }}</h2>
         <p>
-          ${{ project.price }}</br>
+          <span ng-show="project.price">${{ project.price }}</br></span>
           <span ng-show="project.completed">Completed</span>
           <span ng-hide="project.completed">{{ project.start | moment.formatShort }} - {{ project.end | moment.formatShort }}</span>
         </p>
       </div>
-      <div class="paragraph-item">
+      <div ng-show="project.notes" class="paragraph-item">
         {{ project.notes }}
       </div>
       
       <!-- Address -->
-      <div ng-show="project.address.city && project.client.first" class="item item-divider padding-top-extra">
+      <div ng-show="project.address.city || project.client.first" class="item item-divider padding-top-extra">
         Contact Info.
       </div>
       <a ng-show="project.address.city" class="item item-icon-left item-icon-right" href="#">

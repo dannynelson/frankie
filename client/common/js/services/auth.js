@@ -2,9 +2,11 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
 
 .factory('auth', function(User, Login, $http, currentUser) {
   var saveUser = function(user) {
-    currentUser.set(user);
     $http.defaults.headers.common['X-Parse-Session-Token'] = user.sessionToken;
     localStorage.sessionToken = user.sessionToken;
+    // delete session token we do not want it as part of the requests
+    delete user.sessionToken;
+    currentUser.set(user);
   };
 
   var deleteUser = function() {
@@ -16,6 +18,7 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
   return {
     // user must have username and password properties
     signin: function(user, onSuccess) {
+      debugger;
       Login.get({
         username: user.username,
         password: user.password
@@ -38,6 +41,7 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
       if (localStorage.sessionToken) {
         $http.defaults.headers.common['X-Parse-Session-Token'] = localStorage.sessionToken;
         $http.get('https://api.parse.com/1/users/me').success(function(user) {
+          delete user.sessionToken;
           currentUser.set(user);
         });
       }

@@ -7,6 +7,29 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
 
 .factory('currentProject', function(Project, currentUser, currentDate) {
   var currentProject;
+  var reset = function() {
+    var user = currentUser.get();
+    currentProject = new Project({
+      start: currentDate,
+      end: currentDate,
+      user: {
+        '__type': 'Pointer',
+        'className': '_User',
+        'objectId': user.objectId
+      },
+      client: {},
+      address: {},
+      timeline: [],
+      completed: false,
+      ACL: {}
+    });
+    currentProject.ACL[user.objectId] = {
+      read: true,
+      write: true
+    };
+  };
+  reset();
+
   return {
     get: function() {
       return currentProject;
@@ -14,26 +37,6 @@ angular.module('services.currentProject', ['resources.Project', 'services.curren
     set: function(existingProject) {
       currentProject = new Project(existingProject);
     },
-    reset: function() {
-      var user = currentUser.get();
-      currentProject = new Project({
-        start: currentDate,
-        end: currentDate,
-        user: {
-          '__type': 'Pointer',
-          'className': '_User',
-          'objectId': user.objectId
-        },
-        client: {},
-        address: {},
-        timeline: [],
-        completed: false,
-        ACL: {}
-      });
-      currentProject.ACL[user.objectId] = {
-        read: true,
-        write: true
-      };
-    }
+    reset: reset
   };
 });

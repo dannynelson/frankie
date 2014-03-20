@@ -7,7 +7,7 @@ angular.module('main.newAddress', ['services.currentProject'])
     controller: 'NewAdressCtrl',
     resolve: {
       address: function(currentProject) {
-        return currentProject.get('address');
+        return currentProject.get().address;
       }
     }
   });
@@ -16,7 +16,6 @@ angular.module('main.newAddress', ['services.currentProject'])
 .controller('NewAdressCtrl', function($scope, address) {
   $scope.address = address;
 
-  $scope.title = 'Address';
   $scope.leftButtons = [];
   $scope.rightButtons = [];
 });

@@ -9,7 +9,7 @@ angular.module('main.newMilestone', ['services.photo', 'services.currentProject'
 })
 
 .controller('NewMilestoneCtrl', function($scope, $rootScope, $stateParams, photo, currentProject) {
-  $scope.milestone = currentProject.get('timeline')[$stateParams.id];
+  $scope.milestone = currentProject.get().timeline[$stateParams.id];
 
   $scope.title = $scope.milestone.title;
   $scope.leftButtons = [];

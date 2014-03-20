@@ -1,4 +1,4 @@
-angular.module('main.profile', ['resources.User', 'filters.phone'])
+angular.module('main.profile', ['services.currentUser', 'filters.phone'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.profile', {
@@ -6,15 +6,17 @@ angular.module('main.profile', ['resources.User', 'filters.phone'])
     templateUrl: 'main/profile/profile.tpl.html',
     controller: 'ProfileCtrl',
     resolve: {
-      user: function(User) {
-        return User.getAttributes();
+      user: function(currentUser) {
+        debugger;
+        return currentUser.get();
       }
     }
   });
 })
 
 .controller('ProfileCtrl', function($scope, $location, user) {
-  $scope.title = 'Profile';
+  $scope.user = user;
+  
   $scope.leftButtons = [];
   $scope.rightButtons = [{
     type: 'button-clear button-assertive',
@@ -23,5 +25,4 @@ angular.module('main.profile', ['resources.User', 'filters.phone'])
       $location.url('/main/new-profile');
     }
   }];
-  $scope.user = user;
 });

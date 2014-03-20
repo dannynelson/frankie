@@ -1,4 +1,4 @@
-angular.module('main.account', ['resources.User'])
+angular.module('main.account', ['services.currentUser'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.account', {
@@ -6,14 +6,13 @@ angular.module('main.account', ['resources.User'])
     templateUrl: 'main/account/account.tpl.html',
     controller: 'AccountCtrl',
     resolve: {
-      user: function(User) {
-        return User.getAttributes();
+      user: function(currentUser) {
+        return currentUser.get();
       }
     }
   });
 })
 
 .controller('AccountCtrl', function($scope, user) {
-  $scope.title = 'Account';
   $scope.user = user;
 });

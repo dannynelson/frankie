@@ -15,6 +15,7 @@
 - add animation on login
 - currentDate to function
 - set ACL on objects
+- navigation helper
 
 ## Nice to Have
 

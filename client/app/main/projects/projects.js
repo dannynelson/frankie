@@ -6,18 +6,15 @@ angular.module('main.projects', ['filters.moment', 'services.projects', 'service
   $stateProvider.state('main.projects', {
     url: '/projects',
     templateUrl: 'main/projects/projects.tpl.html',
-    controller: 'ProjectsCtrl',
-    resolve: {
-      projectData: function(projects) {
-        debugger;
-        return projects.all();
-      }
-    }
+    controller: 'ProjectsCtrl'
   });
 })
 
-.controller('ProjectsCtrl', function($scope, $location, projectData, loading) {
-  $scope.projects = projectData;
+.controller('ProjectsCtrl', function($scope, $location, projects, loading) {
+  projects.all().then(function(projectData) {
+    $scope.projects = projectData;
+    $scope.courtesyMessage = 'You currently don\'t have any projects. Click the button in the top right to create a one.';
+  });
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{
@@ -28,7 +25,6 @@ angular.module('main.projects', ['filters.moment', 'services.projects', 'service
       $location.url('/main/new-project/new');
     }
   }];
-  $scope.courtesyMessage = 'You currently don\'t have any projects. Click the button in the top right to create a one.';
 });
 
 

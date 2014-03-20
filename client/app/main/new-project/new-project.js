@@ -13,13 +13,9 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
 .controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, currentProject, projects, photo) {
   // $stateParams.type is either 'new', or 'edit'
   // if it is edit, current project defined in project detail view
-  if ($stateParams.type === 'new') {
-    currentProject.reset();
-  }
   $scope.project = currentProject.get();
 
   $scope.title = (function (type) {
-    // capitalize first letter
     var newType = type.charAt(0).toUpperCase() + type.slice(1);
     return newType + ' Project';
   })($stateParams.type);
@@ -28,7 +24,7 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
     type: 'button-clear button-assertive',
     content: 'Cancel',
     tap: function(e) {
-      $rootScope.$viewHistory.backView.go();
+      $scope.returnToProjects();
     }
   }];
 
@@ -40,13 +36,19 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
     }
   }];
 
-  // save current project to Projects collection
-  // clear currentProject 
-  // go back to previous view
+  $scope.$on('back', function() {
+    currentProject.reset();
+  });
+
+  $scope.returnToProjects = function() {
+    currentProject.reset();
+    $rootScope.$viewHistory.backView.go();
+  };
+
   $scope.save = function (project) {
     var method = $stateParams.type === 'new' ? 'add' : 'update';
     projects[method](project, function() {
-      $rootScope.$viewHistory.backView.go();
+      $scope.returnToProjects();
     });
   };
 

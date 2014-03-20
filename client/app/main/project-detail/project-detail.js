@@ -4,16 +4,12 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   $stateProvider.state('main.projectDetail', {
     url: '/projects/:id',
     templateUrl: 'main/project-detail/project-detail.tpl.html',
-    controller: 'ProjectDetailCtrl',
-    resolve: {
-      project: function($stateParams, projects) {
-        return projects.find($stateParams.id);
-      }
-    }
+    controller: 'ProjectDetailCtrl'
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, project, projects, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $stateParams, $rootScope, $location, projects, currentProject) {
+  var project = projects.find($stateParams.id);
   $scope.project = project;
   currentProject.set(project);
 

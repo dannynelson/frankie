@@ -1,4 +1,4 @@
-angular.module('main.newProfile', ['resources.User', 'filters.phone', 'services.photo'])
+angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'services.photo'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.newProfile', {
@@ -6,33 +6,43 @@ angular.module('main.newProfile', ['resources.User', 'filters.phone', 'services.
     templateUrl: 'main/new-profile/new-profile.tpl.html',
     controller: 'NewProfileCtrl',
     resolve: {
-      user: function(User) {
-        return User.get();
+      user: function(currentUser) {
+        return currentUser.get();
       }
     }
   });
 })
 
-.controller('NewProfileCtrl', function($scope, user, photo) {
-  $scope.leftButtons = [];
-  $scope.rightButtons = [];
+.controller('NewProfileCtrl', function($scope, $rootScope, user, currentUser, photo) {
   $scope.user = user;
+  
+  $scope.leftButtons = [{
+    type: 'button-clear button-assertive',
+    content: 'Cancel',
+    tap: function(e) {
+      $scope.returnToProjects();
+    }
+  }];
 
-  // save current project to Projects collection
-  // clear currentProject 
-  // go back to previous view
-  // $scope.save = function (project) {
-  //   if ($stateParams.type === 'new') {
-  //     Projects.add(project);
-  //   } else if ($scope.mode === 'edit') {
-  //     Projects.update(project);
-  //   }
-  //   currentProject.clear();
-  //   $rootScope.$viewHistory.backView.go();
-  // };
+  $scope.rightButtons = [{
+    type: 'button-clear button-assertive',
+    content: 'Save',
+    tap: function(e) {
+      $scope.save($scope.user);
+    }
+  }];
+
+  $scope.save = function(user) {
+    // clone user because it is overrwritten when the resource is retrieved
+    var userClone = _.clone(user);
+    user.$update({objectId: user.objectId}, function(retrievedUser) {
+      currentUser.set(userClone);
+      $rootScope.$viewHistory.backView.go();
+    });
+  };
 
   $scope.getPhoto = function () {
-    photo.get(function (imageData) {
+    photo.get(function(imageData) {
       $scope.$apply(function () {
         $scope.project.photo = "data:image/jpeg;base64," + imageData;
       });

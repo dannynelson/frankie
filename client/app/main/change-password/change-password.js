@@ -9,6 +9,6 @@ angular.module('main.changePassword', ['resources.User'])
 })
 
 .controller('ChangePasswordCtrl', function($scope, User) {
-  $scope.title = 'Change Password';
   $scope.leftButtons = [];
+  $scope.rightButtons = [];
 });

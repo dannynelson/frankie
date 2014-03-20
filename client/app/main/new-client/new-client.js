@@ -7,7 +7,8 @@ angular.module('main.newClient', ['services.currentProject', 'services.currentDa
     controller: 'NewClientCtrl',
     resolve: {
       client: function (currentProject) {
-        return currentProject.get('client');
+        debugger;
+        return currentProject.get().client;
       }
     }
   });
@@ -16,7 +17,6 @@ angular.module('main.newClient', ['services.currentProject', 'services.currentDa
 .controller('NewClientCtrl', function($scope, $location, client, currentDate) {
   $scope.client = client;
 
-  $scope.title = 'Client Info';
   $scope.leftButtons = [];
   $scope.rightButtons = [];
 });

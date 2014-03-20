@@ -7,7 +7,7 @@ angular.module('main.newTimeline', ['services.currentProject'])
     controller: 'NewTimelineCtrl',
     resolve: {
       timeline: function(currentProject) {
-        return currentProject.get('timeline');
+        return currentProject.get().timeline;
       }
     }
   });
@@ -16,7 +16,6 @@ angular.module('main.newTimeline', ['services.currentProject'])
 .controller('NewTimelineCtrl', function($scope, $location, timeline, currentDate) {
   $scope.timeline = timeline;
 
-  $scope.title = 'Timeline';
   $scope.leftButtons = [];
   $scope.rightButtons = [
     {

@@ -42,7 +42,7 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
   };
 
   return {
-    all: function() {
+    all: function(onSuccess) {
       loading.show();
       if (!projects.fetched) {
         return fetchProjects();
@@ -82,7 +82,6 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
       });
     },
     allArchives: function() {
-      debugger;
       loading.show();
       return fetchArchives();
     }
