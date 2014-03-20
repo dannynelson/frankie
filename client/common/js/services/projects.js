@@ -1,4 +1,4 @@
-angular.module('services.projects', ['resources.Project', 'services.loading', 'services.currentUser'])
+angular.module('services.projects', ['resources.Project', 'resources.File', 'services.loading', 'services.currentUser'])
 
 .factory('projects', function($q, Project, loading) {
   
@@ -53,16 +53,30 @@ angular.module('services.projects', ['resources.Project', 'services.loading', 's
     },
     add: function(newProject, onSuccess) {
       loading.show();
-      newProject.$save(function(retrievedProject) {
-        fetchProjects().then(onSuccess);
-      });
+      
+      var saveProject = function() {
+        newProject.$save(function(retrievedProject) {
+          fetchProjects().then(onSuccess);
+        });
+      };
+
+      if (newProject.photo) {
+        var photo = new File(newProject.photo);
+        photo.$save({fileName: 'photo.jpg'}, function(response) {
+          newProject.photo = response.url;
+          saveProject();
+        });
+      } else {
+        saveProject();
+      }
     },
     find: function(objectId) {
-      for (var i = 0; i < projects.length; i++) {
-        if (projects[i].objectId === objectId) {
-          return projects[i];
-        }
-      }
+      // for (var i = 0; i < projects.length; i++) {
+      //   if (projects[i].objectId === objectId) {
+      //     return projects[i];
+      //   }
+      // }
+      return Project.get({objectId: objectId});
     },
     update: function(existingProject, onSuccess) {
       loading.show();

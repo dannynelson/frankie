@@ -14,13 +14,15 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
 })
 
 .controller('NewProfileCtrl', function($scope, $rootScope, user, currentUser, photo) {
+  // do not modify original user in case they cancel
+  currentUser.set(_.clone(user));
   $scope.user = user;
   
   $scope.leftButtons = [{
     type: 'button-clear button-assertive',
     content: 'Cancel',
     tap: function(e) {
-      $scope.returnToProjects();
+      $rootScope.$viewHistory.backView.go();
     }
   }];
 

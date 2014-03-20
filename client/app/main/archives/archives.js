@@ -5,17 +5,14 @@ angular.module('main.archives', ['services.projects'])
   $stateProvider.state('main.archives', {
     url: '/archives',
     templateUrl: 'main/projects/projects.tpl.html',
-    controller: 'ArchivesCtrl',
-    resolve: {
-      archives: function (projects) {
-        return projects.allArchives();
-      }
-    }
+    controller: 'ArchivesCtrl'
   });
 })
 
-.controller('ArchivesCtrl', function($scope, $location, archives) {
-  $scope.projects = archives;
+.controller('ArchivesCtrl', function($scope, $location, projects) {
+  projects.allArchives().then(function(archives) {
+    $scope.projects = archives;
+  });
   $scope.title = 'Archives';
   $scope.courtesyMessage = 'You currently don\'t have any archives. You will see projects show up here after you complete them.';
 });

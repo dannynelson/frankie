@@ -18,21 +18,21 @@
             {{ user.company }}
           </p>
         </div>
-        <div class="paragraph-item">
+        <div ng-show="user.bio" class="paragraph-item">
           {{ user.bio }}
         </div>
 
         <!-- Details -->
-        <div class="item item-divider padding-top-extra">
+        <div ng-show="user.yearsExp || user.rating" class="item item-divider padding-top-extra">
           Profile Details
         </div>
-        <div class="item">
+        <div ng-show="user.yearsExp" class="item">
           Years of Experience
           <span class="item-note">
             {{ user.yearsExp }}
           </span>
         </div>
-        <div class="item">
+        <div ng-show="user.rating"  class="item">
           Client Rating
           <span class="item-note">
             {{ user.rating }}
@@ -40,22 +40,22 @@
         </div>
 
         <!-- Contact Info -->
-        <div class="item item-divider padding-top-extra">
+        <div ng-show="user.phone || user.email || user.location" class="item item-divider padding-top-extra">
           Contact Info
         </div>
-        <div class="item">
+        <div ng-show="user.phone" class="item">
           Phone
           <span class="item-note">
             {{ user.phone | phone }}
           </span>
         </div>
-        <div class="item">
+        <div ng-show="user.email" class="item">
           Email
           <span class="item-note">
             {{ user.email }}
           </span>
         </div>
-        <div class="item">
+        <div ng-show="user.location" class="item">
           Location
           <span class="item-note">
             {{ user.location }}
