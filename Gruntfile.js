@@ -90,16 +90,6 @@ module.exports = function (grunt) {
           }
         ]
       },
-      // ionic: {
-      //   files: [
-      //     {
-      //       dest: '<%= distdir %>/lib',
-      //       src : '**',
-      //       expand: true,
-      //       cwd: 'bower_components/ionic/release'
-      //     }
-      //   ]
-      // },
       phonegap: {
         files: [
           {
