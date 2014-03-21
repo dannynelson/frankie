@@ -1,6 +1,6 @@
 angular.module('services.projects', ['resources.Project', 'resources.File', 'services.loading', 'services.currentUser'])
 
-.factory('projects', function($q, Project, loading) {
+.factory('projects', function($q, File, Project, loading) {
   
   var projects = [];
   projects.fetched = false;
@@ -53,7 +53,6 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
     },
     add: function(newProject, onSuccess) {
       loading.show();
-      
       var saveProject = function() {
         newProject.$save(function(retrievedProject) {
           fetchProjects().then(onSuccess);
@@ -61,10 +60,28 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
       };
 
       if (newProject.photo) {
-        var photo = new File(newProject.photo);
-        photo.$save({fileName: 'photo.jpg'}, function(response) {
-          newProject.photo = response.url;
+        // var base64 = newProject.photo.split('base64,')[1];
+        // var photo = new File();
+        // photo.$upload({
+        //   fileName: 'photo.jpg'
+        // },{
+        //   base64: base64
+        // }, function(response) {
+        //   debugger;
+        //   alert('file saved');
+        //   newProject.photo = response.url;
+        //   alert(response.url);
+        //   saveProject();
+        // });
+        // debugger;
+
+        var base64 = newProject.photo.split('base64,')[1];
+        var parseFile = new Parse.File('photo.jpg', { base64: base64 });
+        parseFile.save().then(function(retrievedFile) {
+          newProject.photo = retrievedFile.url();
           saveProject();
+        }, function(error) {
+          console.log(error);
         });
       } else {
         saveProject();
@@ -76,7 +93,11 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
       //     return projects[i];
       //   }
       // }
-      return Project.get({objectId: objectId});
+      var defer = $q.defer();
+      Project.get({objectId: objectId}, function(project) {
+        defer.resolve(project);
+      });
+      return defer.promise;
     },
     update: function(existingProject, onSuccess) {
       loading.show();

@@ -13,6 +13,7 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
 .controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, currentProject, projects, photo) {
   // $stateParams.type is either 'new', or 'edit'
   // if it is edit, current project defined in project detail view
+  debugger;
   $scope.project = currentProject.get();
 
   $scope.title = (function (type) {

@@ -14,6 +14,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
 })
 
 .controller('ProjectDetailCtrl', function($scope, $rootScope, $location, projects, project, currentProject) {
+  debugger;
   $scope.project = project;
   currentProject.set(project);
 
