@@ -5,6 +5,7 @@ angular.module('main', [
   'main.calendar',
   'main.changeEmail',
   'main.changePassword',
+  'main.map',
   'main.newAddress',
   'main.newClient',
   'main.newMilestone',
