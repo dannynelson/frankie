@@ -11,7 +11,7 @@
         </div>
         <div class="item item-thumbnail-left" type="item-text-wrap">
           <img class="thumbnail" 
-               ng-src="{{ user.profilePhoto || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
+               ng-src="{{ user.photo || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
           <h2>{{ user.name || 'anonymous' }}</h2>
           <p>
             {{ user.title || 'no title' }}</br>
@@ -27,13 +27,13 @@
           Profile Details
         </div>
         <div ng-show="user.yearsExp" class="item">
-          Years of Experience
+          <h2>Years of Experience</h2>
           <span class="item-note">
             {{ user.yearsExp }}
           </span>
         </div>
         <div ng-show="user.rating"  class="item">
-          Client Rating
+          <h2>Client Rating</h2>
           <span class="item-note">
             {{ user.rating }}
           </span>
@@ -43,20 +43,20 @@
         <div ng-show="user.phone || user.email || user.location" class="item item-divider padding-top-extra">
           Contact Info
         </div>
-        <div ng-show="user.phone" class="item">
-          Phone
+        <div ng-if="user.phone" class="item">
+          <h2>Phone</h2>
           <span class="item-note">
-            {{ user.phone | phone }}
+            {{ user.phone }}
           </span>
         </div>
         <div ng-show="user.email" class="item">
-          Email
+          <h2>Email</h2>
           <span class="item-note">
             {{ user.email }}
           </span>
         </div>
         <div ng-show="user.location" class="item">
-          Location
+          <h2>Location</h2>
           <span class="item-note">
             {{ user.location }}
           </span>

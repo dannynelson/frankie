@@ -12,9 +12,9 @@
       <ion-list>
         <div class="item item-divider"></div>
         <a class="item item-avatar" type="item-text-wrap" href="#/main/profile">
-          <img ng-src="{{ user.profilePhoto || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
+          <img ng-src="{{ user.photo || 'http://www.zunuki.com/UsrData/profile-pic/profile-placeholder.gif' }}">
           <h2>{{ user.name || 'Anonymous' }}</h2>
-          <p>{{ user.title || 'no title' }}</p>
+          <p>{{ user.title }}</p>
         </a>
         
         <div class="item item-divider"></div>

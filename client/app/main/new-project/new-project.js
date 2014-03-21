@@ -54,6 +54,7 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   };
 
   $scope.getPhoto = function () {
+    $scope.newPhoto = true;
     photo.get(function (imageData) {
       $scope.$apply(function () {
         $scope.project.photo = "data:image/jpeg;base64," + imageData;

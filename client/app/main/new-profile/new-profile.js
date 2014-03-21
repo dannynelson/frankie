@@ -35,6 +35,7 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
   }];
 
   $scope.save = function(user) {
+    debugger;
     var updateUser = function() {
       // clone user because it is overrwritten when the resource is retrieved
       var userClone = _.clone(user);
@@ -44,9 +45,9 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
       });
     };
 
-    if (user.photo) {
+    if ($scope.newPhoto) {
       photo.save(user.photo, function(response) {
-        user.photo = response.url;
+        user.photo = response.url();
         updateUser();
       });
     } else {
@@ -55,6 +56,7 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
   };
 
   $scope.getPhoto = function () {
+    $scope.newPhoto = true;
     photo.get(function(imageData) {
       $scope.$apply(function () {
         $scope.user.photo = "data:image/jpeg;base64," + imageData;

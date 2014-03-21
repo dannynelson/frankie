@@ -16,6 +16,7 @@
 - currentDate to function
 - set ACL on objects
 - navigation helper
+- change new project to only account for new photos
 
 ## Nice to Have
 
