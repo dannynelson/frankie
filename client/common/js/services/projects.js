@@ -1,6 +1,6 @@
 angular.module('services.projects', ['resources.Project', 'resources.File', 'services.loading', 'services.currentUser'])
 
-.factory('projects', function($q, File, Project, loading) {
+.factory('projects', function($q, $http, File, Project, loading) {
   
   var projects = [];
   projects.fetched = false;
@@ -58,9 +58,24 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
           fetchProjects().then(onSuccess);
         });
       };
+      debugger;
 
       if (newProject.photo) {
         // var base64 = newProject.photo.split('base64,')[1];
+        // debugger;
+        // $http({
+        //   method: 'POST',
+        //   url: 'https://api.parse.com/1/files/photo.jpg',
+        //   headers: {
+        //     'Content-Type':'image/jpeg'
+        //   },
+        //   data: {
+        //     base64: base64
+        //   }
+        // }).success(function(data) {
+        //   newProject.photo = data.url;
+        // });
+
         // var photo = new File();
         // photo.$upload({
         //   fileName: 'photo.jpg'

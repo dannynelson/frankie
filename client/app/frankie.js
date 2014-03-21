@@ -17,7 +17,7 @@ angular.module('frankie', [
   $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'XeVNDBn5qNQRmMD1G6A4PcWpk9sigMtYXVFXFjLB';
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
 
-  $urlRouterProvider.otherwise('/main/projects');
+  $urlRouterProvider.otherwise('/landing/signin');
 })
 
 .run(function($ionicPlatform, auth) {
