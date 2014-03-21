@@ -9,7 +9,6 @@ angular.module('main.map', ['directives.map'])
 })
 
 .controller('MapCtrl', function($scope) {
-  $scope.title = 'Map';
   $scope.leftButtons = [];
 });
 
