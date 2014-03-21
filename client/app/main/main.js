@@ -1,6 +1,6 @@
 angular.module('main', [
   'main.account',
-  // 'main.analytics',
+  'main.analytics',
   'main.archives',
   'main.calendar',
   'main.changeEmail',

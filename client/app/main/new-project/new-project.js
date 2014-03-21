@@ -47,9 +47,6 @@ angular.module('main.newProject', ['services.photo', 'services.loading', 'servic
   };
 
   $scope.save = function (project) {
-    if (project.photo) {
-      
-    }
     var method = $stateParams.type === 'new' ? 'add' : 'update';
     projects[method](project, function() {
       $scope.returnToProjects();

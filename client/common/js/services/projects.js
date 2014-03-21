@@ -2,8 +2,8 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
 
 .factory('projects', function($q, $http, File, Project, loading, photo) {
   
-  var projects = [];
-  projects.fetched = false;
+  // var projects = [];
+  // projects.fetched = false;
 
   var fetchProjects = function(newQuery) {
     var query = {
@@ -44,12 +44,7 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
   return {
     all: function(onSuccess) {
       loading.show();
-      if (!projects.fetched) {
-        return fetchProjects();
-      } else {
-        loading.hide();
-        return projects;
-      }
+      return fetchProjects();
     },
     add: function(newProject, onSuccess) {
       loading.show();

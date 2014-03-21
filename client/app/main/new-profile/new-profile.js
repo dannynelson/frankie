@@ -35,18 +35,29 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
   }];
 
   $scope.save = function(user) {
-    // clone user because it is overrwritten when the resource is retrieved
-    var userClone = _.clone(user);
-    user.$update({objectId: user.objectId}, function(retrievedUser) {
-      currentUser.set(userClone);
-      $rootScope.$viewHistory.backView.go();
-    });
+    var updateUser = function() {
+      // clone user because it is overrwritten when the resource is retrieved
+      var userClone = _.clone(user);
+      user.$update({objectId: user.objectId}, function(retrievedUser) {
+        currentUser.set(userClone);
+        $rootScope.$viewHistory.backView.go();
+      });
+    };
+
+    if (user.photo) {
+      photo.save(user.photo, function(response) {
+        user.photo = response.url;
+        updateUser();
+      });
+    } else {
+      updateUser();
+    }
   };
 
   $scope.getPhoto = function () {
     photo.get(function(imageData) {
       $scope.$apply(function () {
-        $scope.project.photo = "data:image/jpeg;base64," + imageData;
+        $scope.user.photo = "data:image/jpeg;base64," + imageData;
       });
     });
   };

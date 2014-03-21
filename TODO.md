@@ -23,3 +23,4 @@
 - Create template from project summary (used on three separate pages)
 - convert everything to state
 - do file upload without Parse javascript API for consistency. Pass data: {base64: base64}. Not url param
+- scrolling for sideways views??

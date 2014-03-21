@@ -23,7 +23,7 @@ angular.module('main.analytics', ['services.projects', 'services.currentDate'])
   $scope.totalIncome = function(projects) {
     return projects.reduce(function(accum, project) {
       return accum + project.price;
-    }, 0);
+    }, 0) || '0';
   };
 
   $scope.totalOverdue = function(projects) {

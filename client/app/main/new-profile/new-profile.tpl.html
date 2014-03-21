@@ -1,7 +1,3 @@
-<!--
-  View for creating a new project, or editing an existing project.
-  This template loads for the 'main.new-project' state (app.js)
--->
 <ion-view title="Edit Profile" 
       left-buttons="leftButtons" 
       right-buttons="rightButtons"
@@ -34,8 +30,8 @@
         <div class="item item-divider"></div>
         <div class="button button-full button-light no-margin"
              ng-click="getPhoto()">
-          <i ng-hide="project.photo" class="ion-camera camera"></i>
-          <img ng-show="project.photo" ng-src="{{ project.photo }}" class="photo"></img>
+          <i ng-hide="user.photo" class="ion-camera camera"></i>
+          <img ng-show="user.photo" ng-src="{{ user.photo }}" class="photo"></img>
         </div>
       
         <!-- Contact Info -->
