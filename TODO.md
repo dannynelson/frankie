@@ -17,6 +17,7 @@
 - set ACL on objects
 - navigation helper
 - change new project to only account for new photos
+- animations between pages
 
 ## Nice to Have
 

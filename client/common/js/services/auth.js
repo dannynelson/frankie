@@ -1,6 +1,11 @@
-angular.module('services.auth', ['resources.User', 'resources.Login', 'services.currentUser'])
+angular.module('services.auth', [
+  'resources.User',
+  'resources.Login',
+  'services.currentUser',
+  'services.emailValidation'
+])
 
-.factory('auth', function(User, Login, $http, currentUser) {
+.factory('auth', function(User, Login, $http, currentUser, emailValidation) {
   var saveUser = function(user) {
     $http.defaults.headers.common['X-Parse-Session-Token'] = user.sessionToken;
     localStorage.sessionToken = user.sessionToken;
@@ -16,23 +21,47 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
   };
 
   return {
-    // user must have username and password properties
-    signin: function(user, onSuccess) {
-      debugger;
-      Login.get({
-        username: user.username,
-        password: user.password
-      }, function(user) {
-        saveUser(user);
-        onSuccess();
+    requestPasswordReset: function(email) {
+      $http({
+        method: 'POST',
+        url: 'https://api.parse.com/1/requestPasswordReset',
+        data: {
+          email: email
+        }
+      }).success(function() {
+        alert('An email has been sent to you with instructions about how to reset your password');
       });
     },
     // user must have username and password properties
+    signin: function(user, onSuccess) {
+      if (!emailValidation(user.username)) {
+        alert('That is not a valid email address!');
+      } else {
+        Login.get({
+          username: user.username,
+          password: user.password
+        }, function(user) {
+          saveUser(user);
+          onSuccess();
+        }, function(response) {
+          alert('Invalid email or password!');
+        });
+      }
+    },
+    // user must have username and password properties
     signup: function(user, onSuccess) {
-      user.$save(user, function(user) {
-        saveUser(user);
-        onSuccess();
-      });
+      if (!emailValidation(user.username)) {
+        alert('That is not a valid email address!');
+      } else {
+        // copy email username into email field so Parse can use it for other things
+        user.email = user.username;
+        user.$save(user, function(user) {
+          saveUser(response);
+          onSuccess();
+        }, function(response) {
+          alert(response.data.error);
+        });
+      }
     },
     signout: function() {
       deleteUser();
@@ -40,6 +69,7 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
     checkForSession: function(onSuccess) {
       if (localStorage.sessionToken) {
         $http.defaults.headers.common['X-Parse-Session-Token'] = localStorage.sessionToken;
+        // Execute callback immediately, even if user has not been completely retrieved yet
         onSuccess();
         $http.get('https://api.parse.com/1/users/me').success(function(user) {
           delete user.sessionToken;

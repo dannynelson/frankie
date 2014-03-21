@@ -3,20 +3,19 @@
           right-buttons="rightButtons">
    
   <ion-content has-header="true">
-    <div class="item item-divider"></div>
-    <div class="list list-inset">
-      <div class="item item-input">
-        <input type="email" placeholder="Old Email">
+    <form ng-submit="save(oldUsername, newUsername)">
+      <div class="item item-divider"></div>
+      <div class="list list-inset">
+        <div class="item item-input">
+          <input type="email" ng-model="oldUsername" placeholder="Old Email">
+        </div>
+        <div class="item item-input">
+          <input type="email" ng-model="newUsername" placeholder="New Email">
+        </div>
       </div>
-      <div class="item item-input">
-        <input type="email" placeholder="New Email">
+      <div class="padding">
+        <button type="submit" class="button button-block button-assertive">Change Email</button>
       </div>
-      <div class="item item-input">
-        <input type="password" placeholder="Password">
-      </div>
-    </div>
-    <div class="padding">
-      <button class="button button-block button-assertive">Change Email</button>
-    </div>
+    <form>
   </ion-content>
 </ion-view>

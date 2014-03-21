@@ -1,7 +1,7 @@
-angular.module('landing.forgotPassword', ['services.auth'])
+angular.module('main.forgotPassword', ['services.auth'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('landing.forgotPassword', {
+  $stateProvider.state('main.forgotPassword', {
     url: "/forgot-password",
     templateUrl: 'templates/forgot-password.tpl.html',
     controller: 'ForgotPasswordCtrl'

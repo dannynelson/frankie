@@ -1,4 +1,7 @@
-angular.module('main.changeEmail', ['resources.User'])
+angular.module('main.changeEmail', [
+  'services.currentUser',
+  'services.emailValidation'
+])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.changeEmail', {
@@ -8,7 +11,18 @@ angular.module('main.changeEmail', ['resources.User'])
   });
 })
 
-.controller('ChangeEmailCtrl', function($scope, User) {
+.controller('ChangeEmailCtrl', function($scope, $rootScope, emailValidation, currentUser) {
   $scope.leftButtons = [];
   $scope.rightButtons = [];
+  $scope.save = function(oldUsername, newUsername) {
+    if (!emailValidation(newUsername) || !emailValidation(oldUsername)) {
+      alert('Invalid email address!');
+    } else {
+      var user = currentUser.get();
+      user.username = user.email = newUsername;
+      currentUser.save(function() {
+        $rootScope.$viewHistory.backView.go();
+      });
+    }
+  };
 });

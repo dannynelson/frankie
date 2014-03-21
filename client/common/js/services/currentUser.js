@@ -12,6 +12,13 @@ angular.module('services.currentUser', ['resources.User'])
     },
     set: function(user) {
       currentUser = new User(user);
+    },
+    save: function(onSuccess) {
+      var userClone = _.clone(currentUser);
+      currentUser.$update({objectId: currentUser.objectId}, function() {
+        currentUser = new User(userClone);
+        onSuccess();
+      });
     }
   };
 });

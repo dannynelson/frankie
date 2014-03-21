@@ -4,7 +4,7 @@ angular.module('main', [
   'main.archives',
   'main.calendar',
   'main.changeEmail',
-  'main.changePassword',
+  'main.forgotPassword',
   'main.map',
   'main.newAddress',
   'main.newClient',
