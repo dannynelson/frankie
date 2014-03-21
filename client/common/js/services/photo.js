@@ -50,6 +50,41 @@ angular.module('services.photo', [])
   };
 
   return {
-    get: selectPhotoType
+    get: selectPhotoType,
+    // onSuccess gets saved file info
+    save: function(dataURI, onSuccess) {
+      // var base64 = newProject.photo.split('base64,')[1];
+      // debugger;
+      // $http({
+      //   method: 'POST',
+      //   url: 'https://api.parse.com/1/files/photo.jpg',
+      //   headers: {
+      //     'Content-Type':'image/jpeg'
+      //   },
+      //   data: {
+      //     base64: base64
+      //   }
+      // }).success(function(data) {
+      //   newProject.photo = data.url;
+      // });
+
+      // var photo = new File();
+      // photo.$upload({
+      //   fileName: 'photo.jpg'
+      // },{
+      //   base64: base64
+      // }, function(response) {
+      //   debugger;
+      //   alert('file saved');
+      //   newProject.photo = response.url;
+      //   alert(response.url);
+      //   saveProject();
+      // });
+      // debugger;
+
+      var base64 = dataURI.split('base64,')[1];
+      var parseFile = new Parse.File('photo.jpg', { base64: base64 });
+      parseFile.save().then(onSuccess);
+    }
   };
 });
