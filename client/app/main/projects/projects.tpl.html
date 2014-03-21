@@ -24,7 +24,7 @@
          ng-repeat="project in projects | filter:liveSearch" 
          type="item-text-wrap" 
          href="#/main/projects/{{project.objectId}}">
-        <img class="thumbnail" ng-src="{{ project.photo }}">
+        <img class="thumbnail" ng-src="{{ project.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
         <h2>{{ project.title }}</h2>
         <p>
           ${{ project.price }}</br>

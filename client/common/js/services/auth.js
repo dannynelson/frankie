@@ -37,9 +37,10 @@ angular.module('services.auth', ['resources.User', 'resources.Login', 'services.
     signout: function() {
       deleteUser();
     },
-    checkForSession: function() {
+    checkForSession: function(onSuccess) {
       if (localStorage.sessionToken) {
         $http.defaults.headers.common['X-Parse-Session-Token'] = localStorage.sessionToken;
+        onSuccess();
         $http.get('https://api.parse.com/1/users/me').success(function(user) {
           delete user.sessionToken;
           currentUser.set(user);

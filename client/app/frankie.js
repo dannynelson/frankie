@@ -20,12 +20,14 @@ angular.module('frankie', [
   $urlRouterProvider.otherwise('/landing/signin');
 })
 
-.run(function($ionicPlatform, auth) {
+.run(function($ionicPlatform, auth, $state) {
   // change status bar to light color
   // $ionicPlatform.ready(function() {
   //   StatusBar.styleLightContent();
   // });
   // Parse javascript API only being used for the file upload feature
   Parse.initialize("P2Z0R55WriW7Mi8h6bQqmhlLgGZQxjPe3Vc7PVQx", "jvPhmi8qIckRbuv6C1ezzXCMMivYTfJrjjHK5Tcc");
-  auth.checkForSession();
+  auth.checkForSession(function() {
+    $state.go('main.projects');
+  });
 });
