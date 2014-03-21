@@ -168,7 +168,13 @@ a.item {
   padding-top: 15px;
 }
 
-// Remove grey focus color
+// Remove grey focus color for input
 .item-input.item.active {
+  background-color: $light;
+}
+// Remove grey focus color for items
+.item.active:not(.item-divider), 
+.item:active:not(.item-divider), 
+.item-complex.active .item-content {
   background-color: $light;
 }
