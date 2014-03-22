@@ -1,10 +1,12 @@
-angular.module('services.projects', ['resources.Project', 'resources.File', 'services.loading', 'services.loading', 'services.currentUser'])
+angular.module('services.projects', [
+  'resources.Project',
+  'resources.File',
+  'services.loading',
+  'services.loading',
+  'services.currentUser'
+])
 
 .factory('projects', function($q, $http, File, Project, loading, photo) {
-  
-  // var projects = [];
-  // projects.fetched = false;
-
   var fetchProjects = function(newQuery) {
     var query = {
       // user: {
@@ -28,10 +30,10 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
   };
 
   var fetchArchives = function() {
+    var defer = $q.defer();
     var query = {
       completed: true
     };
-    var defer = $q.defer();
     Project.get({
       where: JSON.stringify(query)
     }, function(response) {
@@ -41,28 +43,43 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
     return defer.promise;
   };
 
+  var savePhoto = function(proj) {
+    var d = $q.defer();
+    var isParseUrl = function(url) {
+      return (/files\.parse\.com/).test(url);
+    };
+    if (proj.photo && !isParseUrl(proj.photo)) {
+      photo.save(proj.photo, function(retrievedFile) {
+        proj.photo = retrievedFile.url();
+        d.resolve();
+      });
+    } else {
+      d.resolve();
+    }
+    return d.promise;
+  };
+
   return {
     all: function(onSuccess) {
       loading.show();
       return fetchProjects();
     },
     add: function(newProject, onSuccess) {
-      loading.show();
-
-      var saveProject = function() {
+      // loading.show();
+      savePhoto(newProject).then(function() {
         newProject.$save(function(retrievedProject) {
           fetchProjects().then(onSuccess);
         });
-      };
+      });
 
-      if (newProject.photo) {
-        photo.save(newProject.photo, function(retrievedFile) {
-          newProject.photo = retrievedFile.url();
-          saveProject();
-        })
-      } else {
-        saveProject();
-      }
+      // if (newProject.photo) {
+      //   photo.save(newProject.photo, function(retrievedFile) {
+      //     newProject.photo = retrievedFile.url();
+      //     saveProject();
+      //   });
+      // } else {
+      //   saveProject();
+      // }
     },
     find: function(objectId) {
       var defer = $q.defer();
@@ -73,8 +90,10 @@ angular.module('services.projects', ['resources.Project', 'resources.File', 'ser
     },
     update: function(existingProject, onSuccess) {
       loading.show();
-      existingProject.$update({objectId: existingProject.objectId}, function(retrievedProject) {
-        fetchProjects().then(onSuccess);
+      savePhoto(existingProject).then(function() {
+        existingProject.$update({objectId: existingProject.objectId}, function(retrievedProject) {
+          fetchProjects().then(onSuccess);
+        });
       });
     },
     archive: function(project, onSuccess) {

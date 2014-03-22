@@ -4,12 +4,17 @@ angular.module('main.map', ['directives.map'])
   $stateProvider.state('main.map', {
     url: '/map',
     templateUrl: 'main/map/map.tpl.html',
-    controller: 'MapCtrl'
+    controller: 'MapCtrl',
+    resolve: {
+      project: function(currentProject) {
+        return currentProject.get();
+      }
+    }
   });
 })
 
-.controller('MapCtrl', function($scope) {
+.controller('MapCtrl', function($scope, project) {
+  debugger;
+  $scope.address = project.address.street + ', ' + project.address.city + ', ' + project.address.zip
   $scope.leftButtons = [];
 });
-
-

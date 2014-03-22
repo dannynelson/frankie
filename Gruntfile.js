@@ -12,6 +12,7 @@ module.exports = function (grunt) {
         'bower_components/ionic/release/js/ionic.bundle.js',
         'bower_components/parse-js-sdk/lib/parse.js',
         'bower_components/momentjs/moment.js',
+        'bower_components/async/lib/async.js',
         'bower_components/lodash/dist/lodash.js',
         'bower_components/angular-resource/angular-resource.js'
       ],

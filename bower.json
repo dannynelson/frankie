@@ -19,6 +19,7 @@
     "momentjs": "~2.5.1",
     "lodash": "~2.4.1",
     "angular-resource": "~1.2.14",
-    "parse-js-sdk": "~1.2.16"
+    "parse-js-sdk": "~1.2.16",
+    "async": "~0.2.10"
   }
 }
