@@ -6,10 +6,10 @@ angular.module('main.analytics', ['services.projects', 'services.currentDate'])
     templateUrl: 'main/analytics/analytics.tpl.html',
     controller: 'AnalyticsCtrl',
     resolve: {
-      completedProjects: function(projects) {
+      uncompletedProjects: function(projects) {
         return projects.all();
       },
-      uncompletedProjects: function(projects) {
+      completedProjects: function(projects) {
         return projects.allArchives();
       }
     }

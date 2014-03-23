@@ -27,7 +27,7 @@ angular.module('main.newTimeline', ['services.currentProject'])
     },
     {
       type: 'button-icon button-clear button-assertive',
-      content: '<i class="ion-plus large"></i>',
+      content: '<i class="ion-plus large padding-left"></i>',
       tap: function(e) {
         $scope.addMilestone();
       }

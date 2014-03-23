@@ -18,6 +18,7 @@
 - navigation helper
 - change new project to only account for new photos
 - animations between pages
+- create an icon
 
 ## Nice to Have
 

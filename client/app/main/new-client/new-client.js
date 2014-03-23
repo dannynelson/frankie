@@ -7,7 +7,6 @@ angular.module('main.newClient', ['services.currentProject', 'services.currentDa
     controller: 'NewClientCtrl',
     resolve: {
       client: function (currentProject) {
-        debugger;
         return currentProject.get().client;
       }
     }

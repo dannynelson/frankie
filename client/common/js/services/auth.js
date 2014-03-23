@@ -53,8 +53,9 @@ angular.module('services.auth', [
       if (!emailValidation(user.username)) {
         alert('That is not a valid email address!');
       } else {
-        // copy email username into email field so Parse can use it for other things
+        // copy username into email so that parse can do password resets
         user.email = user.username;
+        user.address = {};
         user.$save(user, function(user) {
           saveUser(response);
           onSuccess();

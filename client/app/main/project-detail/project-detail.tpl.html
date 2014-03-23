@@ -22,15 +22,10 @@
         {{ project.notes }}
       </div>
 
-      <!-- Address -->
       <div ng-show="project.address.city || project.client.first" class="item item-divider padding-top-extra">
         Contact Info.
       </div>
-      <a ng-show="project.address.city" class="item item-icon-left item-icon-right" href="#/main/map">
-        <i class="icon ion-navigate positive"></i>
-        {{ project.address.city }}, {{ project.address.zip }}
-        <i class="icon ion-location assertive"></i>
-      </a>
+
       <!-- Client -->
       <div ng-show="project.client.first">
         <div class="item item-icon-left">
@@ -38,20 +33,34 @@
           {{ project.client.first + ' ' +  project.client.last }}
           <span class="icons-right">
             <!-- call -->
-            <i class="ion-ios7-telephone extra-large assertive"
-               ng-click="contact('tel', project.client.phone)">
-            </i>
-            <!-- email -->
-            <i class="ion-email extra-large padding-left assertive"
-               ng-click="contact('mailto', project.client.email)">
+            <i  ng-show="project.client.phone" 
+                class="ion-ios7-telephone extra-large assertive"
+                ng-click="contact('tel', project.client.phone)">
             </i>
             <!-- text -->
-            <i class="ion-chatboxes extra-large padding-left assertive"
-               ng-click="contact('sms', project.client.phone)">
+            <i  ng-show="project.client.phone" 
+                class="ion-chatboxes extra-large padding-left assertive"
+                ng-click="contact('sms', project.client.phone)">
+            </i>
+            <!-- email -->
+            <i  ng-show="project.client.email"
+                class="ion-email extra-large padding-left assertive"
+                ng-click="contact('mailto', project.client.email)">
             </i>
           </span>
         </div>
       </div>
+      
+      <!-- 
+      Address Native
+      Note, This link will only work on android devices right now
+       -->
+      <a ng-show="project.address.street || project.address.city || project.address.zip" 
+           class="item item-icon-left" 
+           href="{{ createMapUrl() }}">
+        <i class="icon ion-location positive"></i>
+        Get directions
+      </a>
 
       <!-- Timeline -->
       <div ng-show="project.timeline.length">

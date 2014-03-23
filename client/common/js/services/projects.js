@@ -107,6 +107,17 @@ angular.module('services.projects', [
         });
       });
     },
+    unarchive: function(project, onSuccess) {
+      loading.show();
+      project.completed = false;
+      var project = new Project(project);
+      project.$update({objectId: project.objectId}, function(retrievedProject) {
+        fetchProjects().then(function() {
+          loading.hide();
+          onSuccess();
+        });
+      });
+    },
     allArchives: function() {
       loading.show();
       return fetchArchives();

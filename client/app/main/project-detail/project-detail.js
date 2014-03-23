@@ -1,4 +1,4 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.projects'])
+angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.currentUser', 'services.projects'])
 
 .config(function($stateProvider) {
   $stateProvider.state('main.projectDetail', {
@@ -8,12 +8,15 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     resolve: {
       project: function($stateParams, projects) {
         return projects.find($stateParams.id);
+      },
+      user: function(currentUser) {
+        return currentUser.get();
       }
     }
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, projects, project, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, projects, project, user, currentProject) {
   $scope.project = project;
   currentProject.set(project);
 
@@ -45,8 +48,24 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     window.location.href = method + ':' + address;
   };
 
+  $scope.createMapUrl = function() {
+    var getAddress = function(addressObj) {
+      return [
+        addressObj.street || '',
+        addressObj.city || '',
+        addressObj.zip || '',
+      ].join(' ');
+    };
+    var baseUrl = 'http://maps.google.com/maps?';
+    // leaving start address blank starts directions from current location on mobile devices
+    var startAddress = 'saddr=';
+    var destAddress = 'daddr=' + getAddress(project.address);
+    return baseUrl + startAddress + '&' + destAddress;
+  };
+
   $scope.completeProject = function(project) {
-    projects.archive(project, function() {
+    var method = project.completed ? 'unarchive' : 'archive';
+    projects[method](project, function() {
       $rootScope.$viewHistory.backView.go();
     });
   };

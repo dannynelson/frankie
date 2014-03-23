@@ -14,7 +14,7 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
 })
 
 .controller('NewProfileCtrl', function($scope, $rootScope, user, currentUser, photo) {
-  // do not modify original user in case they cancel
+  // do not modify currentUser in case they cancel
   currentUser.set(_.clone(user));
   $scope.user = user;
   
@@ -35,7 +35,6 @@ angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'ser
   }];
 
   $scope.save = function(user) {
-    debugger;
     var updateUser = function() {
       // clone user because it is overrwritten when the resource is retrieved
       var userClone = _.clone(user);

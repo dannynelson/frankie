@@ -15,7 +15,7 @@ angular.module('services.makeCalendar', ['services.currentDate'])
     projects.forEach(function (project) {
       // Class for creating events
       var Event = function (title, date) {
-        this.projectId = project.id,
+        this.projectId = project.objectId,
         this.projectTitle = project.title,
         this.photo = project.photo,
         this.title = title,

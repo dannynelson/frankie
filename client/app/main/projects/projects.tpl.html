@@ -27,13 +27,9 @@
         <img class="thumbnail" ng-src="{{ project.photo || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png' }}">
         <h2>{{ project.title }}</h2>
         <p>
-          ${{ project.price }}</br>
-          <span ng-show="project.completed">
-            Completed
-          </span>
-          <span ng-hide="project.completed">
-            Due {{ project.end | moment.fromNow }}
-          </span>
+          <span ng-show="project.price">${{ project.price }}</br></span>
+          <span ng-show="project.completed">Completed</span>
+          <span ng-hide="project.completed">Due {{ project.end | moment.fromNow }}</span>
         </p>
       </a>
     </ion-list>

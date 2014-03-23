@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>StarterApp</name>
+    <name>Frankie</name>
     <description>
-        A sample Ionic Framework app using Cordova and AngularJS
+        An organizational tool for contractors
     </description>
-    <author email="support@drifty.com" href="http://ionicframework.com/">
-        Ionic Framework Team
+    <author email="danielnelsonguitar@gmail.com" href="http://dannynelson.io/">
+        Frankie Team
     </author>
     <content src="index.html" />
     <access origin="*" />
