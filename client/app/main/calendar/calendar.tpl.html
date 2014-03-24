@@ -17,7 +17,7 @@
       <!-- Over Due Events -->
       <div ng-show="overDue.length">
         <div class="item item-darker item-divider">Over Due</div>
-        <a class="item item-thumbnail-left" 
+        <a class="item item-thumbnail-left-wide" 
            ng-repeat="event in overDue | orderBy:'orderingDate'" 
            type="item-text-wrap" 
            href="#/main/projects/{{ event.projectId }}">
@@ -35,7 +35,7 @@
       <!-- TODO: why are the months sorting correctly?? -->
       <div ng-repeat="(month, events) in calendar">
         <div class="item item-darker item-divider">{{ month | moment.formatLong }}</div>
-        <a class="item item-thumbnail-left" 
+        <a class="item item-thumbnail-left-wide" 
            ng-repeat="event in events | orderBy:'orderingDate'" 
            type="item-text-wrap" 
            href="#/main/projects/{{event.projectId}}">

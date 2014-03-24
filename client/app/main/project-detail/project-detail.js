@@ -16,7 +16,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $rootScope, $location, projects, project, user, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $window, $rootScope, $location, projects, project, user, currentProject) {
   $scope.project = project;
   currentProject.set(project);
 
@@ -45,22 +45,17 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   // method is tel, sms, or mailto
   // address is address to be contacted
   $scope.contact = function (method, address) {
-    window.location.href = method + ':' + address;
+    $window.open(method + ':' + address);
   };
 
-  $scope.createMapUrl = function() {
-    var getAddress = function(addressObj) {
-      return [
-        addressObj.street || '',
-        addressObj.city || '',
-        addressObj.zip || '',
-      ].join(' ');
-    };
-    var baseUrl = 'http://maps.google.com/maps?';
-    // leaving start address blank starts directions from current location on mobile devices
-    var startAddress = 'saddr=';
-    var destAddress = 'daddr=' + getAddress(project.address);
-    return baseUrl + startAddress + '&' + destAddress;
+  $scope.openAddressInMap = function() {
+    var formattedAddress = [
+      project.address.street || '',
+      project.address.city || '',
+      project.address.zip || '',
+    ].join(' ');
+    formattedAddress = encodeURIComponent(formattedAddress);
+    $window.open('geo:0,0?q=' + formattedAddress);
   };
 
   $scope.completeProject = function(project) {

@@ -12,10 +12,13 @@ angular.module('frankie', [
   'resources.User'
 ])
 
-.config(function($urlRouterProvider, $httpProvider) {
+.config(function($urlRouterProvider, $httpProvider, $compileProvider) {
   $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'P2Z0R55WriW7Mi8h6bQqmhlLgGZQxjPe3Vc7PVQx';
   $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'XeVNDBn5qNQRmMD1G6A4PcWpk9sigMtYXVFXFjLB';
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
+
+  // Add geo, email, tel, and sms to the url whitelist
+  // $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|email|tel|sms):/);
 
   $urlRouterProvider.otherwise('/landing/signin');
 })
