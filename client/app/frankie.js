@@ -12,13 +12,10 @@ angular.module('frankie', [
   'resources.User'
 ])
 
-.config(function($urlRouterProvider, $httpProvider, $compileProvider) {
+.config(function($urlRouterProvider, $httpProvider) {
   $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'P2Z0R55WriW7Mi8h6bQqmhlLgGZQxjPe3Vc7PVQx';
   $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'XeVNDBn5qNQRmMD1G6A4PcWpk9sigMtYXVFXFjLB';
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
-
-  // Add geo, email, tel, and sms to the url whitelist
-  // $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|email|tel|sms):/);
 
   $urlRouterProvider.otherwise('/landing/signin');
 })
@@ -31,6 +28,6 @@ angular.module('frankie', [
   // Parse javascript API only being used for the file upload feature
   Parse.initialize("P2Z0R55WriW7Mi8h6bQqmhlLgGZQxjPe3Vc7PVQx", "jvPhmi8qIckRbuv6C1ezzXCMMivYTfJrjjHK5Tcc");
   auth.checkForSession(function() {
-    $state.go('main.projects');
+    $state.go('main.projects.projectList');
   });
 });

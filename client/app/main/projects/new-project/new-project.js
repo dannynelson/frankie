@@ -1,21 +1,30 @@
 // TODO: create a separate state for this not in main
-angular.module('main.newProject', ['services.photo', 'services.loading', 'services.loading', 'services.currentProject'])
+angular.module('main.projects.newProject', [
+  'services.photo',
+  'services.loading',
+  'services.currentProject'
+])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newProject', {
+  $stateProvider.state('main.projects.newProject', {
     // add type to specify edit/new
     url: '/new-project/:type',
-    templateUrl: 'main/new-project/new-project.tpl.html',
+    templateUrl: 'main/projects/new-project/new-project.tpl.html',
     controller: 'NewProjectCtrl',
+    resolve: {
+      project: function(currentProject) {
+        return currentProject.get();
+      }
+    }
   });
 })
 
-.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, currentProject, projects, photo) {
+.controller('NewProjectCtrl', function($scope, $rootScope, $stateParams, project, currentProject, projects, photo) {
   // $stateParams.type is either 'new', or 'edit'
   // if it is edit, current project defined in project detail view
   $scope.project = currentProject.get();
 
-  $scope.title = (function (type) {
+  $scope.title = (function(type) {
     var newType = type.charAt(0).toUpperCase() + type.slice(1);
     return newType + ' Project';
   })($stateParams.type);

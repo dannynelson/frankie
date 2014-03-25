@@ -1,9 +1,9 @@
-angular.module('main.newProfile', ['services.currentUser', 'filters.phone', 'services.photo'])
+angular.module('main.account.newProfile', ['services.currentUser', 'filters.phone', 'services.photo'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newProfile', {
+  $stateProvider.state('main.account.newProfile', {
     url: '/new-profile',
-    templateUrl: 'main/new-profile/new-profile.tpl.html',
+    templateUrl: 'main/account/new-profile/new-profile.tpl.html',
     controller: 'NewProfileCtrl',
     resolve: {
       user: function(currentUser) {

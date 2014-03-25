@@ -1,7 +1,3 @@
-<!--
-  View for creating a new project, or editing an existing project.
-  This template loads for the 'main.new-project' state (app.js)
--->
 <ion-view title="{{title}}" 
           left-buttons="leftButtons"
           right-buttons="rightButtons"
@@ -47,7 +43,7 @@
 
         <!-- Client Info -->
         <div class="item item-divider"></div>
-        <a class="item item-icon-left" href="#/main/new-client">
+        <a class="item item-icon-left" ui-sref="^.newClient">
           <i class="icon ion-person positive"></i>
           <h2>Client Info</h2>
           <span ng-hide="project.client.first" class="item-note">
@@ -57,7 +53,7 @@
             {{ project.client.first + ' ' + project.client.last }}
           </span>
         </a>
-        <a class="item item-icon-left" href="#/main/new-address">
+        <a class="item item-icon-left" ui-sref="^.newAddress">
           <i class="icon ion-location positive"></i>
           <h2>Address</h2>
           <span ng-hide="project.address.street" class="item-note">
@@ -68,7 +64,7 @@
           </span>
         </a>
         <!-- Timeline -->
-        <a class="item item-icon-left" href="#/main/new-timeline">
+        <a class="item item-icon-left" ui-sref="^.newTimeline">
           <i class="icon ion-checkmark positive"></i>
           <h2>Timeline</h2>
           <span class="item-note">
@@ -83,9 +79,6 @@
         <div class="item item-divider"></div>
 
       </ion-list>
-
     </form>
-
   </ion-content>
-
 </ion-view>

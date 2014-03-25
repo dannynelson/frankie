@@ -12,7 +12,7 @@ angular.module('landing.signin', ['resources.User', 'services.auth', 'main.proje
   $scope.user = {};
   $scope.signin = function(user) {
     auth.signin(user, function() {
-      $state.go('main.projects');
+      $state.go('main.projects.projectList');
     });
   };
 });

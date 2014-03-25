@@ -1,9 +1,12 @@
-angular.module('main.newClient', ['services.currentProject', 'services.currentDate'])
+angular.module('main.projects.newClient', [
+  'services.currentProject',
+  'services.currentDate'
+])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newClient', {
+  $stateProvider.state('main.projects.newClient', {
     url: '/new-client',
-    templateUrl: 'main/new-client/new-client.tpl.html',
+    templateUrl: 'main/projects/new-client/new-client.tpl.html',
     controller: 'NewClientCtrl',
     resolve: {
       client: function (currentProject) {

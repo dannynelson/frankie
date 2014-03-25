@@ -3,17 +3,6 @@ angular.module('main', [
   'main.analytics',
   'main.archives',
   'main.calendar',
-  'main.changeEmail',
-  'main.forgotPassword',
-  'main.map',
-  'main.newAddress',
-  'main.newClient',
-  'main.newMilestone',
-  'main.newProfile',
-  'main.newProject',
-  'main.newTimeline',
-  'main.profile',
-  'main.projectDetail',
   'main.projects',
   // common
   'services.auth'

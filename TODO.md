@@ -15,6 +15,7 @@
 - change new project to only account for new photos
 - animations between pages
 - strip messages so they are formatted correctly
+- does not remember page when opening app again?
 
 ## Nice to Have
 

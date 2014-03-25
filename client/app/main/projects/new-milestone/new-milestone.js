@@ -3,7 +3,7 @@ angular.module('main.newMilestone', ['services.photo', 'services.currentProject'
 .config(function($stateProvider) {
   $stateProvider.state('main.newMilestone', {
     url: '/new-milestone/:id',
-    templateUrl: 'main/new-milestone/new-milestone.tpl.html',
+    templateUrl: 'main/projects/new-milestone/new-milestone.tpl.html',
     controller: 'NewMilestoneCtrl'
   });
 })

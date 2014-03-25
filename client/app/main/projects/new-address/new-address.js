@@ -1,9 +1,9 @@
-angular.module('main.newAddress', ['services.currentProject'])
+angular.module('main.projects.newAddress', ['services.currentProject'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newAddress', {
+  $stateProvider.state('main.projects.newAddress', {
     url: '/new-address',
-    templateUrl: 'main/new-address/new-address.tpl.html',
+    templateUrl: 'main/projects/new-address/new-address.tpl.html',
     controller: 'NewAdressCtrl',
     resolve: {
       address: function(currentProject) {

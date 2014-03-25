@@ -1,9 +1,9 @@
-angular.module('main.newTimeline', ['services.currentProject'])
+angular.module('main.projects.newTimeline', ['services.currentProject'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newTimeline', {
+  $stateProvider.state('main.projects.newTimeline', {
     url: '/new-timeline',
-    templateUrl: 'main/new-timeline/new-timeline.tpl.html',
+    templateUrl: 'main/projects/new-timeline/new-timeline.tpl.html',
     controller: 'NewTimelineCtrl',
     resolve: {
       timeline: function(currentProject) {

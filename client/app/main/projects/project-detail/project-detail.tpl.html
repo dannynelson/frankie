@@ -82,7 +82,7 @@
         <ion-list>
           <a class="item item-icon-left"
              ng-repeat="milestone in project.timeline"
-             href="#/main/new-milestone/{{ $index }}">
+             href="#/main/projects/new-milestone/{{ $index }}">
              <i ng-hide="milestone.completed" class="icon ion-checkmark stable"></i>
              <i ng-show="milestone.completed" class="icon ion-checkmark assertive"></i>
              {{ milestone.title }}

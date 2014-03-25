@@ -1,9 +1,9 @@
-angular.module('main.profile', ['services.currentUser', 'filters.phone'])
+angular.module('main.account.profile', ['services.currentUser', 'filters.phone'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.profile', {
+  $stateProvider.state('main.account.profile', {
     url: '/profile',
-    templateUrl: 'main/profile/profile.tpl.html',
+    templateUrl: 'main/account/profile/profile.tpl.html',
     controller: 'ProfileCtrl',
     resolve: {
       user: function(currentUser) {

@@ -1,17 +1,18 @@
-angular.module('main.changeEmail', [
+angular.module('main.account.changeEmail', [
   'services.currentUser',
   'services.emailValidation'
 ])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.changeEmail', {
+  $stateProvider.state('main.account.changeEmail', {
     url: '/change-email',
-    templateUrl: 'main/change-email/change-email.tpl.html',
+    templateUrl: 'main/account/change-email/change-email.tpl.html',
     controller: 'ChangeEmailCtrl'
   });
 })
 
 .controller('ChangeEmailCtrl', function($scope, $rootScope, emailValidation, currentUser) {
+  debugger;
   $scope.leftButtons = [];
   $scope.rightButtons = [];
   $scope.save = function(oldUsername, newUsername) {

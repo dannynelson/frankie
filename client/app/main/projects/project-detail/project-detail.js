@@ -1,9 +1,14 @@
-angular.module('main.projectDetail', ['filters.moment', 'services.currentProject', 'services.currentUser', 'services.projects'])
+angular.module('main.projects.projectDetail', [
+  'filters.moment',
+  'services.currentProject',
+  'services.currentUser',
+  'services.projects'
+])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.projectDetail', {
-    url: '/projects/:id',
-    templateUrl: 'main/project-detail/project-detail.tpl.html',
+  $stateProvider.state('main.projects.projectDetail', {
+    url: '/project-detail/:id',
+    templateUrl: 'main/projects/project-detail/project-detail.tpl.html',
     controller: 'ProjectDetailCtrl',
     resolve: {
       project: function($stateParams, projects) {
@@ -16,7 +21,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $window, $rootScope, $location, projects, project, user, currentProject) {
+.controller('ProjectDetailCtrl', function($scope, $window, $rootScope, $state, projects, project, user, currentProject) {
   $scope.project = project;
   currentProject.set(project);
 
@@ -28,7 +33,7 @@ angular.module('main.projectDetail', ['filters.moment', 'services.currentProject
     type: 'button-clear button-assertive',
     content: '<button>edit</button>',
     tap: function(e) {
-      $location.url('/main/new-project/edit');
+      $state.go('^.newProject', {type:'edit'});
     }
   }];
 
