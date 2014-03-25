@@ -1,15 +1,15 @@
-angular.module('main.archives', ['services.projects'])
+angular.module('main.projects.archives', ['services.projects'])
 
 // Shares the same template as projects
 .config(function($stateProvider) {
-  $stateProvider.state('main.archives', {
+  $stateProvider.state('main.projects.archives', {
     url: '/archives',
-    templateUrl: 'main/projects/projects.tpl.html',
+    templateUrl: 'templates/project-list.tpl.html',
     controller: 'ArchivesCtrl'
   });
 })
 
-.controller('ArchivesCtrl', function($scope, $location, projects) {
+.controller('ArchivesCtrl', function($scope, projects) {
   projects.allArchives().then(function(archives) {
     $scope.projects = archives;
   });

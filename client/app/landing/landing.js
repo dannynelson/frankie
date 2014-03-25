@@ -8,7 +8,7 @@ angular.module('landing', [
   $stateProvider.state('landing', {
     url: "/landing",
     abstract: true,
-    templateUrl: "landing/landing.tpl.html",
+    templateUrl: 'templates/animation-view.tpl.html',
     controller: 'LandingCtrl'
   });
 })

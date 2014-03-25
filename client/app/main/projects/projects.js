@@ -2,9 +2,11 @@
 
 angular.module('main.projects', [
   'main.projects.projectList',
+  'main.projects.calendar',
+  'main.projects.archives',
   'main.projects.newAddress',
   'main.projects.newClient',
-  // 'main.projects.newMilestone',
+  'main.projects.newMilestone',
   'main.projects.newProject',
   'main.projects.newTimeline',
   'main.projects.projectDetail'

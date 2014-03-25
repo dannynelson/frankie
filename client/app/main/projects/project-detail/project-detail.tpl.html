@@ -61,18 +61,6 @@
         <i class="icon ion-location positive"></i>
         Get directions
       </a>
-<!--       <a ng-show="project.address.street || project.address.city || project.address.zip" 
-           class="item item-icon-left" 
-           href="geo:{{getAddress()}}">
-        <i class="icon ion-location positive"></i>
-        Get directions
-      </a> -->
-<!--       <div ng-show="project.address.street || project.address.city || project.address.zip"
-           class="item item-icon-left" 
-           ng-click="goToMap(project)">
-        <i class="icon ion-location positive"></i>
-        Get directions
-      </div> -->
 
       <!-- Timeline -->
       <div ng-show="project.timeline.length">
@@ -82,7 +70,7 @@
         <ion-list>
           <a class="item item-icon-left"
              ng-repeat="milestone in project.timeline"
-             href="#/main/projects/new-milestone/{{ $index }}">
+             ui-sref="^.newMilestone({ id: $index })">
              <i ng-hide="milestone.completed" class="icon ion-checkmark stable"></i>
              <i ng-show="milestone.completed" class="icon ion-checkmark assertive"></i>
              {{ milestone.title }}

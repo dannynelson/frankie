@@ -7,23 +7,19 @@ angular.module('services.projects', [
 ])
 
 .factory('projects', function($q, $http, File, Project, loading, photo) {
-  var fetchProjects = function(newQuery) {
+
+  var fetchProjects = function() {
     var query = {
-      // user: {
-      //   __type: 'Pointer',
-      //   className: '_User',
-      //   objectId: 'gwhGqiyLjR'
-      // },
       completed: false
     };
+
     var defer = $q.defer();
-    _.extend(query, newQuery);
     Project.get({
       where: JSON.stringify(query)
     }, function(response) {
       projects = response.results;
       loading.hide();
-      fetched = true;
+      projects.fetched = true;
       defer.resolve(projects);
     });
     return defer.promise;
@@ -71,15 +67,6 @@ angular.module('services.projects', [
           fetchProjects().then(onSuccess);
         });
       });
-
-      // if (newProject.photo) {
-      //   photo.save(newProject.photo, function(retrievedFile) {
-      //     newProject.photo = retrievedFile.url();
-      //     saveProject();
-      //   });
-      // } else {
-      //   saveProject();
-      // }
     },
     find: function(objectId) {
       var defer = $q.defer();

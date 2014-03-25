@@ -1,8 +1,3 @@
-<!-- 
-  Create side menu tabs with an icon and label. 
-  Each menu item links to a state (configured in app.js) to load the appropriate <nav-view>.
--->
-
 <ion-side-menus>
   <!-- Left menu -->
   <ion-side-menu ng-controller="MenuCtrl" side="left" class="darker-bg">
@@ -10,17 +5,17 @@
       <div class="item item-divider darker-bg dark-border"></div>
       <!-- goTo helper in sideMenuController in ionic-angular.js -->
       <div class="item item-darker item-icon-left"
-           ng-click="goTo('main.projects')">
+           ng-click="goTo('main.projects.projectList')">
         <i class="icon stable ion-clipboard"></i>
         Projects
       </div>
       <div class="item item-darker item-icon-left"
-           ng-click="goTo('main.calendar')">
+           ng-click="goTo('main.projects.calendar')">
         <i class="icon stable ion-calendar"></i>
         Calendar
       </div>
       <div class="item item-darker item-icon-left"
-           ng-click="goTo('main.archives')">
+           ng-click="goTo('main.projects.archives')">
         <i class="icon stable ion-filing"></i>
         Archives
       </div>

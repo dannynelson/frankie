@@ -1,7 +1,11 @@
-angular.module('main.newMilestone', ['services.photo', 'services.currentProject',  'services.loading'])
+angular.module('main.projects.newMilestone', [
+  'services.photo',
+  'services.currentProject',
+  'services.loading'
+])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.newMilestone', {
+  $stateProvider.state('main.projects.newMilestone', {
     url: '/new-milestone/:id',
     templateUrl: 'main/projects/new-milestone/new-milestone.tpl.html',
     controller: 'NewMilestoneCtrl'

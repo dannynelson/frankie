@@ -7,16 +7,20 @@ angular.module('main.projects.projectList', [
 .config(function($stateProvider) {
   $stateProvider.state('main.projects.projectList', {
     url: '/project-list',
-    templateUrl: 'main/projects/project-list/project-list.tpl.html',
-    controller: 'ProjectListCtrl'
+    templateUrl: 'templates/project-list.tpl.html',
+    controller: 'ProjectListCtrl',
+    resolve: {
+      projectData: function(projects) {
+        return projects.all();
+      }
+    }
   });
 })
 
-.controller('ProjectListCtrl', function($scope, $state, projects, loading) {
-  projects.all().then(function(projectData) {
-    $scope.projects = projectData;
-    $scope.courtesyMessage = 'You currently don\'t have any projects. Click the button in the top right to create a one.';
-  });
+.controller('ProjectListCtrl', function($scope, $state, projectData, loading) {
+  
+  $scope.projects = projectData;
+  $scope.courtesyMessage = 'You currently don\'t have any projects. Click the button in the top right to create a one.';
 
   $scope.title = 'Projects';
   $scope.rightButtons = [{

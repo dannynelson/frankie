@@ -16,7 +16,7 @@ angular.module('main.projects.newClient', [
   });
 })
 
-.controller('NewClientCtrl', function($scope, $location, client, currentDate) {
+.controller('NewClientCtrl', function($scope, client, currentDate) {
   $scope.client = client;
 
   $scope.leftButtons = [];

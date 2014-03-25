@@ -7,14 +7,13 @@ angular.module('main.account.profile', ['services.currentUser', 'filters.phone']
     controller: 'ProfileCtrl',
     resolve: {
       user: function(currentUser) {
-        debugger;
         return currentUser.get();
       }
     }
   });
 })
 
-.controller('ProfileCtrl', function($scope, $location, user) {
+.controller('ProfileCtrl', function($scope, $state, user) {
   $scope.user = user;
   
   $scope.leftButtons = [];
@@ -22,7 +21,7 @@ angular.module('main.account.profile', ['services.currentUser', 'filters.phone']
     type: 'button-clear button-assertive',
     content: '<button>edit</button>',
     tap: function(e) {
-      $location.url('/main/new-profile');
+      $state.go('^.newProfile');
     }
   }];
 });

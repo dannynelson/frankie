@@ -1,31 +1,27 @@
-<ion-view class="signin">
+<ion-content scroll="false" class="positive-bg">
   
-  <ion-content scroll="false" class="positive-bg">
-    
-    <div class="title">FRANKIE</div>
-    <form class="signin-form"
-          ng-submit="signin(user)">
-      <div class="list list-inset">
-        <div class="item item-input">
-          <input type="email" ng-model="user.username" placeholder="Email">
-        </div>
-        <div class="item item-input">
-          <input type="password" ng-model="user.password" placeholder="Password">
-        </div>
+  <div class="title">FRANKIE</div>
+  <form class="signin-form"
+        ng-submit="signin(user)">
+    <div class="list list-inset">
+      <div class="item item-input">
+        <input type="email" ng-model="user.username" placeholder="Email">
       </div>
-      <div class="padding-horizontal">
-        <input type="submit" value="Signin" class="button button-block button-assertive"></input>
+      <div class="item item-input">
+        <input type="password" ng-model="user.password" placeholder="Password">
       </div>
-      <center>
-        <a class="button button-clear button-assertive" href="#/landing/forgot-password">
-          Forgot Password?
-        </a>
-        <a class="button button-clear button-assertive" href="#/landing/signup">
-          Create an Account
-        </a>
-      </center>
-    </form>
+    </div>
+    <div class="padding-horizontal">
+      <input type="submit" value="Signin" class="button button-block button-assertive"></input>
+    </div>
+    <center>
+      <a class="button button-clear button-assertive" href="#/landing/forgot-password">
+        Forgot Password?
+      </a>
+      <a class="button button-clear button-assertive" href="#/landing/signup">
+        Create an Account
+      </a>
+    </center>
+  </form>
 
-  </ion-content>
-
-</ion-view>
+</ion-content>

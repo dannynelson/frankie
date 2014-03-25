@@ -12,7 +12,6 @@ angular.module('main.account.changeEmail', [
 })
 
 .controller('ChangeEmailCtrl', function($scope, $rootScope, emailValidation, currentUser) {
-  debugger;
   $scope.leftButtons = [];
   $scope.rightButtons = [];
   $scope.save = function(oldUsername, newUsername) {

@@ -1,9 +1,9 @@
-angular.module('main.calendar', ['services.makeCalendar', 'services.projects'])
+angular.module('main.projects.calendar', ['services.makeCalendar', 'services.projects'])
 
 .config(function($stateProvider) {
-  $stateProvider.state('main.calendar', {
+  $stateProvider.state('main.projects.calendar', {
     url: '/calendar',
-    templateUrl: 'main/calendar/calendar.tpl.html',
+    templateUrl: 'main/projects/calendar/calendar.tpl.html',
     controller: 'CalendarCtrl',
     resolve: {
       projects: function (projects) {
@@ -13,7 +13,7 @@ angular.module('main.calendar', ['services.makeCalendar', 'services.projects'])
   });
 })
 
-.controller('CalendarCtrl', function($scope, $location, makeCalendar, projects) {
+.controller('CalendarCtrl', function($scope, makeCalendar, projects) {
   var calendar = makeCalendar.create(projects);
   $scope.overDue = calendar.overDue;
   $scope.calendar = calendar.upcoming;
